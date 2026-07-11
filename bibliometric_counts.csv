@@ -1,0 +1,12 @@
+side,category,label,query,count,search_date
+A,precise,CT + radiation risk,"(""computed tomography""[tiab] OR ""CT scan""[tiab]) AND ""radiation risk""[tiab]",304,2026-06-03
+A,precise,CT + radiation-induced cancer,"(""computed tomography""[tiab] OR ""CT scan""[tiab]) AND (""radiation-induced cancer""[tiab] OR ""radiation induced cancer""[tiab])",127,2026-06-03
+A,precise,CT + lifetime attributable / carcinogenic risk,"(""computed tomography""[tiab] OR ""CT scan""[tiab]) AND (""lifetime attributable risk""[tiab] OR ""carcinogenic risk""[tiab])",107,2026-06-03
+A,MeSH,"MeSH: CT AND Neoplasms, Radiation-Induced","""Tomography, X-Ray Computed""[Mesh] AND ""Neoplasms, Radiation-Induced""[Mesh]",875,2026-06-03
+A,broad,CT + radiation dose + risk,"(""computed tomography""[tiab] OR ""CT scan""[tiab]) AND ""radiation dose""[tiab] AND risk[tiab]",1167,2026-06-03
+B,precise,CT + risk of not scanning / non-scanning,"(""computed tomography""[tiab] OR ""CT scan""[tiab]) AND (""risk of not scanning""[tiab] OR ""not scanning""[tiab] OR ""non-scanning""[tiab])",4,2026-06-03
+B,precise,withholding / deferred / forgoing CT or imaging,"(""computed tomography""[tiab] OR ""CT scan""[tiab]) AND (""withholding CT""[tiab] OR ""deferred CT""[tiab] OR ""forgoing CT""[tiab] OR ""withholding imaging""[tiab] OR ""deferred imaging""[tiab] OR ""forgoing imaging""[tiab])",0,2026-06-03
+B,precise,delayed CT / CT delay / time to CT,"(""delayed CT""[tiab] OR ""CT delay""[tiab] OR ""time to CT""[tiab] OR ""delayed computed tomography""[tiab])",402,2026-06-03
+B,MeSH,MeSH: CT AND Delayed Diagnosis (broad proxy),"""Tomography, X-Ray Computed""[Mesh] AND ""Delayed Diagnosis""[Mesh]",643,2026-06-03
+B,broad,CT + delayed diagnosis / diagnostic delay (broad proxy),"(""computed tomography""[tiab] OR ""CT scan""[tiab]) AND (""delayed diagnosis""[tiab] OR ""diagnostic delay""[tiab])",1534,2026-06-03
+B,broad,CT + missed diagnosis (broad proxy),"(""computed tomography""[tiab] OR ""CT scan""[tiab]) AND ""missed diagnosis""[tiab]",426,2026-06-03

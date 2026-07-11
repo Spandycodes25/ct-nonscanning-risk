@@ -1,0 +1,5518 @@
+{
+  "search_date": "2026-06-03",
+  "sides": {
+    "Radiation risk (named)": [
+      {
+        "pmid": 31707971,
+        "year": 2019,
+        "citation_count": 2,
+        "rcr": 0.14773875876213097,
+        "citations_per_year": 0.2857142857142857
+      },
+      {
+        "pmid": 31813894,
+        "year": 2020,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 31858481,
+        "year": 2020,
+        "citation_count": 31,
+        "rcr": 4.152965380740387,
+        "citations_per_year": 5.166666666666667
+      },
+      {
+        "pmid": 31920030,
+        "year": 2020,
+        "citation_count": 10,
+        "rcr": 0.7156343572705551,
+        "citations_per_year": 1.6666666666666667
+      },
+      {
+        "pmid": 32001130,
+        "year": 2020,
+        "citation_count": 4,
+        "rcr": 0.624440854743742,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 32052770,
+        "year": 2020,
+        "citation_count": 5,
+        "rcr": 0.5546390874283447,
+        "citations_per_year": 0.8333333333333334
+      },
+      {
+        "pmid": 32082446,
+        "year": 2019,
+        "citation_count": 3,
+        "rcr": 0.168526838051289,
+        "citations_per_year": 0.42857142857142855
+      },
+      {
+        "pmid": 32088659,
+        "year": 2020,
+        "citation_count": 15,
+        "rcr": 1.0479588113602216,
+        "citations_per_year": 2.5
+      },
+      {
+        "pmid": 32128379,
+        "year": 2020,
+        "citation_count": 7,
+        "rcr": 0.7033792446579259,
+        "citations_per_year": 1.1666666666666667
+      },
+      {
+        "pmid": 32163886,
+        "year": 2020,
+        "citation_count": 18,
+        "rcr": 1.60234162817343,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 32195547,
+        "year": 2020,
+        "citation_count": 6,
+        "rcr": 0.5764233647538081,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 32200290,
+        "year": 2020,
+        "citation_count": 7,
+        "rcr": 0.44350174318585367,
+        "citations_per_year": 1.1666666666666667
+      },
+      {
+        "pmid": 32200412,
+        "year": 2021,
+        "citation_count": 4,
+        "rcr": 0.41488148773260336,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 32266979,
+        "year": 2020,
+        "citation_count": 8,
+        "rcr": 0.6115054927648813,
+        "citations_per_year": 1.3333333333333333
+      },
+      {
+        "pmid": 32327167,
+        "year": 2020,
+        "citation_count": 17,
+        "rcr": 1.6371732491712603,
+        "citations_per_year": 2.8333333333333335
+      },
+      {
+        "pmid": 32349196,
+        "year": 2021,
+        "citation_count": 2,
+        "rcr": 0.29382296019951826,
+        "citations_per_year": 0.4
+      },
+      {
+        "pmid": 32528028,
+        "year": 2020,
+        "citation_count": 12,
+        "rcr": 1.0468246997797221,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 32566434,
+        "year": 2020,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 32617064,
+        "year": 2020,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 32640553,
+        "year": 2020,
+        "citation_count": 18,
+        "rcr": 1.7228076741629224,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 32671989,
+        "year": 2020,
+        "citation_count": 13,
+        "rcr": 0.9460296097376318,
+        "citations_per_year": 2.1666666666666665
+      },
+      {
+        "pmid": 32698332,
+        "year": 2020,
+        "citation_count": 7,
+        "rcr": 0.8755360910471713,
+        "citations_per_year": 1.1666666666666667
+      },
+      {
+        "pmid": 32718206,
+        "year": 2020,
+        "citation_count": 6,
+        "rcr": 0.3911877672049313,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 32874751,
+        "year": 2020,
+        "citation_count": 2,
+        "rcr": 0.18472287057547374,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 32897493,
+        "year": 2021,
+        "citation_count": 20,
+        "rcr": 1.6742732447135373,
+        "citations_per_year": 4.0
+      },
+      {
+        "pmid": 32972850,
+        "year": 2021,
+        "citation_count": 4,
+        "rcr": 0.5489673449613625,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 32986646,
+        "year": 2020,
+        "citation_count": 6,
+        "rcr": 0.8301077272939955,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 33027775,
+        "year": 2020,
+        "citation_count": 5,
+        "rcr": 0.29154414777328197,
+        "citations_per_year": 0.8333333333333334
+      },
+      {
+        "pmid": 33044223,
+        "year": 2020,
+        "citation_count": 5,
+        "rcr": 0.6547241379840408,
+        "citations_per_year": 0.8333333333333334
+      },
+      {
+        "pmid": 33044423,
+        "year": 2021,
+        "citation_count": 5,
+        "rcr": 0.7480719864147843,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 33064161,
+        "year": 2020,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 33109231,
+        "year": 2020,
+        "citation_count": 2,
+        "rcr": 0.2618109152247482,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 33171381,
+        "year": 2020,
+        "citation_count": 15,
+        "rcr": 0.9884788412668916,
+        "citations_per_year": 2.5
+      },
+      {
+        "pmid": 33182418,
+        "year": 2020,
+        "citation_count": 10,
+        "rcr": 1.2511252591452087,
+        "citations_per_year": 1.6666666666666667
+      },
+      {
+        "pmid": 33307438,
+        "year": 2021,
+        "citation_count": 9,
+        "rcr": 1.0941449897993285,
+        "citations_per_year": 1.8
+      },
+      {
+        "pmid": 33339745,
+        "year": 2021,
+        "citation_count": 11,
+        "rcr": 1.4630546477155248,
+        "citations_per_year": 2.2
+      },
+      {
+        "pmid": 33352939,
+        "year": 2020,
+        "citation_count": 6,
+        "rcr": 0.48358965210141297,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 33424315,
+        "year": 2021,
+        "citation_count": 13,
+        "rcr": 1.741167806780396,
+        "citations_per_year": 2.6
+      },
+      {
+        "pmid": 33468822,
+        "year": 2020,
+        "citation_count": 1,
+        "rcr": 0.01820201900116588,
+        "citations_per_year": 0.16666666666666666
+      },
+      {
+        "pmid": 33624163,
+        "year": 2021,
+        "citation_count": 23,
+        "rcr": 2.645372168683094,
+        "citations_per_year": 4.6
+      },
+      {
+        "pmid": 33687468,
+        "year": 2021,
+        "citation_count": 471,
+        "rcr": 32.61366762146466,
+        "citations_per_year": 94.2
+      },
+      {
+        "pmid": 33741287,
+        "year": 2021,
+        "citation_count": 27,
+        "rcr": 3.2257709500139358,
+        "citations_per_year": 5.4
+      },
+      {
+        "pmid": 33763187,
+        "year": 2021,
+        "citation_count": 2,
+        "rcr": 0.208939777362984,
+        "citations_per_year": 0.4
+      },
+      {
+        "pmid": 33803464,
+        "year": 2021,
+        "citation_count": 5,
+        "rcr": 0.6377731154911679,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 33852774,
+        "year": 2021,
+        "citation_count": 11,
+        "rcr": 1.1253152326637057,
+        "citations_per_year": 2.2
+      },
+      {
+        "pmid": 33909230,
+        "year": 2021,
+        "citation_count": 4,
+        "rcr": 0.25536546973463625,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 33915472,
+        "year": 2021,
+        "citation_count": 13,
+        "rcr": 1.586063099688233,
+        "citations_per_year": 2.6
+      },
+      {
+        "pmid": 34096826,
+        "year": 2021,
+        "citation_count": 14,
+        "rcr": 1.6564988056931114,
+        "citations_per_year": 2.8
+      },
+      {
+        "pmid": 34098534,
+        "year": 2021,
+        "citation_count": 5,
+        "rcr": 0.5396824150116694,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 34118968,
+        "year": 2021,
+        "citation_count": 5,
+        "rcr": 0.602008381378146,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 34161140,
+        "year": 2021,
+        "citation_count": 59,
+        "rcr": 5.599888848778796,
+        "citations_per_year": 11.8
+      },
+      {
+        "pmid": 34161937,
+        "year": 2021,
+        "citation_count": 4,
+        "rcr": 0.5233530225146534,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 34164288,
+        "year": 2021,
+        "citation_count": 45,
+        "rcr": 3.141366670946589,
+        "citations_per_year": 9.0
+      },
+      {
+        "pmid": 34270418,
+        "year": 2021,
+        "citation_count": 56,
+        "rcr": 6.173500755036981,
+        "citations_per_year": 11.2
+      },
+      {
+        "pmid": 34304321,
+        "year": 2021,
+        "citation_count": 4,
+        "rcr": 0.47780424536836263,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 34325998,
+        "year": 2022,
+        "citation_count": 34,
+        "rcr": 4.575768399634129,
+        "citations_per_year": 8.5
+      },
+      {
+        "pmid": 34383160,
+        "year": 2022,
+        "citation_count": 3,
+        "rcr": 0.2764585944124199,
+        "citations_per_year": 0.75
+      },
+      {
+        "pmid": 34406127,
+        "year": 2021,
+        "citation_count": 3,
+        "rcr": 0.34214502892449267,
+        "citations_per_year": 0.6
+      },
+      {
+        "pmid": 34438276,
+        "year": 2021,
+        "citation_count": 9,
+        "rcr": 0.9184017404250266,
+        "citations_per_year": 1.8
+      },
+      {
+        "pmid": 34474418,
+        "year": 2021,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 34528102,
+        "year": 2021,
+        "citation_count": 3,
+        "rcr": 0.4162034250737021,
+        "citations_per_year": 0.6
+      },
+      {
+        "pmid": 34603643,
+        "year": 2021,
+        "citation_count": 1,
+        "rcr": 0.1325442963532448,
+        "citations_per_year": 0.2
+      },
+      {
+        "pmid": 34606959,
+        "year": 2022,
+        "citation_count": 2,
+        "rcr": 0.3020109012146599,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 34688024,
+        "year": 2021,
+        "citation_count": 4,
+        "rcr": 0.4577179657736915,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 34688230,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 0.7633244319291087,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 34755419,
+        "year": 2022,
+        "citation_count": 5,
+        "rcr": 0.5592016641770035,
+        "citations_per_year": 1.25
+      },
+      {
+        "pmid": 34756228,
+        "year": 2020,
+        "citation_count": 3,
+        "rcr": 0.18734595654539973,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 35076626,
+        "year": 2022,
+        "citation_count": 2,
+        "rcr": 0.24010009346950467,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 35159277,
+        "year": 2022,
+        "citation_count": 8,
+        "rcr": 1.0409590690139325,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 35194653,
+        "year": 2022,
+        "citation_count": 18,
+        "rcr": 2.5783046000368506,
+        "citations_per_year": 4.5
+      },
+      {
+        "pmid": 35204455,
+        "year": 2022,
+        "citation_count": 19,
+        "rcr": 1.6100715484437726,
+        "citations_per_year": 4.75
+      },
+      {
+        "pmid": 35217250,
+        "year": 2022,
+        "citation_count": 28,
+        "rcr": 4.153093535367328,
+        "citations_per_year": 7.0
+      },
+      {
+        "pmid": 35236121,
+        "year": 2022,
+        "citation_count": 2,
+        "rcr": 0.20662071052917771,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 35237001,
+        "year": 2022,
+        "citation_count": 1,
+        "rcr": 0.23386441317242984,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 35262687,
+        "year": 2022,
+        "citation_count": 27,
+        "rcr": 3.792147304411528,
+        "citations_per_year": 6.75
+      },
+      {
+        "pmid": 35284094,
+        "year": 2022,
+        "citation_count": 8,
+        "rcr": 0.8908266252915452,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 35289145,
+        "year": 2022,
+        "citation_count": 9,
+        "rcr": 1.186445929584243,
+        "citations_per_year": 2.25
+      },
+      {
+        "pmid": 35367977,
+        "year": 2022,
+        "citation_count": 2,
+        "rcr": 0.37180147261845353,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 35384458,
+        "year": 2022,
+        "citation_count": 16,
+        "rcr": 2.210048123939228,
+        "citations_per_year": 4.0
+      },
+      {
+        "pmid": 35404962,
+        "year": 2022,
+        "citation_count": 3,
+        "rcr": 0.49587403168960026,
+        "citations_per_year": 0.75
+      },
+      {
+        "pmid": 35421263,
+        "year": 2022,
+        "citation_count": 15,
+        "rcr": 2.163644533271367,
+        "citations_per_year": 3.75
+      },
+      {
+        "pmid": 35531247,
+        "year": 2022,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 35735955,
+        "year": 2022,
+        "citation_count": 4,
+        "rcr": 0.49281963552120545,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 35782241,
+        "year": 2022,
+        "citation_count": 36,
+        "rcr": 4.401319879492179,
+        "citations_per_year": 9.0
+      },
+      {
+        "pmid": 35896148,
+        "year": 2022,
+        "citation_count": 3,
+        "rcr": 0.5218358606616199,
+        "citations_per_year": 0.75
+      },
+      {
+        "pmid": 35899220,
+        "year": 2022,
+        "citation_count": 12,
+        "rcr": 1.6887716062073228,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 35942666,
+        "year": 2022,
+        "citation_count": 1,
+        "rcr": 0.20119143116993354,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 36010362,
+        "year": 2022,
+        "citation_count": 5,
+        "rcr": 0.8284038317478484,
+        "citations_per_year": 1.25
+      },
+      {
+        "pmid": 36143227,
+        "year": 2022,
+        "citation_count": 5,
+        "rcr": 0.5312501365039148,
+        "citations_per_year": 1.25
+      },
+      {
+        "pmid": 36183658,
+        "year": 2022,
+        "citation_count": 4,
+        "rcr": 0.667704535802815,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 36301699,
+        "year": 2022,
+        "citation_count": 4,
+        "rcr": 0.5858846791547201,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 36347619,
+        "year": 2022,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 36517974,
+        "year": 2023,
+        "citation_count": 8,
+        "rcr": 2.99250672255704,
+        "citations_per_year": 2.6666666666666665
+      },
+      {
+        "pmid": 36525913,
+        "year": 2023,
+        "citation_count": 1,
+        "rcr": 0.6515594651820519,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 36527854,
+        "year": 2023,
+        "citation_count": 2,
+        "rcr": 0.410108903134522,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 36539250,
+        "year": 2022,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 36553050,
+        "year": 2022,
+        "citation_count": 11,
+        "rcr": 1.3436797351890113,
+        "citations_per_year": 2.75
+      },
+      {
+        "pmid": 36584412,
+        "year": 2023,
+        "citation_count": 1,
+        "rcr": 0.5265142413267362,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 36611159,
+        "year": 2023,
+        "citation_count": 10,
+        "rcr": 1.5083748874457896,
+        "citations_per_year": 3.3333333333333335
+      },
+      {
+        "pmid": 36620157,
+        "year": 2023,
+        "citation_count": 3,
+        "rcr": 1.473867509396215,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 36646547,
+        "year": 2023,
+        "citation_count": 5,
+        "rcr": 1.142042852786348,
+        "citations_per_year": 1.6666666666666667
+      },
+      {
+        "pmid": 36699908,
+        "year": 2023,
+        "citation_count": 8,
+        "rcr": 1.4291912451193511,
+        "citations_per_year": 2.6666666666666665
+      },
+      {
+        "pmid": 36733738,
+        "year": 2022,
+        "citation_count": 4,
+        "rcr": 0.6590998108193824,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 36749423,
+        "year": 2023,
+        "citation_count": 2,
+        "rcr": 0.4198042110698239,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 36828367,
+        "year": 2023,
+        "citation_count": 17,
+        "rcr": 2.4648802875965017,
+        "citations_per_year": 5.666666666666667
+      },
+      {
+        "pmid": 36841936,
+        "year": 2024,
+        "citation_count": 7,
+        "rcr": 3.113352237888912,
+        "citations_per_year": 3.5
+      },
+      {
+        "pmid": 36856709,
+        "year": 2023,
+        "citation_count": 2,
+        "rcr": 0.4101950248198715,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 36902633,
+        "year": 2023,
+        "citation_count": 7,
+        "rcr": 1.8105751147718758,
+        "citations_per_year": 2.3333333333333335
+      },
+      {
+        "pmid": 36932003,
+        "year": 2023,
+        "citation_count": 3,
+        "rcr": 0.5438049248731714,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 37129707,
+        "year": 2023,
+        "citation_count": 2,
+        "rcr": 1.0473821272483754,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 37132289,
+        "year": 2023,
+        "citation_count": 3,
+        "rcr": 1.01808028040299,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 37289287,
+        "year": 2023,
+        "citation_count": 6,
+        "rcr": 1.6586637027465332,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 37306750,
+        "year": 2023,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 37465608,
+        "year": 2020,
+        "citation_count": 2,
+        "rcr": 0.33388904493386173,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 37575745,
+        "year": 2023,
+        "citation_count": 1,
+        "rcr": 0.2068349016923139,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 37596237,
+        "year": 2023,
+        "citation_count": 3,
+        "rcr": 1.10609198404533,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 37651539,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 0.9130231517306279,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 37670164,
+        "year": 2024,
+        "citation_count": 27,
+        "rcr": 8.10241998289948,
+        "citations_per_year": 13.5
+      },
+      {
+        "pmid": 37787314,
+        "year": 2023,
+        "citation_count": 3,
+        "rcr": 0.4239029756372898,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 37795436,
+        "year": 2023,
+        "citation_count": 9,
+        "rcr": 1.910469704143577,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 37813832,
+        "year": 2023,
+        "citation_count": 29,
+        "rcr": 3.745502610407289,
+        "citations_per_year": 9.666666666666666
+      },
+      {
+        "pmid": 37877072,
+        "year": 2023,
+        "citation_count": 2,
+        "rcr": 0.797615449431687,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 37909704,
+        "year": 2023,
+        "citation_count": 5,
+        "rcr": 1.720716158067982,
+        "citations_per_year": 1.6666666666666667
+      },
+      {
+        "pmid": 37909872,
+        "year": 2024,
+        "citation_count": 14,
+        "rcr": 2.9308767691222077,
+        "citations_per_year": 7.0
+      },
+      {
+        "pmid": 37909877,
+        "year": 2024,
+        "citation_count": 277,
+        "rcr": 49.98062266131454,
+        "citations_per_year": 138.5
+      },
+      {
+        "pmid": 38045176,
+        "year": 2023,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 38048023,
+        "year": 2024,
+        "citation_count": 6,
+        "rcr": 2.123439582349274,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 38100342,
+        "year": 2025,
+        "citation_count": 11,
+        "rcr": 4.916525694475595,
+        "citations_per_year": 11.0
+      },
+      {
+        "pmid": 38148965,
+        "year": 2023,
+        "citation_count": 3,
+        "rcr": 0.7440393329287016,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 38185693,
+        "year": 2024,
+        "citation_count": 3,
+        "rcr": 1.4181852853508434,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 38186237,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.43511259574662736,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 38216155,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 38271533,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.09228851914203659,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 38324896,
+        "year": 2024,
+        "citation_count": 3,
+        "rcr": 0.9787909292039559,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 38384636,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 1.1780251710931016,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 38424982,
+        "year": 2020,
+        "citation_count": 35,
+        "rcr": 1.9622355881538445,
+        "citations_per_year": 5.833333333333333
+      },
+      {
+        "pmid": 38443829,
+        "year": 2024,
+        "citation_count": 6,
+        "rcr": 1.4273840824872752,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 38486458,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 0.7013755274721755,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 38540213,
+        "year": 2024,
+        "citation_count": 7,
+        "rcr": 3.0317522800410166,
+        "citations_per_year": 3.5
+      },
+      {
+        "pmid": 38595575,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 1.4757106289502888,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 38614834,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 0.8884780684787855,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 38687690,
+        "year": 2024,
+        "citation_count": 3,
+        "rcr": 0.63736188085632,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 38982690,
+        "year": 2025,
+        "citation_count": 3,
+        "rcr": null,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 38991121,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.47511820881527467,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 38993205,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39019051,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.375561721004082,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 39023602,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 0.5490139214678146,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 39024663,
+        "year": 2024,
+        "citation_count": 12,
+        "rcr": 3.372264916988251,
+        "citations_per_year": 6.0
+      },
+      {
+        "pmid": 39146953,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 1.9131668332065448,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 39230721,
+        "year": 2024,
+        "citation_count": 5,
+        "rcr": 1.2211703190680074,
+        "citations_per_year": 2.5
+      },
+      {
+        "pmid": 39287517,
+        "year": 2024,
+        "citation_count": 14,
+        "rcr": 5.717677303803591,
+        "citations_per_year": 7.0
+      },
+      {
+        "pmid": 39318368,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.47139471188098564,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 39350475,
+        "year": 2025,
+        "citation_count": 45,
+        "rcr": 19.77238232331779,
+        "citations_per_year": 45.0
+      },
+      {
+        "pmid": 39371310,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.9745619772523295,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 39445722,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39613960,
+        "year": 2025,
+        "citation_count": 7,
+        "rcr": 3.1664194111619786,
+        "citations_per_year": 7.0
+      },
+      {
+        "pmid": 39704906,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39705821,
+        "year": 2025,
+        "citation_count": 3,
+        "rcr": null,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 39761638,
+        "year": 2025,
+        "citation_count": 3,
+        "rcr": null,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 39765051,
+        "year": 2025,
+        "citation_count": 8,
+        "rcr": 3.901243525618721,
+        "citations_per_year": 8.0
+      },
+      {
+        "pmid": 39793215,
+        "year": 2025,
+        "citation_count": 8,
+        "rcr": 2.73596403787553,
+        "citations_per_year": 8.0
+      },
+      {
+        "pmid": 39801539,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.38459057056274787,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 39812675,
+        "year": 2025,
+        "citation_count": 9,
+        "rcr": 4.393415674732096,
+        "citations_per_year": 9.0
+      },
+      {
+        "pmid": 39884344,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39971724,
+        "year": 2025,
+        "citation_count": 3,
+        "rcr": null,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 40004878,
+        "year": 2025,
+        "citation_count": 2,
+        "rcr": null,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 40133692,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40227719,
+        "year": 2025,
+        "citation_count": 208,
+        "rcr": 86.50445436068154,
+        "citations_per_year": 208.0
+      },
+      {
+        "pmid": 40278709,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 40342647,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40437781,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40537965,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40560011,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40580446,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40680436,
+        "year": 2025,
+        "citation_count": 2,
+        "rcr": null,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 40713279,
+        "year": 2026,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 40749323,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40779137,
+        "year": 2025,
+        "citation_count": 4,
+        "rcr": null,
+        "citations_per_year": 4.0
+      },
+      {
+        "pmid": 40815377,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40902714,
+        "year": 2026,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 40903921,
+        "year": 2025,
+        "citation_count": 2,
+        "rcr": null,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 40985764,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 41045819,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 41066017,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41117818,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41170700,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41237682,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41397309,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41564446,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41570636,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41679920,
+        "year": 2026,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 41770963,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41821464,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41859753,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41880870,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41886799,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 42077333,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 42130479,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 21527055,
+        "year": 2011,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 21587045,
+        "year": 2013,
+        "citation_count": 14,
+        "rcr": 0.9708512476974377,
+        "citations_per_year": 1.0769230769230769
+      },
+      {
+        "pmid": 21652231,
+        "year": 2011,
+        "citation_count": 9,
+        "rcr": 0.3817877286666362,
+        "citations_per_year": 0.6
+      },
+      {
+        "pmid": 21685843,
+        "year": 2011,
+        "citation_count": 5,
+        "rcr": 0.199131440469809,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 21795982,
+        "year": 2011,
+        "citation_count": 24,
+        "rcr": 0.9730676029469528,
+        "citations_per_year": 1.6
+      },
+      {
+        "pmid": 21817973,
+        "year": 2011,
+        "citation_count": 34,
+        "rcr": 1.5715451737393524,
+        "citations_per_year": 2.2666666666666666
+      },
+      {
+        "pmid": 21857528,
+        "year": 2012,
+        "citation_count": 22,
+        "rcr": 0.9357409343178024,
+        "citations_per_year": 1.5714285714285714
+      },
+      {
+        "pmid": 21889021,
+        "year": 2011,
+        "citation_count": 20,
+        "rcr": 0.8961093094745737,
+        "citations_per_year": 1.3333333333333333
+      },
+      {
+        "pmid": 21928375,
+        "year": 2012,
+        "citation_count": 44,
+        "rcr": 1.9031234594695654,
+        "citations_per_year": 3.142857142857143
+      },
+      {
+        "pmid": 21962004,
+        "year": 2011,
+        "citation_count": 11,
+        "rcr": 0.41453616525122966,
+        "citations_per_year": 0.7333333333333333
+      },
+      {
+        "pmid": 21979547,
+        "year": 2011,
+        "citation_count": 11,
+        "rcr": 0.5830779989743479,
+        "citations_per_year": 0.7333333333333333
+      },
+      {
+        "pmid": 22001421,
+        "year": 2011,
+        "citation_count": 7,
+        "rcr": 0.4244876889394624,
+        "citations_per_year": 0.4666666666666667
+      },
+      {
+        "pmid": 22011831,
+        "year": 2011,
+        "citation_count": 22,
+        "rcr": 1.1959479808705504,
+        "citations_per_year": 1.4666666666666666
+      },
+      {
+        "pmid": 22190749,
+        "year": 2012,
+        "citation_count": 73,
+        "rcr": 3.2216310418775054,
+        "citations_per_year": 5.214285714285714
+      },
+      {
+        "pmid": 22331345,
+        "year": 2012,
+        "citation_count": 100,
+        "rcr": 4.870754057845272,
+        "citations_per_year": 7.142857142857143
+      },
+      {
+        "pmid": 22352775,
+        "year": 2012,
+        "citation_count": 9,
+        "rcr": 0.5059958447980384,
+        "citations_per_year": 0.6428571428571429
+      },
+      {
+        "pmid": 22357897,
+        "year": 2012,
+        "citation_count": 16,
+        "rcr": 0.47383685742458415,
+        "citations_per_year": 1.1428571428571428
+      },
+      {
+        "pmid": 22438681,
+        "year": 2012,
+        "citation_count": 13,
+        "rcr": 0.5390939075380611,
+        "citations_per_year": 0.9285714285714286
+      },
+      {
+        "pmid": 22492218,
+        "year": 2012,
+        "citation_count": 21,
+        "rcr": 1.0986598085573032,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 22538627,
+        "year": 2012,
+        "citation_count": 68,
+        "rcr": 2.466736762618588,
+        "citations_per_year": 4.857142857142857
+      },
+      {
+        "pmid": 22576966,
+        "year": 2012,
+        "citation_count": 9,
+        "rcr": 0.4881513108865482,
+        "citations_per_year": 0.6428571428571429
+      },
+      {
+        "pmid": 22607509,
+        "year": 2012,
+        "citation_count": 15,
+        "rcr": 0.7170951836669627,
+        "citations_per_year": 1.0714285714285714
+      },
+      {
+        "pmid": 22722826,
+        "year": 2012,
+        "citation_count": 20,
+        "rcr": 1.215410375080235,
+        "citations_per_year": 1.4285714285714286
+      },
+      {
+        "pmid": 22766908,
+        "year": 2012,
+        "citation_count": 10,
+        "rcr": 0.37600549647134174,
+        "citations_per_year": 0.7142857142857143
+      },
+      {
+        "pmid": 22794055,
+        "year": 2012,
+        "citation_count": 21,
+        "rcr": 1.0298472475482383,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 22852481,
+        "year": 2012,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 22855231,
+        "year": 2012,
+        "citation_count": 38,
+        "rcr": 1.6987748299085779,
+        "citations_per_year": 2.7142857142857144
+      },
+      {
+        "pmid": 22900113,
+        "year": 2012,
+        "citation_count": 35,
+        "rcr": 1.5263682754297712,
+        "citations_per_year": 2.5
+      },
+      {
+        "pmid": 22921827,
+        "year": 2013,
+        "citation_count": 30,
+        "rcr": 1.565760420518242,
+        "citations_per_year": 2.3076923076923075
+      },
+      {
+        "pmid": 22940858,
+        "year": 2012,
+        "citation_count": 18,
+        "rcr": 0.8679009219834508,
+        "citations_per_year": 1.2857142857142858
+      },
+      {
+        "pmid": 22981307,
+        "year": 2012,
+        "citation_count": 15,
+        "rcr": 0.6294055745660514,
+        "citations_per_year": 1.0714285714285714
+      },
+      {
+        "pmid": 22997065,
+        "year": 2012,
+        "citation_count": 38,
+        "rcr": 1.5489642612059744,
+        "citations_per_year": 2.7142857142857144
+      },
+      {
+        "pmid": 23111234,
+        "year": 2013,
+        "citation_count": 48,
+        "rcr": 2.6306577251359164,
+        "citations_per_year": 3.6923076923076925
+      },
+      {
+        "pmid": 23173394,
+        "year": 2012,
+        "citation_count": 100,
+        "rcr": 4.4056682902074575,
+        "citations_per_year": 7.142857142857143
+      },
+      {
+        "pmid": 23307209,
+        "year": 2013,
+        "citation_count": 37,
+        "rcr": 1.2905074076264615,
+        "citations_per_year": 2.8461538461538463
+      },
+      {
+        "pmid": 23331317,
+        "year": 2013,
+        "citation_count": 14,
+        "rcr": 0.49778106484854784,
+        "citations_per_year": 1.0769230769230769
+      },
+      {
+        "pmid": 23361488,
+        "year": 2012,
+        "citation_count": 16,
+        "rcr": 0.6422657883647276,
+        "citations_per_year": 1.1428571428571428
+      },
+      {
+        "pmid": 23386731,
+        "year": 2013,
+        "citation_count": 58,
+        "rcr": 2.455581126162356,
+        "citations_per_year": 4.461538461538462
+      },
+      {
+        "pmid": 23425740,
+        "year": 2013,
+        "citation_count": 28,
+        "rcr": 1.4941334952656278,
+        "citations_per_year": 2.1538461538461537
+      },
+      {
+        "pmid": 23456207,
+        "year": 2013,
+        "citation_count": 31,
+        "rcr": 0.8303279797214741,
+        "citations_per_year": 2.3846153846153846
+      },
+      {
+        "pmid": 23532078,
+        "year": 2013,
+        "citation_count": 42,
+        "rcr": 1.853443377738974,
+        "citations_per_year": 3.230769230769231
+      },
+      {
+        "pmid": 23746760,
+        "year": 2013,
+        "citation_count": 52,
+        "rcr": 3.0400072118890127,
+        "citations_per_year": 4.0
+      },
+      {
+        "pmid": 23761544,
+        "year": 2013,
+        "citation_count": 34,
+        "rcr": 1.467535208770583,
+        "citations_per_year": 2.6153846153846154
+      },
+      {
+        "pmid": 23830321,
+        "year": 2014,
+        "citation_count": 33,
+        "rcr": 1.3435693051760964,
+        "citations_per_year": 2.75
+      },
+      {
+        "pmid": 23851128,
+        "year": 2014,
+        "citation_count": 24,
+        "rcr": 1.1991121257636426,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 23852432,
+        "year": 2013,
+        "citation_count": 27,
+        "rcr": 1.4314133216588811,
+        "citations_per_year": 2.076923076923077
+      },
+      {
+        "pmid": 23971634,
+        "year": 2013,
+        "citation_count": 48,
+        "rcr": 2.480293655048378,
+        "citations_per_year": 3.6923076923076925
+      },
+      {
+        "pmid": 23972586,
+        "year": 2014,
+        "citation_count": 7,
+        "rcr": 0.4410990494072722,
+        "citations_per_year": 0.5833333333333334
+      },
+      {
+        "pmid": 23988304,
+        "year": 2013,
+        "citation_count": 3,
+        "rcr": 0.11444468030876212,
+        "citations_per_year": 0.23076923076923078
+      },
+      {
+        "pmid": 24052089,
+        "year": 2014,
+        "citation_count": 42,
+        "rcr": 1.9651725458314364,
+        "citations_per_year": 3.5
+      },
+      {
+        "pmid": 24119259,
+        "year": 2014,
+        "citation_count": 4,
+        "rcr": 0.17300785528583207,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 24134171,
+        "year": 2013,
+        "citation_count": 7,
+        "rcr": 0.3372478178515033,
+        "citations_per_year": 0.5384615384615384
+      },
+      {
+        "pmid": 24139635,
+        "year": 2014,
+        "citation_count": 42,
+        "rcr": 3.3049804767460675,
+        "citations_per_year": 3.5
+      },
+      {
+        "pmid": 24192155,
+        "year": 2013,
+        "citation_count": 9,
+        "rcr": 0.6324085136693428,
+        "citations_per_year": 0.6923076923076923
+      },
+      {
+        "pmid": 24258564,
+        "year": 2013,
+        "citation_count": 19,
+        "rcr": 0.4958015116191614,
+        "citations_per_year": 1.4615384615384615
+      },
+      {
+        "pmid": 24281269,
+        "year": 2014,
+        "citation_count": 14,
+        "rcr": 0.7300273787330854,
+        "citations_per_year": 1.1666666666666667
+      },
+      {
+        "pmid": 24353666,
+        "year": 2013,
+        "citation_count": 5,
+        "rcr": 0.21633698860422615,
+        "citations_per_year": 0.38461538461538464
+      },
+      {
+        "pmid": 24355659,
+        "year": 2014,
+        "citation_count": 15,
+        "rcr": 0.6684517993971073,
+        "citations_per_year": 1.25
+      },
+      {
+        "pmid": 24378509,
+        "year": 2014,
+        "citation_count": 10,
+        "rcr": 0.4693541911786711,
+        "citations_per_year": 0.8333333333333334
+      },
+      {
+        "pmid": 24392191,
+        "year": 2013,
+        "citation_count": 25,
+        "rcr": 1.0343724906022886,
+        "citations_per_year": 1.9230769230769231
+      },
+      {
+        "pmid": 24595465,
+        "year": 2014,
+        "citation_count": 2,
+        "rcr": 0.08613991720187726,
+        "citations_per_year": 0.16666666666666666
+      },
+      {
+        "pmid": 24656401,
+        "year": 2014,
+        "citation_count": 34,
+        "rcr": 1.2618449274207795,
+        "citations_per_year": 2.8333333333333335
+      },
+      {
+        "pmid": 24673144,
+        "year": 2014,
+        "citation_count": 45,
+        "rcr": 2.027104918567909,
+        "citations_per_year": 3.75
+      },
+      {
+        "pmid": 24673667,
+        "year": 2014,
+        "citation_count": 40,
+        "rcr": 1.908040624068712,
+        "citations_per_year": 3.3333333333333335
+      },
+      {
+        "pmid": 24697683,
+        "year": 2014,
+        "citation_count": 109,
+        "rcr": 4.914733695203978,
+        "citations_per_year": 9.083333333333334
+      },
+      {
+        "pmid": 24737442,
+        "year": 2014,
+        "citation_count": 9,
+        "rcr": 0.4796896895988301,
+        "citations_per_year": 0.75
+      },
+      {
+        "pmid": 24742979,
+        "year": 2014,
+        "citation_count": 23,
+        "rcr": 1.218395989660773,
+        "citations_per_year": 1.9166666666666667
+      },
+      {
+        "pmid": 24748424,
+        "year": 2014,
+        "citation_count": 35,
+        "rcr": 1.444077160959733,
+        "citations_per_year": 2.9166666666666665
+      },
+      {
+        "pmid": 24776915,
+        "year": 2014,
+        "citation_count": 1,
+        "rcr": 0.05767521160528978,
+        "citations_per_year": 0.08333333333333333
+      },
+      {
+        "pmid": 24878841,
+        "year": 2014,
+        "citation_count": 4,
+        "rcr": 0.135182598869057,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 24912118,
+        "year": 2014,
+        "citation_count": 82,
+        "rcr": 4.97254268417531,
+        "citations_per_year": 6.833333333333333
+      },
+      {
+        "pmid": 24914037,
+        "year": 2014,
+        "citation_count": 182,
+        "rcr": 8.214006583447153,
+        "citations_per_year": 15.166666666666666
+      },
+      {
+        "pmid": 24927811,
+        "year": 2014,
+        "citation_count": 56,
+        "rcr": 3.29479323531906,
+        "citations_per_year": 4.666666666666667
+      },
+      {
+        "pmid": 24957710,
+        "year": 2014,
+        "citation_count": 55,
+        "rcr": 3.749374770747104,
+        "citations_per_year": 4.583333333333333
+      },
+      {
+        "pmid": 24977992,
+        "year": 2014,
+        "citation_count": 7,
+        "rcr": 0.3074973616705347,
+        "citations_per_year": 0.5833333333333334
+      },
+      {
+        "pmid": 24988435,
+        "year": 2014,
+        "citation_count": 8,
+        "rcr": 0.3783335766403887,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 25014243,
+        "year": 2014,
+        "citation_count": 6,
+        "rcr": 0.23105668664088244,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 25035753,
+        "year": 2014,
+        "citation_count": 3,
+        "rcr": 0.20272710308389477,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 25130177,
+        "year": 2014,
+        "citation_count": 17,
+        "rcr": 0.8811709027148386,
+        "citations_per_year": 1.4166666666666667
+      },
+      {
+        "pmid": 25145520,
+        "year": 2014,
+        "citation_count": 66,
+        "rcr": 2.4628592614287914,
+        "citations_per_year": 5.5
+      },
+      {
+        "pmid": 25186339,
+        "year": 2014,
+        "citation_count": 27,
+        "rcr": 1.601382718279591,
+        "citations_per_year": 2.25
+      },
+      {
+        "pmid": 25186414,
+        "year": 2014,
+        "citation_count": 5,
+        "rcr": 0.2777015848414594,
+        "citations_per_year": 0.4166666666666667
+      },
+      {
+        "pmid": 25188755,
+        "year": 2015,
+        "citation_count": 24,
+        "rcr": 1.3979121901039548,
+        "citations_per_year": 2.1818181818181817
+      },
+      {
+        "pmid": 25250590,
+        "year": 2014,
+        "citation_count": 29,
+        "rcr": 1.4421387913584574,
+        "citations_per_year": 2.4166666666666665
+      },
+      {
+        "pmid": 25269980,
+        "year": 2014,
+        "citation_count": 21,
+        "rcr": 0.8994675507638763,
+        "citations_per_year": 1.75
+      },
+      {
+        "pmid": 25304714,
+        "year": 2014,
+        "citation_count": 12,
+        "rcr": 0.5962297910969782,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 25304716,
+        "year": 2014,
+        "citation_count": 21,
+        "rcr": 1.0286007316773553,
+        "citations_per_year": 1.75
+      },
+      {
+        "pmid": 25318745,
+        "year": 2015,
+        "citation_count": 7,
+        "rcr": 0.42208559705775806,
+        "citations_per_year": 0.6363636363636364
+      },
+      {
+        "pmid": 25359782,
+        "year": 2015,
+        "citation_count": 15,
+        "rcr": 0.8188939840401119,
+        "citations_per_year": 1.3636363636363635
+      },
+      {
+        "pmid": 25361450,
+        "year": 2014,
+        "citation_count": 7,
+        "rcr": 0.3526924599302288,
+        "citations_per_year": 0.5833333333333334
+      },
+      {
+        "pmid": 25488354,
+        "year": 2015,
+        "citation_count": 43,
+        "rcr": 2.7203950919797633,
+        "citations_per_year": 3.909090909090909
+      },
+      {
+        "pmid": 25530376,
+        "year": 2015,
+        "citation_count": 7,
+        "rcr": 0.27164114794955607,
+        "citations_per_year": 0.6363636363636364
+      },
+      {
+        "pmid": 25572540,
+        "year": 2015,
+        "citation_count": 40,
+        "rcr": 1.9733671035018872,
+        "citations_per_year": 3.6363636363636362
+      },
+      {
+        "pmid": 25614408,
+        "year": 2015,
+        "citation_count": 1,
+        "rcr": 0.061519054550930125,
+        "citations_per_year": 0.09090909090909091
+      },
+      {
+        "pmid": 25662801,
+        "year": 2015,
+        "citation_count": 5,
+        "rcr": 0.28257344235344767,
+        "citations_per_year": 0.45454545454545453
+      },
+      {
+        "pmid": 25775837,
+        "year": 2014,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 25836694,
+        "year": 2015,
+        "citation_count": 12,
+        "rcr": 0.8815787120715062,
+        "citations_per_year": 1.0909090909090908
+      },
+      {
+        "pmid": 25852181,
+        "year": 2015,
+        "citation_count": 18,
+        "rcr": 1.134600172492814,
+        "citations_per_year": 1.6363636363636365
+      },
+      {
+        "pmid": 25927257,
+        "year": 2015,
+        "citation_count": 18,
+        "rcr": 1.109545898983933,
+        "citations_per_year": 1.6363636363636365
+      },
+      {
+        "pmid": 25934378,
+        "year": 2015,
+        "citation_count": 12,
+        "rcr": 0.8548255872623736,
+        "citations_per_year": 1.0909090909090908
+      },
+      {
+        "pmid": 26019999,
+        "year": 2015,
+        "citation_count": 7,
+        "rcr": 0.3999062494955672,
+        "citations_per_year": 0.6363636363636364
+      },
+      {
+        "pmid": 26025934,
+        "year": 2015,
+        "citation_count": 4,
+        "rcr": 0.12121760009988403,
+        "citations_per_year": 0.36363636363636365
+      },
+      {
+        "pmid": 26102455,
+        "year": 2015,
+        "citation_count": 6,
+        "rcr": 0.3500703037778889,
+        "citations_per_year": 0.5454545454545454
+      },
+      {
+        "pmid": 26151513,
+        "year": 2015,
+        "citation_count": 25,
+        "rcr": 1.4321975388848074,
+        "citations_per_year": 2.272727272727273
+      },
+      {
+        "pmid": 26181505,
+        "year": 2015,
+        "citation_count": 10,
+        "rcr": 0.610583931303508,
+        "citations_per_year": 0.9090909090909091
+      },
+      {
+        "pmid": 26219738,
+        "year": 2015,
+        "citation_count": 22,
+        "rcr": 1.486850802500461,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 26224738,
+        "year": 2016,
+        "citation_count": 12,
+        "rcr": 1.0130674071326364,
+        "citations_per_year": 1.2
+      },
+      {
+        "pmid": 26229665,
+        "year": 2015,
+        "citation_count": 8,
+        "rcr": 0.4028186708888895,
+        "citations_per_year": 0.7272727272727273
+      },
+      {
+        "pmid": 26351022,
+        "year": 2015,
+        "citation_count": 6,
+        "rcr": 0.3930731004222745,
+        "citations_per_year": 0.5454545454545454
+      },
+      {
+        "pmid": 26381145,
+        "year": 2015,
+        "citation_count": 7,
+        "rcr": 0.38255493851260153,
+        "citations_per_year": 0.6363636363636364
+      },
+      {
+        "pmid": 26466183,
+        "year": 2015,
+        "citation_count": 111,
+        "rcr": 5.594563877213278,
+        "citations_per_year": 10.090909090909092
+      },
+      {
+        "pmid": 26528348,
+        "year": 2015,
+        "citation_count": 56,
+        "rcr": 1.7404525528653783,
+        "citations_per_year": 5.090909090909091
+      },
+      {
+        "pmid": 26673121,
+        "year": 2015,
+        "citation_count": 19,
+        "rcr": 0.926142550319614,
+        "citations_per_year": 1.7272727272727273
+      },
+      {
+        "pmid": 26738733,
+        "year": 2016,
+        "citation_count": 9,
+        "rcr": 0.4903246315428866,
+        "citations_per_year": 0.9
+      },
+      {
+        "pmid": 26778841,
+        "year": 2016,
+        "citation_count": 28,
+        "rcr": 1.7999920811209926,
+        "citations_per_year": 2.8
+      },
+      {
+        "pmid": 26817669,
+        "year": 2016,
+        "citation_count": 43,
+        "rcr": 2.625940983662488,
+        "citations_per_year": 4.3
+      },
+      {
+        "pmid": 26860683,
+        "year": 2016,
+        "citation_count": 1,
+        "rcr": 0.0527641450026498,
+        "citations_per_year": 0.1
+      },
+      {
+        "pmid": 26883247,
+        "year": 2016,
+        "citation_count": 6,
+        "rcr": 0.3052982051021613,
+        "citations_per_year": 0.6
+      },
+      {
+        "pmid": 26981223,
+        "year": 2016,
+        "citation_count": 38,
+        "rcr": 2.7467648971168686,
+        "citations_per_year": 3.8
+      },
+      {
+        "pmid": 27032011,
+        "year": 2016,
+        "citation_count": 17,
+        "rcr": 1.1759900433076347,
+        "citations_per_year": 1.7
+      },
+      {
+        "pmid": 27038588,
+        "year": 2016,
+        "citation_count": 25,
+        "rcr": 1.141177940024283,
+        "citations_per_year": 2.5
+      },
+      {
+        "pmid": 27084545,
+        "year": 2018,
+        "citation_count": 20,
+        "rcr": 1.0597834134164836,
+        "citations_per_year": 2.5
+      },
+      {
+        "pmid": 27136071,
+        "year": 2017,
+        "citation_count": 7,
+        "rcr": 0.3867473244554077,
+        "citations_per_year": 0.7777777777777778
+      },
+      {
+        "pmid": 27194897,
+        "year": 2016,
+        "citation_count": 2,
+        "rcr": 0.12737354995126945,
+        "citations_per_year": 0.2
+      },
+      {
+        "pmid": 27461961,
+        "year": 2016,
+        "citation_count": 54,
+        "rcr": 2.4909225764591056,
+        "citations_per_year": 5.4
+      },
+      {
+        "pmid": 27789564,
+        "year": 2017,
+        "citation_count": 21,
+        "rcr": 1.1754529814980545,
+        "citations_per_year": 2.3333333333333335
+      },
+      {
+        "pmid": 27888430,
+        "year": 2017,
+        "citation_count": 23,
+        "rcr": 1.702728297136405,
+        "citations_per_year": 2.5555555555555554
+      },
+      {
+        "pmid": 28027166,
+        "year": 2017,
+        "citation_count": 1,
+        "rcr": 0.09297437510857869,
+        "citations_per_year": 0.1111111111111111
+      },
+      {
+        "pmid": 28091834,
+        "year": 2017,
+        "citation_count": 13,
+        "rcr": 0.90365272591402,
+        "citations_per_year": 1.4444444444444444
+      },
+      {
+        "pmid": 28149156,
+        "year": 2017,
+        "citation_count": 32,
+        "rcr": 2.1668171027978578,
+        "citations_per_year": 3.5555555555555554
+      },
+      {
+        "pmid": 28179230,
+        "year": 2017,
+        "citation_count": 205,
+        "rcr": 8.30859867001346,
+        "citations_per_year": 22.77777777777778
+      },
+      {
+        "pmid": 28179338,
+        "year": 2017,
+        "citation_count": 11,
+        "rcr": 0.39942854358733565,
+        "citations_per_year": 1.2222222222222223
+      },
+      {
+        "pmid": 28243923,
+        "year": 2017,
+        "citation_count": 5,
+        "rcr": 0.3359710780093196,
+        "citations_per_year": 0.5555555555555556
+      },
+      {
+        "pmid": 28297089,
+        "year": 2017,
+        "citation_count": 49,
+        "rcr": 4.784696130210871,
+        "citations_per_year": 5.444444444444445
+      },
+      {
+        "pmid": 28315025,
+        "year": 2017,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 28351519,
+        "year": 2018,
+        "citation_count": 38,
+        "rcr": 3.4960761769979367,
+        "citations_per_year": 4.75
+      },
+      {
+        "pmid": 28403040,
+        "year": 2017,
+        "citation_count": 9,
+        "rcr": 0.35087477339727663,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 28444638,
+        "year": 2017,
+        "citation_count": 2,
+        "rcr": 0.06615316239206367,
+        "citations_per_year": 0.2222222222222222
+      },
+      {
+        "pmid": 28514670,
+        "year": 2017,
+        "citation_count": 91,
+        "rcr": 5.231709623798638,
+        "citations_per_year": 10.11111111111111
+      },
+      {
+        "pmid": 28519498,
+        "year": 2012,
+        "citation_count": 9,
+        "rcr": 0.4573344813557995,
+        "citations_per_year": 0.6428571428571429
+      },
+      {
+        "pmid": 28581035,
+        "year": 2018,
+        "citation_count": 7,
+        "rcr": 0.4302235109846045,
+        "citations_per_year": 0.875
+      },
+      {
+        "pmid": 28654572,
+        "year": 2018,
+        "citation_count": 5,
+        "rcr": 0.4057996789478481,
+        "citations_per_year": 0.625
+      },
+      {
+        "pmid": 28741984,
+        "year": 2017,
+        "citation_count": 18,
+        "rcr": 1.0552226543643568,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 28771407,
+        "year": 2017,
+        "citation_count": 20,
+        "rcr": 1.5728586272273017,
+        "citations_per_year": 2.2222222222222223
+      },
+      {
+        "pmid": 28852812,
+        "year": 2017,
+        "citation_count": 6,
+        "rcr": 0.46946815442566553,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 28856394,
+        "year": 2017,
+        "citation_count": 14,
+        "rcr": 1.0428675296527363,
+        "citations_per_year": 1.5555555555555556
+      },
+      {
+        "pmid": 28877358,
+        "year": 2018,
+        "citation_count": 9,
+        "rcr": 1.022074977092864,
+        "citations_per_year": 1.125
+      },
+      {
+        "pmid": 28921009,
+        "year": 2018,
+        "citation_count": 22,
+        "rcr": 1.2967534893413175,
+        "citations_per_year": 2.75
+      },
+      {
+        "pmid": 28922116,
+        "year": 2017,
+        "citation_count": 128,
+        "rcr": 7.879635615874703,
+        "citations_per_year": 14.222222222222221
+      },
+      {
+        "pmid": 29100768,
+        "year": 2018,
+        "citation_count": 49,
+        "rcr": 4.082099274100769,
+        "citations_per_year": 6.125
+      },
+      {
+        "pmid": 29188451,
+        "year": 2018,
+        "citation_count": 27,
+        "rcr": 3.032479392857966,
+        "citations_per_year": 3.375
+      },
+      {
+        "pmid": 29218678,
+        "year": 2018,
+        "citation_count": 33,
+        "rcr": 1.3232709424686282,
+        "citations_per_year": 4.125
+      },
+      {
+        "pmid": 29237054,
+        "year": 2018,
+        "citation_count": 17,
+        "rcr": 0.9696225983917702,
+        "citations_per_year": 2.125
+      },
+      {
+        "pmid": 29304961,
+        "year": 2018,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 29330983,
+        "year": 2017,
+        "citation_count": 6,
+        "rcr": 0.48357781254321186,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 29399974,
+        "year": 2018,
+        "citation_count": 3,
+        "rcr": 0.2573079577179502,
+        "citations_per_year": 0.375
+      },
+      {
+        "pmid": 29401094,
+        "year": 2018,
+        "citation_count": 24,
+        "rcr": 2.2599080094116792,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 29521805,
+        "year": 2018,
+        "citation_count": 25,
+        "rcr": 1.9789230195971466,
+        "citations_per_year": 3.125
+      },
+      {
+        "pmid": 29584596,
+        "year": 2018,
+        "citation_count": 13,
+        "rcr": 1.1207096155248684,
+        "citations_per_year": 1.625
+      },
+      {
+        "pmid": 29589667,
+        "year": 2018,
+        "citation_count": 30,
+        "rcr": 3.0399292624702494,
+        "citations_per_year": 3.75
+      },
+      {
+        "pmid": 29645279,
+        "year": 2018,
+        "citation_count": 5,
+        "rcr": 0.409052793185924,
+        "citations_per_year": 0.625
+      },
+      {
+        "pmid": 29651767,
+        "year": 2018,
+        "citation_count": 25,
+        "rcr": 0.9458305237914995,
+        "citations_per_year": 3.125
+      },
+      {
+        "pmid": 29705114,
+        "year": 2018,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 29729876,
+        "year": 2018,
+        "citation_count": 28,
+        "rcr": 1.618682889796826,
+        "citations_per_year": 3.5
+      },
+      {
+        "pmid": 29729877,
+        "year": 2018,
+        "citation_count": 108,
+        "rcr": 6.038259181678398,
+        "citations_per_year": 13.5
+      },
+      {
+        "pmid": 29729878,
+        "year": 2018,
+        "citation_count": 53,
+        "rcr": 3.2556241390141096,
+        "citations_per_year": 6.625
+      },
+      {
+        "pmid": 29738006,
+        "year": 2018,
+        "citation_count": 5,
+        "rcr": 0.5936432096541516,
+        "citations_per_year": 0.625
+      },
+      {
+        "pmid": 29856001,
+        "year": 2018,
+        "citation_count": 8,
+        "rcr": 0.5470978758704688,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 29960081,
+        "year": 2018,
+        "citation_count": 9,
+        "rcr": 0.6308578806382208,
+        "citations_per_year": 1.125
+      },
+      {
+        "pmid": 30013456,
+        "year": 2018,
+        "citation_count": 36,
+        "rcr": 3.021516567137231,
+        "citations_per_year": 4.5
+      },
+      {
+        "pmid": 30013709,
+        "year": 2018,
+        "citation_count": 1,
+        "rcr": 0.09230460276801587,
+        "citations_per_year": 0.125
+      },
+      {
+        "pmid": 30017294,
+        "year": 2018,
+        "citation_count": 2,
+        "rcr": 0.07946026038564435,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 30075771,
+        "year": 2018,
+        "citation_count": 32,
+        "rcr": 3.1214336960935336,
+        "citations_per_year": 4.0
+      },
+      {
+        "pmid": 30160001,
+        "year": 2018,
+        "citation_count": 5,
+        "rcr": 0.28668830185864597,
+        "citations_per_year": 0.625
+      },
+      {
+        "pmid": 30160013,
+        "year": 2018,
+        "citation_count": 5,
+        "rcr": 0.15839909298408014,
+        "citations_per_year": 0.625
+      },
+      {
+        "pmid": 30160063,
+        "year": 2018,
+        "citation_count": 20,
+        "rcr": 1.1091732110987123,
+        "citations_per_year": 2.5
+      },
+      {
+        "pmid": 30350489,
+        "year": 2018,
+        "citation_count": 25,
+        "rcr": 1.2158733486378153,
+        "citations_per_year": 3.125
+      },
+      {
+        "pmid": 30367207,
+        "year": 2019,
+        "citation_count": 9,
+        "rcr": 0.7713256411915723,
+        "citations_per_year": 1.2857142857142858
+      },
+      {
+        "pmid": 30423665,
+        "year": 2017,
+        "citation_count": 37,
+        "rcr": 3.024127422105224,
+        "citations_per_year": 4.111111111111111
+      },
+      {
+        "pmid": 30515203,
+        "year": 2018,
+        "citation_count": 12,
+        "rcr": 0.7880032522405439,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 30568923,
+        "year": 2018,
+        "citation_count": 5,
+        "rcr": 0.34424301754705083,
+        "citations_per_year": 0.625
+      },
+      {
+        "pmid": 30580703,
+        "year": 2019,
+        "citation_count": 18,
+        "rcr": 1.1066478942240021,
+        "citations_per_year": 2.5714285714285716
+      },
+      {
+        "pmid": 30582891,
+        "year": 2019,
+        "citation_count": 1,
+        "rcr": 0.1036264592910609,
+        "citations_per_year": 0.14285714285714285
+      },
+      {
+        "pmid": 30585957,
+        "year": 2019,
+        "citation_count": 18,
+        "rcr": 1.214899512417817,
+        "citations_per_year": 2.5714285714285716
+      },
+      {
+        "pmid": 30652955,
+        "year": 2019,
+        "citation_count": 9,
+        "rcr": 0.5160246670623375,
+        "citations_per_year": 1.2857142857142858
+      },
+      {
+        "pmid": 30668449,
+        "year": 2019,
+        "citation_count": 14,
+        "rcr": 0.9406222592337198,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 30850181,
+        "year": 2019,
+        "citation_count": 3,
+        "rcr": 0.13504861879273006,
+        "citations_per_year": 0.42857142857142855
+      },
+      {
+        "pmid": 30868184,
+        "year": 2019,
+        "citation_count": 27,
+        "rcr": 1.6744736415092945,
+        "citations_per_year": 3.857142857142857
+      },
+      {
+        "pmid": 30928972,
+        "year": 2018,
+        "citation_count": 5,
+        "rcr": 0.3681786657102972,
+        "citations_per_year": 0.625
+      },
+      {
+        "pmid": 30949891,
+        "year": 2019,
+        "citation_count": 36,
+        "rcr": 2.8919366913903364,
+        "citations_per_year": 5.142857142857143
+      },
+      {
+        "pmid": 31047259,
+        "year": 2016,
+        "citation_count": 5,
+        "rcr": 0.366337092732462,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 31160628,
+        "year": 2019,
+        "citation_count": 9,
+        "rcr": 0.7168998440679072,
+        "citations_per_year": 1.2857142857142858
+      },
+      {
+        "pmid": 31215700,
+        "year": 2019,
+        "citation_count": 3,
+        "rcr": 0.18737476929666658,
+        "citations_per_year": 0.42857142857142855
+      },
+      {
+        "pmid": 31264018,
+        "year": 2019,
+        "citation_count": 42,
+        "rcr": 4.881232194269161,
+        "citations_per_year": 6.0
+      },
+      {
+        "pmid": 31301794,
+        "year": 2019,
+        "citation_count": 14,
+        "rcr": 1.4900905165432736,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 31340732,
+        "year": 2019,
+        "citation_count": 14,
+        "rcr": 0.9419938627091861,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 31412037,
+        "year": 2019,
+        "citation_count": 7,
+        "rcr": 0.5768835153098048,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 31428872,
+        "year": 2020,
+        "citation_count": 19,
+        "rcr": 2.0015588404983866,
+        "citations_per_year": 3.1666666666666665
+      },
+      {
+        "pmid": 31494047,
+        "year": 2020,
+        "citation_count": 16,
+        "rcr": 1.2439768634740238,
+        "citations_per_year": 2.6666666666666665
+      },
+      {
+        "pmid": 31699362,
+        "year": 2020,
+        "citation_count": 5,
+        "rcr": 0.41308526578964344,
+        "citations_per_year": 0.8333333333333334
+      },
+      {
+        "pmid": 11685091,
+        "year": 2001,
+        "citation_count": 30,
+        "rcr": 1.18702851534219,
+        "citations_per_year": 1.2
+      },
+      {
+        "pmid": 11793002,
+        "year": 2002,
+        "citation_count": 14,
+        "rcr": 0.5304486780103397,
+        "citations_per_year": 0.5833333333333334
+      },
+      {
+        "pmid": 11956716,
+        "year": 2002,
+        "citation_count": 61,
+        "rcr": 1.9880962900589807,
+        "citations_per_year": 2.5416666666666665
+      },
+      {
+        "pmid": 12244457,
+        "year": 2002,
+        "citation_count": 307,
+        "rcr": 12.144161728838467,
+        "citations_per_year": 12.791666666666666
+      },
+      {
+        "pmid": 14523191,
+        "year": 2003,
+        "citation_count": 422,
+        "rcr": 16.216751839265395,
+        "citations_per_year": 18.347826086956523
+      },
+      {
+        "pmid": 15218991,
+        "year": 2004,
+        "citation_count": 33,
+        "rcr": 0.9309987777197173,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 15273359,
+        "year": 2004,
+        "citation_count": 35,
+        "rcr": 1.1676806306697949,
+        "citations_per_year": 1.5909090909090908
+      },
+      {
+        "pmid": 15817357,
+        "year": 2005,
+        "citation_count": 183,
+        "rcr": 4.897821884319083,
+        "citations_per_year": 8.714285714285714
+      },
+      {
+        "pmid": 16012958,
+        "year": 2005,
+        "citation_count": 161,
+        "rcr": 4.805157074809487,
+        "citations_per_year": 7.666666666666667
+      },
+      {
+        "pmid": 16133620,
+        "year": 2005,
+        "citation_count": 48,
+        "rcr": 1.6336471009975766,
+        "citations_per_year": 2.2857142857142856
+      },
+      {
+        "pmid": 16415136,
+        "year": 2006,
+        "citation_count": 17,
+        "rcr": 0.8410919283445064,
+        "citations_per_year": 0.85
+      },
+      {
+        "pmid": 16425524,
+        "year": 2005,
+        "citation_count": 6,
+        "rcr": 0.1328052561943677,
+        "citations_per_year": 0.2857142857142857
+      },
+      {
+        "pmid": 16439738,
+        "year": 2006,
+        "citation_count": 30,
+        "rcr": 1.259999340830141,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 16894409,
+        "year": 2006,
+        "citation_count": 4,
+        "rcr": 0.1875469245462742,
+        "citations_per_year": 0.2
+      },
+      {
+        "pmid": 17157589,
+        "year": 2006,
+        "citation_count": 28,
+        "rcr": 1.251593060140207,
+        "citations_per_year": 1.4
+      },
+      {
+        "pmid": 17197294,
+        "year": 2007,
+        "citation_count": 3,
+        "rcr": 0.11696737171335786,
+        "citations_per_year": 0.15789473684210525
+      },
+      {
+        "pmid": 17384239,
+        "year": 2007,
+        "citation_count": 58,
+        "rcr": 2.1337938652253206,
+        "citations_per_year": 3.0526315789473686
+      },
+      {
+        "pmid": 17457809,
+        "year": 2007,
+        "citation_count": 139,
+        "rcr": 5.084139918403849,
+        "citations_per_year": 7.315789473684211
+      },
+      {
+        "pmid": 17635892,
+        "year": 2007,
+        "citation_count": 1051,
+        "rcr": 31.39774650045198,
+        "citations_per_year": 55.31578947368421
+      },
+      {
+        "pmid": 17652493,
+        "year": 2007,
+        "citation_count": 92,
+        "rcr": 3.1195210948344902,
+        "citations_per_year": 4.842105263157895
+      },
+      {
+        "pmid": 17717201,
+        "year": 2007,
+        "citation_count": 42,
+        "rcr": 1.3785772966128074,
+        "citations_per_year": 2.210526315789474
+      },
+      {
+        "pmid": 17766543,
+        "year": 2007,
+        "citation_count": 451,
+        "rcr": 17.686427452095646,
+        "citations_per_year": 23.736842105263158
+      },
+      {
+        "pmid": 18207670,
+        "year": 2008,
+        "citation_count": 107,
+        "rcr": 3.415814955514575,
+        "citations_per_year": 5.944444444444445
+      },
+      {
+        "pmid": 18211708,
+        "year": 2008,
+        "citation_count": 8,
+        "rcr": 0.30559428327791177,
+        "citations_per_year": 0.4444444444444444
+      },
+      {
+        "pmid": 18242530,
+        "year": 2008,
+        "citation_count": 42,
+        "rcr": 1.712357969958465,
+        "citations_per_year": 2.3333333333333335
+      },
+      {
+        "pmid": 18245440,
+        "year": 2008,
+        "citation_count": 15,
+        "rcr": 0.5609784050369597,
+        "citations_per_year": 0.8333333333333334
+      },
+      {
+        "pmid": 18293585,
+        "year": 2008,
+        "citation_count": 49,
+        "rcr": 2.133367615467826,
+        "citations_per_year": 2.7222222222222223
+      },
+      {
+        "pmid": 18320163,
+        "year": 2008,
+        "citation_count": 17,
+        "rcr": 0.6663792301743948,
+        "citations_per_year": 0.9444444444444444
+      },
+      {
+        "pmid": 18354713,
+        "year": 2008,
+        "citation_count": 77,
+        "rcr": 3.539307358158336,
+        "citations_per_year": 4.277777777777778
+      },
+      {
+        "pmid": 18371595,
+        "year": 2008,
+        "citation_count": 50,
+        "rcr": 1.8166166859518231,
+        "citations_per_year": 2.7777777777777777
+      },
+      {
+        "pmid": 18449157,
+        "year": 2007,
+        "citation_count": 30,
+        "rcr": 0.9927574938180596,
+        "citations_per_year": 1.5789473684210527
+      },
+      {
+        "pmid": 18550003,
+        "year": 2008,
+        "citation_count": 8,
+        "rcr": 0.33230749104270935,
+        "citations_per_year": 0.4444444444444444
+      },
+      {
+        "pmid": 18589050,
+        "year": 2008,
+        "citation_count": 41,
+        "rcr": 1.3107826276601264,
+        "citations_per_year": 2.2777777777777777
+      },
+      {
+        "pmid": 18694708,
+        "year": 2008,
+        "citation_count": 31,
+        "rcr": 0.9914025514214398,
+        "citations_per_year": 1.7222222222222223
+      },
+      {
+        "pmid": 18777910,
+        "year": 2008,
+        "citation_count": 11,
+        "rcr": 0.3877398906361048,
+        "citations_per_year": 0.6111111111111112
+      },
+      {
+        "pmid": 18815660,
+        "year": 2008,
+        "citation_count": 7,
+        "rcr": 0.235210424959868,
+        "citations_per_year": 0.3888888888888889
+      },
+      {
+        "pmid": 18927099,
+        "year": 2008,
+        "citation_count": 89,
+        "rcr": 2.06592228271396,
+        "citations_per_year": 4.944444444444445
+      },
+      {
+        "pmid": 18941001,
+        "year": 2008,
+        "citation_count": 36,
+        "rcr": 1.4091857754336676,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 19056720,
+        "year": 2008,
+        "citation_count": 27,
+        "rcr": 1.0224254088008995,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 19058939,
+        "year": 2010,
+        "citation_count": 95,
+        "rcr": 2.923843057351821,
+        "citations_per_year": 5.9375
+      },
+      {
+        "pmid": 19098225,
+        "year": 2009,
+        "citation_count": 117,
+        "rcr": 5.267172699613965,
+        "citations_per_year": 6.882352941176471
+      },
+      {
+        "pmid": 19308374,
+        "year": 2009,
+        "citation_count": 36,
+        "rcr": 1.72535410045019,
+        "citations_per_year": 2.1176470588235294
+      },
+      {
+        "pmid": 19323702,
+        "year": 2009,
+        "citation_count": 16,
+        "rcr": 0.6851118883304157,
+        "citations_per_year": 0.9411764705882353
+      },
+      {
+        "pmid": 19350325,
+        "year": 2009,
+        "citation_count": 17,
+        "rcr": 0.6621498844608666,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 19554322,
+        "year": 2009,
+        "citation_count": 43,
+        "rcr": 1.9138185378283312,
+        "citations_per_year": 2.5294117647058822
+      },
+      {
+        "pmid": 19592033,
+        "year": 2009,
+        "citation_count": 38,
+        "rcr": 1.9831628132511525,
+        "citations_per_year": 2.235294117647059
+      },
+      {
+        "pmid": 19597066,
+        "year": 2009,
+        "citation_count": 5,
+        "rcr": 0.10709026380064811,
+        "citations_per_year": 0.29411764705882354
+      },
+      {
+        "pmid": 19597067,
+        "year": 2009,
+        "citation_count": 200,
+        "rcr": 5.2430598832496225,
+        "citations_per_year": 11.764705882352942
+      },
+      {
+        "pmid": 19637359,
+        "year": 2010,
+        "citation_count": 36,
+        "rcr": 1.443223966953353,
+        "citations_per_year": 2.25
+      },
+      {
+        "pmid": 19755601,
+        "year": 2009,
+        "citation_count": 103,
+        "rcr": 5.083006613112839,
+        "citations_per_year": 6.0588235294117645
+      },
+      {
+        "pmid": 19779760,
+        "year": 2010,
+        "citation_count": 6,
+        "rcr": 0.22294515989391045,
+        "citations_per_year": 0.375
+      },
+      {
+        "pmid": 19928077,
+        "year": 2009,
+        "citation_count": 11,
+        "rcr": 0.5476587904820861,
+        "citations_per_year": 0.6470588235294118
+      },
+      {
+        "pmid": 20008690,
+        "year": 2009,
+        "citation_count": 1811,
+        "rcr": 64.30534105349274,
+        "citations_per_year": 106.52941176470588
+      },
+      {
+        "pmid": 20081559,
+        "year": 2010,
+        "citation_count": 63,
+        "rcr": 2.877101232843392,
+        "citations_per_year": 3.9375
+      },
+      {
+        "pmid": 20230262,
+        "year": 2010,
+        "citation_count": 4,
+        "rcr": 0.13392666711736878,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 20593141,
+        "year": 2010,
+        "citation_count": 24,
+        "rcr": 0.8244669846883868,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 20599063,
+        "year": 2010,
+        "citation_count": 26,
+        "rcr": 1.3136460521936828,
+        "citations_per_year": 1.625
+      },
+      {
+        "pmid": 20615013,
+        "year": 2010,
+        "citation_count": 8,
+        "rcr": 0.41490647500298955,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 20621510,
+        "year": 2011,
+        "citation_count": 16,
+        "rcr": 0.7050896626230742,
+        "citations_per_year": 1.0666666666666667
+      },
+      {
+        "pmid": 20643522,
+        "year": 2010,
+        "citation_count": 70,
+        "rcr": 2.7749183604779915,
+        "citations_per_year": 4.375
+      },
+      {
+        "pmid": 20658103,
+        "year": 2010,
+        "citation_count": 21,
+        "rcr": 0.9371725097840563,
+        "citations_per_year": 1.3125
+      },
+      {
+        "pmid": 20691929,
+        "year": 2010,
+        "citation_count": 19,
+        "rcr": 0.7839831389140683,
+        "citations_per_year": 1.1875
+      },
+      {
+        "pmid": 20711036,
+        "year": 2010,
+        "citation_count": 20,
+        "rcr": 0.7198307272284867,
+        "citations_per_year": 1.25
+      },
+      {
+        "pmid": 20735275,
+        "year": 2010,
+        "citation_count": 24,
+        "rcr": 0.9810257780732157,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 20736332,
+        "year": 2010,
+        "citation_count": 210,
+        "rcr": 6.700229201110841,
+        "citations_per_year": 13.125
+      },
+      {
+        "pmid": 20836949,
+        "year": 2010,
+        "citation_count": 46,
+        "rcr": 2.81517397826951,
+        "citations_per_year": 2.875
+      },
+      {
+        "pmid": 20889080,
+        "year": 2010,
+        "citation_count": 51,
+        "rcr": 2.618123013040094,
+        "citations_per_year": 3.1875
+      },
+      {
+        "pmid": 20955121,
+        "year": 2010,
+        "citation_count": 50,
+        "rcr": 2.134070572774907,
+        "citations_per_year": 3.125
+      },
+      {
+        "pmid": 21038026,
+        "year": 2010,
+        "citation_count": 7,
+        "rcr": 0.39615548008952894,
+        "citations_per_year": 0.4375
+      },
+      {
+        "pmid": 21098451,
+        "year": 2010,
+        "citation_count": 18,
+        "rcr": 0.6171366560817306,
+        "citations_per_year": 1.125
+      },
+      {
+        "pmid": 21123642,
+        "year": 2010,
+        "citation_count": 363,
+        "rcr": 12.063142332160119,
+        "citations_per_year": 22.6875
+      },
+      {
+        "pmid": 21146900,
+        "year": 2011,
+        "citation_count": 108,
+        "rcr": 3.846754820025193,
+        "citations_per_year": 7.2
+      },
+      {
+        "pmid": 21160611,
+        "year": 2010,
+        "citation_count": 33,
+        "rcr": 1.0552652686809354,
+        "citations_per_year": 2.0625
+      },
+      {
+        "pmid": 21160666,
+        "year": 2010,
+        "citation_count": 19,
+        "rcr": 0.7056466382297493,
+        "citations_per_year": 1.1875
+      },
+      {
+        "pmid": 21213049,
+        "year": 2012,
+        "citation_count": 14,
+        "rcr": 0.6125115576387323,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 21236595,
+        "year": 2012,
+        "citation_count": 52,
+        "rcr": 1.6093247285674324,
+        "citations_per_year": 3.7142857142857144
+      },
+      {
+        "pmid": 21362521,
+        "year": 2011,
+        "citation_count": 2,
+        "rcr": 0.06962335575256212,
+        "citations_per_year": 0.13333333333333333
+      },
+      {
+        "pmid": 21512607,
+        "year": 2011,
+        "citation_count": 72,
+        "rcr": 2.808819670422953,
+        "citations_per_year": 4.8
+      },
+      {
+        "pmid": 21611021,
+        "year": 2008,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 2343087,
+        "year": 1990,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 25161479,
+        "year": 2010,
+        "citation_count": 38,
+        "rcr": 1.6394565298453592,
+        "citations_per_year": 2.375
+      },
+      {
+        "pmid": 2673660,
+        "year": 1989,
+        "citation_count": 17,
+        "rcr": 1.5970690404762884,
+        "citations_per_year": 0.4594594594594595
+      },
+      {
+        "pmid": 2745015,
+        "year": 1989,
+        "citation_count": 92,
+        "rcr": 3.617861847947207,
+        "citations_per_year": 2.4864864864864864
+      },
+      {
+        "pmid": 2936289,
+        "year": 1986,
+        "citation_count": 7,
+        "rcr": 0.5548823983414759,
+        "citations_per_year": 0.175
+      },
+      {
+        "pmid": 6413329,
+        "year": 1983,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 6836640,
+        "year": 1983,
+        "citation_count": 3,
+        "rcr": 0.2660841902263719,
+        "citations_per_year": 0.06976744186046512
+      },
+      {
+        "pmid": 7796354,
+        "year": 1995,
+        "citation_count": 3,
+        "rcr": 0.12426255491560352,
+        "citations_per_year": 0.0967741935483871
+      },
+      {
+        "pmid": 8364051,
+        "year": 1993,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 8580128,
+        "year": 1995,
+        "citation_count": 1,
+        "rcr": 0.09906385028169294,
+        "citations_per_year": 0.03225806451612903
+      },
+      {
+        "pmid": 8724747,
+        "year": 1996,
+        "citation_count": 46,
+        "rcr": 2.7371041512395564,
+        "citations_per_year": 1.5333333333333334
+      },
+      {
+        "pmid": 9656254,
+        "year": 1998,
+        "citation_count": 2,
+        "rcr": 0.10881405289308915,
+        "citations_per_year": 0.07142857142857142
+      }
+    ],
+    "Delay-to-scan (time-to-CT)": [
+      {
+        "pmid": 27809989,
+        "year": 2016,
+        "citation_count": 20,
+        "rcr": 1.3132262277692983,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 28108319,
+        "year": 2017,
+        "citation_count": 1,
+        "rcr": 0.09184279145479061,
+        "citations_per_year": 0.1111111111111111
+      },
+      {
+        "pmid": 28258447,
+        "year": 2017,
+        "citation_count": 7,
+        "rcr": 0.5165716478936924,
+        "citations_per_year": 0.7777777777777778
+      },
+      {
+        "pmid": 28339314,
+        "year": 2017,
+        "citation_count": 11,
+        "rcr": 0.633977043369809,
+        "citations_per_year": 1.2222222222222223
+      },
+      {
+        "pmid": 28407334,
+        "year": 2017,
+        "citation_count": 5,
+        "rcr": 0.47053444901006586,
+        "citations_per_year": 0.5555555555555556
+      },
+      {
+        "pmid": 28434773,
+        "year": 2017,
+        "citation_count": 20,
+        "rcr": 1.0526554273096644,
+        "citations_per_year": 2.2222222222222223
+      },
+      {
+        "pmid": 28533683,
+        "year": 2017,
+        "citation_count": 12,
+        "rcr": 0.6437051224348125,
+        "citations_per_year": 1.3333333333333333
+      },
+      {
+        "pmid": 28562465,
+        "year": 2019,
+        "citation_count": 7,
+        "rcr": 0.8153355742199557,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 28592785,
+        "year": 2017,
+        "citation_count": 22,
+        "rcr": 1.143820372264063,
+        "citations_per_year": 2.4444444444444446
+      },
+      {
+        "pmid": 28635146,
+        "year": 2017,
+        "citation_count": 6,
+        "rcr": 0.47776302834760287,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 28680767,
+        "year": 2017,
+        "citation_count": 21,
+        "rcr": 0.9884106608512607,
+        "citations_per_year": 2.3333333333333335
+      },
+      {
+        "pmid": 28789887,
+        "year": 2018,
+        "citation_count": 11,
+        "rcr": 0.9023273296697044,
+        "citations_per_year": 1.375
+      },
+      {
+        "pmid": 28820652,
+        "year": 2017,
+        "citation_count": 8,
+        "rcr": 0.44259983542632486,
+        "citations_per_year": 0.8888888888888888
+      },
+      {
+        "pmid": 28824806,
+        "year": 2017,
+        "citation_count": 5,
+        "rcr": 0.3480060481736669,
+        "citations_per_year": 0.5555555555555556
+      },
+      {
+        "pmid": 28841085,
+        "year": 2018,
+        "citation_count": 9,
+        "rcr": 0.5239787136044894,
+        "citations_per_year": 1.125
+      },
+      {
+        "pmid": 28953551,
+        "year": 2019,
+        "citation_count": 111,
+        "rcr": 9.3651656935051,
+        "citations_per_year": 15.857142857142858
+      },
+      {
+        "pmid": 28974993,
+        "year": 2017,
+        "citation_count": 2,
+        "rcr": 0.10707177859375593,
+        "citations_per_year": 0.2222222222222222
+      },
+      {
+        "pmid": 29037011,
+        "year": 2017,
+        "citation_count": 23,
+        "rcr": 0.9613637377747485,
+        "citations_per_year": 2.5555555555555554
+      },
+      {
+        "pmid": 29184343,
+        "year": 2017,
+        "citation_count": 7,
+        "rcr": 0.32918372492000214,
+        "citations_per_year": 0.7777777777777778
+      },
+      {
+        "pmid": 29336708,
+        "year": 2018,
+        "citation_count": 19,
+        "rcr": 0.7790438831577406,
+        "citations_per_year": 2.375
+      },
+      {
+        "pmid": 29411303,
+        "year": 2018,
+        "citation_count": 13,
+        "rcr": 0.7240627410255445,
+        "citations_per_year": 1.625
+      },
+      {
+        "pmid": 29422380,
+        "year": 2018,
+        "citation_count": 26,
+        "rcr": 1.5197590811691675,
+        "citations_per_year": 3.25
+      },
+      {
+        "pmid": 29521805,
+        "year": 2018,
+        "citation_count": 25,
+        "rcr": 1.9789230195971466,
+        "citations_per_year": 3.125
+      },
+      {
+        "pmid": 29671138,
+        "year": 2018,
+        "citation_count": 8,
+        "rcr": 0.5142061131844866,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 29760676,
+        "year": 2018,
+        "citation_count": 24,
+        "rcr": 0.9669843865486614,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 29766100,
+        "year": 2017,
+        "citation_count": 9,
+        "rcr": 0.7370838653460506,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 29853326,
+        "year": 2018,
+        "citation_count": 3,
+        "rcr": 0.2654196332614525,
+        "citations_per_year": 0.375
+      },
+      {
+        "pmid": 30019014,
+        "year": 2018,
+        "citation_count": 4,
+        "rcr": 0.2536178867948011,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 30195862,
+        "year": 2019,
+        "citation_count": 6,
+        "rcr": 0.35965796518440485,
+        "citations_per_year": 0.8571428571428571
+      },
+      {
+        "pmid": 30631920,
+        "year": 2019,
+        "citation_count": 13,
+        "rcr": 0.9717751581333334,
+        "citations_per_year": 1.8571428571428572
+      },
+      {
+        "pmid": 30671160,
+        "year": 2019,
+        "citation_count": 5,
+        "rcr": 0.2733488949356838,
+        "citations_per_year": 0.7142857142857143
+      },
+      {
+        "pmid": 30690872,
+        "year": 2019,
+        "citation_count": 10,
+        "rcr": 0.8654676397872754,
+        "citations_per_year": 1.4285714285714286
+      },
+      {
+        "pmid": 30707084,
+        "year": 2019,
+        "citation_count": 4,
+        "rcr": 0.2682122323835615,
+        "citations_per_year": 0.5714285714285714
+      },
+      {
+        "pmid": 30711425,
+        "year": 2019,
+        "citation_count": 28,
+        "rcr": 2.611259482281062,
+        "citations_per_year": 4.0
+      },
+      {
+        "pmid": 30736956,
+        "year": 2019,
+        "citation_count": 6,
+        "rcr": 0.6091056166056009,
+        "citations_per_year": 0.8571428571428571
+      },
+      {
+        "pmid": 30756318,
+        "year": 2019,
+        "citation_count": 39,
+        "rcr": 2.2257357598055094,
+        "citations_per_year": 5.571428571428571
+      },
+      {
+        "pmid": 30873541,
+        "year": 2019,
+        "citation_count": 10,
+        "rcr": 0.6030531984927969,
+        "citations_per_year": 1.4285714285714286
+      },
+      {
+        "pmid": 30937022,
+        "year": 2019,
+        "citation_count": 1,
+        "rcr": 0.0884971072807743,
+        "citations_per_year": 0.14285714285714285
+      },
+      {
+        "pmid": 30998885,
+        "year": 2018,
+        "citation_count": 7,
+        "rcr": 0.4876224439246968,
+        "citations_per_year": 0.875
+      },
+      {
+        "pmid": 31007949,
+        "year": 2019,
+        "citation_count": 2,
+        "rcr": 0.1857676288892442,
+        "citations_per_year": 0.2857142857142857
+      },
+      {
+        "pmid": 31215186,
+        "year": 2019,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 31488337,
+        "year": 2020,
+        "citation_count": 8,
+        "rcr": 0.696209220220158,
+        "citations_per_year": 1.3333333333333333
+      },
+      {
+        "pmid": 31521325,
+        "year": 2019,
+        "citation_count": 1,
+        "rcr": 0.045049168010936884,
+        "citations_per_year": 0.14285714285714285
+      },
+      {
+        "pmid": 31545693,
+        "year": 2019,
+        "citation_count": 13,
+        "rcr": 0.8309372884170863,
+        "citations_per_year": 1.8571428571428572
+      },
+      {
+        "pmid": 31606319,
+        "year": 2019,
+        "citation_count": 10,
+        "rcr": 0.617788241907696,
+        "citations_per_year": 1.4285714285714286
+      },
+      {
+        "pmid": 31677557,
+        "year": 2020,
+        "citation_count": 1,
+        "rcr": 0.08449288914890264,
+        "citations_per_year": 0.16666666666666666
+      },
+      {
+        "pmid": 31689726,
+        "year": 2019,
+        "citation_count": 11,
+        "rcr": 1.041641307344769,
+        "citations_per_year": 1.5714285714285714
+      },
+      {
+        "pmid": 31696008,
+        "year": 2019,
+        "citation_count": 12,
+        "rcr": 0.7959617796211494,
+        "citations_per_year": 1.7142857142857142
+      },
+      {
+        "pmid": 31754315,
+        "year": 2019,
+        "citation_count": 14,
+        "rcr": 1.5132145880962595,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 31754499,
+        "year": 2018,
+        "citation_count": 18,
+        "rcr": 1.038620676572258,
+        "citations_per_year": 2.25
+      },
+      {
+        "pmid": 31802188,
+        "year": 2020,
+        "citation_count": 3,
+        "rcr": 0.3541689018456139,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 31839545,
+        "year": 2020,
+        "citation_count": 13,
+        "rcr": 0.8898122190567302,
+        "citations_per_year": 2.1666666666666665
+      },
+      {
+        "pmid": 31903225,
+        "year": 2019,
+        "citation_count": 4,
+        "rcr": 0.41138774409966605,
+        "citations_per_year": 0.5714285714285714
+      },
+      {
+        "pmid": 32054556,
+        "year": 2020,
+        "citation_count": 5,
+        "rcr": 0.47480020591799554,
+        "citations_per_year": 0.8333333333333334
+      },
+      {
+        "pmid": 32095872,
+        "year": 2020,
+        "citation_count": 11,
+        "rcr": 0.9150383130273957,
+        "citations_per_year": 1.8333333333333333
+      },
+      {
+        "pmid": 32154381,
+        "year": 2020,
+        "citation_count": 5,
+        "rcr": 0.42058719112998666,
+        "citations_per_year": 0.8333333333333334
+      },
+      {
+        "pmid": 32255520,
+        "year": 2020,
+        "citation_count": 43,
+        "rcr": 2.809823699396905,
+        "citations_per_year": 7.166666666666667
+      },
+      {
+        "pmid": 32307317,
+        "year": 2020,
+        "citation_count": 8,
+        "rcr": 0.5507804691405148,
+        "citations_per_year": 1.3333333333333333
+      },
+      {
+        "pmid": 32335685,
+        "year": 2021,
+        "citation_count": 6,
+        "rcr": 0.7996647011650393,
+        "citations_per_year": 1.2
+      },
+      {
+        "pmid": 32390552,
+        "year": 2020,
+        "citation_count": 17,
+        "rcr": 1.2577166965776139,
+        "citations_per_year": 2.8333333333333335
+      },
+      {
+        "pmid": 32427652,
+        "year": 2020,
+        "citation_count": 7,
+        "rcr": 0.6925113244036682,
+        "citations_per_year": 1.1666666666666667
+      },
+      {
+        "pmid": 32615562,
+        "year": 2020,
+        "citation_count": 6,
+        "rcr": 0.30784261825024073,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 32644299,
+        "year": 2020,
+        "citation_count": 26,
+        "rcr": 2.842838786136158,
+        "citations_per_year": 4.333333333333333
+      },
+      {
+        "pmid": 32676877,
+        "year": 2021,
+        "citation_count": 1,
+        "rcr": 0.09785432457703797,
+        "citations_per_year": 0.2
+      },
+      {
+        "pmid": 32741386,
+        "year": 2021,
+        "citation_count": 35,
+        "rcr": 3.1509560683346036,
+        "citations_per_year": 7.0
+      },
+      {
+        "pmid": 32753804,
+        "year": 2020,
+        "citation_count": 1,
+        "rcr": 0.09592240195787148,
+        "citations_per_year": 0.16666666666666666
+      },
+      {
+        "pmid": 32783531,
+        "year": 2021,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 32873250,
+        "year": 2020,
+        "citation_count": 9,
+        "rcr": 0.633348562681339,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 32926210,
+        "year": 2021,
+        "citation_count": 4,
+        "rcr": 0.43282310035940164,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 32983694,
+        "year": 2020,
+        "citation_count": 9,
+        "rcr": 0.6960083738023505,
+        "citations_per_year": 1.5
+      },
+      {
+        "pmid": 33250851,
+        "year": 2020,
+        "citation_count": 39,
+        "rcr": 2.504097871333116,
+        "citations_per_year": 6.5
+      },
+      {
+        "pmid": 33449944,
+        "year": 2021,
+        "citation_count": 1,
+        "rcr": 0.11469174846481271,
+        "citations_per_year": 0.2
+      },
+      {
+        "pmid": 33468042,
+        "year": 2021,
+        "citation_count": 5,
+        "rcr": 0.38420770282746697,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 33774614,
+        "year": 2021,
+        "citation_count": 13,
+        "rcr": 1.206416200802929,
+        "citations_per_year": 2.6
+      },
+      {
+        "pmid": 33782732,
+        "year": 2021,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 33787282,
+        "year": 2021,
+        "citation_count": 22,
+        "rcr": 1.7851900197937864,
+        "citations_per_year": 4.4
+      },
+      {
+        "pmid": 33917338,
+        "year": 2021,
+        "citation_count": 21,
+        "rcr": 2.3056856851521275,
+        "citations_per_year": 4.2
+      },
+      {
+        "pmid": 33978229,
+        "year": 2021,
+        "citation_count": 1,
+        "rcr": 0.09460970207184835,
+        "citations_per_year": 0.2
+      },
+      {
+        "pmid": 34013050,
+        "year": 2021,
+        "citation_count": 5,
+        "rcr": 0.7649607319821872,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 34163545,
+        "year": 2021,
+        "citation_count": 4,
+        "rcr": 0.3146125291577523,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 34257079,
+        "year": 2022,
+        "citation_count": 17,
+        "rcr": 1.372899575308493,
+        "citations_per_year": 4.25
+      },
+      {
+        "pmid": 34284323,
+        "year": 2021,
+        "citation_count": 18,
+        "rcr": 1.5450179028278221,
+        "citations_per_year": 3.6
+      },
+      {
+        "pmid": 34323876,
+        "year": 2021,
+        "citation_count": 2,
+        "rcr": 0.2700401931593136,
+        "citations_per_year": 0.4
+      },
+      {
+        "pmid": 34392026,
+        "year": 2021,
+        "citation_count": 3,
+        "rcr": 0.2563866758148593,
+        "citations_per_year": 0.6
+      },
+      {
+        "pmid": 34403202,
+        "year": 2022,
+        "citation_count": 9,
+        "rcr": 0.6354846858768246,
+        "citations_per_year": 2.25
+      },
+      {
+        "pmid": 34485580,
+        "year": 2021,
+        "citation_count": 4,
+        "rcr": 0.4837554421387441,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 34598828,
+        "year": 2021,
+        "citation_count": 17,
+        "rcr": 1.3230271893888204,
+        "citations_per_year": 3.4
+      },
+      {
+        "pmid": 34604947,
+        "year": 2022,
+        "citation_count": 7,
+        "rcr": 0.6731503587199319,
+        "citations_per_year": 1.75
+      },
+      {
+        "pmid": 34786840,
+        "year": 2022,
+        "citation_count": 1,
+        "rcr": 0.19646074458706184,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 34810150,
+        "year": 2022,
+        "citation_count": 9,
+        "rcr": 1.2609012711582803,
+        "citations_per_year": 2.25
+      },
+      {
+        "pmid": 34881023,
+        "year": 2021,
+        "citation_count": 6,
+        "rcr": 0.5735806728008955,
+        "citations_per_year": 1.2
+      },
+      {
+        "pmid": 34920877,
+        "year": 2022,
+        "citation_count": 22,
+        "rcr": 3.961530287970381,
+        "citations_per_year": 5.5
+      },
+      {
+        "pmid": 35017174,
+        "year": 2022,
+        "citation_count": 8,
+        "rcr": 0.6906158894824187,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 35047298,
+        "year": 2021,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 35073771,
+        "year": 2022,
+        "citation_count": 10,
+        "rcr": 1.9872772550415667,
+        "citations_per_year": 2.5
+      },
+      {
+        "pmid": 35204601,
+        "year": 2022,
+        "citation_count": 1,
+        "rcr": 0.12630281213200598,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 35298996,
+        "year": 2022,
+        "citation_count": 1,
+        "rcr": 0.09058985030558982,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 35356455,
+        "year": 2022,
+        "citation_count": 18,
+        "rcr": 1.9728604921591273,
+        "citations_per_year": 4.5
+      },
+      {
+        "pmid": 35405470,
+        "year": 2022,
+        "citation_count": 1,
+        "rcr": 0.1116184400431739,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 35526406,
+        "year": 2022,
+        "citation_count": 8,
+        "rcr": 0.8339355957250688,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 35545497,
+        "year": 2023,
+        "citation_count": 2,
+        "rcr": 0.5218680285750775,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 35613963,
+        "year": 2022,
+        "citation_count": 9,
+        "rcr": 1.2598554754820057,
+        "citations_per_year": 2.25
+      },
+      {
+        "pmid": 35773229,
+        "year": 2023,
+        "citation_count": 1,
+        "rcr": 0.1383976717417797,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 35851025,
+        "year": 2022,
+        "citation_count": 12,
+        "rcr": 1.173088097312951,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 35851729,
+        "year": 2022,
+        "citation_count": 4,
+        "rcr": 0.592882245822628,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 35868208,
+        "year": 2022,
+        "citation_count": 3,
+        "rcr": 0.4004236009668253,
+        "citations_per_year": 0.75
+      },
+      {
+        "pmid": 35918164,
+        "year": 2022,
+        "citation_count": 13,
+        "rcr": 1.351472604711355,
+        "citations_per_year": 3.25
+      },
+      {
+        "pmid": 35988107,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.658672418265591,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 36088471,
+        "year": 2022,
+        "citation_count": 1,
+        "rcr": 0.15816595627683397,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 36124298,
+        "year": 2022,
+        "citation_count": 12,
+        "rcr": 1.2046256108745375,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 36137769,
+        "year": 2022,
+        "citation_count": 8,
+        "rcr": 1.5004271721659534,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 36226088,
+        "year": 2022,
+        "citation_count": 11,
+        "rcr": 1.3503253929261663,
+        "citations_per_year": 2.75
+      },
+      {
+        "pmid": 36352591,
+        "year": 2022,
+        "citation_count": 2,
+        "rcr": 0.2936559093869824,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 37064176,
+        "year": 2023,
+        "citation_count": 13,
+        "rcr": 2.8171224965267427,
+        "citations_per_year": 4.333333333333333
+      },
+      {
+        "pmid": 37120338,
+        "year": 2023,
+        "citation_count": 5,
+        "rcr": 0.7793431928822545,
+        "citations_per_year": 1.6666666666666667
+      },
+      {
+        "pmid": 37422167,
+        "year": 2023,
+        "citation_count": 20,
+        "rcr": 3.139922594013419,
+        "citations_per_year": 6.666666666666667
+      },
+      {
+        "pmid": 37457020,
+        "year": 2023,
+        "citation_count": 5,
+        "rcr": 0.6949426405737312,
+        "citations_per_year": 1.6666666666666667
+      },
+      {
+        "pmid": 37457547,
+        "year": 2023,
+        "citation_count": 1,
+        "rcr": 0.3136408425622386,
+        "citations_per_year": 0.3333333333333333
+      },
+      {
+        "pmid": 37536089,
+        "year": 2023,
+        "citation_count": 4,
+        "rcr": 1.389300975815483,
+        "citations_per_year": 1.3333333333333333
+      },
+      {
+        "pmid": 37572556,
+        "year": 2023,
+        "citation_count": 10,
+        "rcr": 1.4437140387680882,
+        "citations_per_year": 3.3333333333333335
+      },
+      {
+        "pmid": 37647845,
+        "year": 2023,
+        "citation_count": 2,
+        "rcr": 0.41578307246940954,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 37655152,
+        "year": 2023,
+        "citation_count": 3,
+        "rcr": 0.7784346218078475,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 37742324,
+        "year": 2023,
+        "citation_count": 6,
+        "rcr": 1.4005858467613013,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 37981191,
+        "year": 2024,
+        "citation_count": 4,
+        "rcr": 1.0547074388219142,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 38134248,
+        "year": 2024,
+        "citation_count": 12,
+        "rcr": 2.3696637650432217,
+        "citations_per_year": 6.0
+      },
+      {
+        "pmid": 38137723,
+        "year": 2023,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 38168903,
+        "year": 2024,
+        "citation_count": 7,
+        "rcr": 1.8860856327365005,
+        "citations_per_year": 3.5
+      },
+      {
+        "pmid": 38230353,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.5878612708758187,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 38263532,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.6448323888938012,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 38276228,
+        "year": 2023,
+        "citation_count": 8,
+        "rcr": 1.2931784988560975,
+        "citations_per_year": 2.6666666666666665
+      },
+      {
+        "pmid": 38289419,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 38372249,
+        "year": 2025,
+        "citation_count": 2,
+        "rcr": null,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 38486439,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.26919962959189836,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 38566851,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 0.39170334225067577,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 38592420,
+        "year": 2024,
+        "citation_count": 9,
+        "rcr": 1.9931873605453752,
+        "citations_per_year": 4.5
+      },
+      {
+        "pmid": 38627583,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 38659561,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.6798142544757433,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 38663928,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 1.0806677189366471,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 38784291,
+        "year": 2024,
+        "citation_count": 4,
+        "rcr": 1.6057118322480985,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 38801039,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.7575562372293926,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 38849214,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 38854248,
+        "year": 2024,
+        "citation_count": 20,
+        "rcr": 8.095553867565783,
+        "citations_per_year": 10.0
+      },
+      {
+        "pmid": 38919231,
+        "year": 2024,
+        "citation_count": 1,
+        "rcr": 0.37276874836399215,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 38929817,
+        "year": 2024,
+        "citation_count": 6,
+        "rcr": 1.6274341243510222,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 39051367,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39055431,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39299743,
+        "year": 2025,
+        "citation_count": 5,
+        "rcr": 2.3009103451563444,
+        "citations_per_year": 5.0
+      },
+      {
+        "pmid": 39338208,
+        "year": 2024,
+        "citation_count": 2,
+        "rcr": 0.3609575446232223,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 39440737,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39483280,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39588669,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 39655817,
+        "year": 2024,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39694615,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 39740694,
+        "year": 2025,
+        "citation_count": 3,
+        "rcr": null,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 39742569,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 39930510,
+        "year": 2025,
+        "citation_count": 9,
+        "rcr": 4.461966233761631,
+        "citations_per_year": 9.0
+      },
+      {
+        "pmid": 39947892,
+        "year": 2026,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 40051977,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 40074251,
+        "year": 2025,
+        "citation_count": 4,
+        "rcr": null,
+        "citations_per_year": 4.0
+      },
+      {
+        "pmid": 40129244,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40137451,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40140101,
+        "year": 2025,
+        "citation_count": 3,
+        "rcr": null,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 40248959,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40338185,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40387090,
+        "year": 2025,
+        "citation_count": 4,
+        "rcr": null,
+        "citations_per_year": 4.0
+      },
+      {
+        "pmid": 40409313,
+        "year": 2025,
+        "citation_count": 14,
+        "rcr": 5.028514255705321,
+        "citations_per_year": 14.0
+      },
+      {
+        "pmid": 40467347,
+        "year": 2025,
+        "citation_count": 3,
+        "rcr": null,
+        "citations_per_year": 3.0
+      },
+      {
+        "pmid": 40546832,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 40654072,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 40660130,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 40709051,
+        "year": 2024,
+        "citation_count": 5,
+        "rcr": 1.9574969160379385,
+        "citations_per_year": 2.5
+      },
+      {
+        "pmid": 40724640,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40727597,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 40821464,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40856694,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40931209,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 40994526,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41016302,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41131917,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41148313,
+        "year": 2025,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 41281147,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41380065,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41405346,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41412887,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41414990,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41418048,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41426825,
+        "year": 2025,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41513161,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41569957,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41641834,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41657727,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41752940,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41781727,
+        "year": 2026,
+        "citation_count": 1,
+        "rcr": null,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 41856532,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41876649,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 41992989,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 42046759,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 42124866,
+        "year": 2026,
+        "citation_count": 0,
+        "rcr": null,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 42214304,
+        "year": 2026,
+        "citation_count": null,
+        "rcr": null,
+        "citations_per_year": null
+      },
+      {
+        "pmid": 10192674,
+        "year": 1999,
+        "citation_count": 80,
+        "rcr": 2.8999076359137845,
+        "citations_per_year": 2.962962962962963
+      },
+      {
+        "pmid": 10367871,
+        "year": 1999,
+        "citation_count": 60,
+        "rcr": 3.149977216267823,
+        "citations_per_year": 2.2222222222222223
+      },
+      {
+        "pmid": 11230641,
+        "year": 2001,
+        "citation_count": 74,
+        "rcr": 1.9763251638202692,
+        "citations_per_year": 2.96
+      },
+      {
+        "pmid": 11340212,
+        "year": 2001,
+        "citation_count": 84,
+        "rcr": 2.474318382087445,
+        "citations_per_year": 3.36
+      },
+      {
+        "pmid": 11450770,
+        "year": 2001,
+        "citation_count": 28,
+        "rcr": 1.2669542206593405,
+        "citations_per_year": 1.12
+      },
+      {
+        "pmid": 11452074,
+        "year": 2001,
+        "citation_count": 226,
+        "rcr": 8.330372562765973,
+        "citations_per_year": 9.04
+      },
+      {
+        "pmid": 12624218,
+        "year": 2003,
+        "citation_count": 33,
+        "rcr": 1.0594332337079522,
+        "citations_per_year": 1.434782608695652
+      },
+      {
+        "pmid": 12865610,
+        "year": 2003,
+        "citation_count": 53,
+        "rcr": 1.4742699535946877,
+        "citations_per_year": 2.3043478260869565
+      },
+      {
+        "pmid": 14685017,
+        "year": 2004,
+        "citation_count": 9,
+        "rcr": 0.3238465815353158,
+        "citations_per_year": 0.4090909090909091
+      },
+      {
+        "pmid": 14986460,
+        "year": 2004,
+        "citation_count": 12,
+        "rcr": 0.3145460422192753,
+        "citations_per_year": 0.5454545454545454
+      },
+      {
+        "pmid": 15073381,
+        "year": 2004,
+        "citation_count": 72,
+        "rcr": 2.0401743111868806,
+        "citations_per_year": 3.272727272727273
+      },
+      {
+        "pmid": 15647629,
+        "year": 2004,
+        "citation_count": 4,
+        "rcr": 0.10124492171142516,
+        "citations_per_year": 0.18181818181818182
+      },
+      {
+        "pmid": 15879336,
+        "year": 2005,
+        "citation_count": 13,
+        "rcr": 0.447078201347817,
+        "citations_per_year": 0.6190476190476191
+      },
+      {
+        "pmid": 15886726,
+        "year": 2005,
+        "citation_count": 4,
+        "rcr": 0.12785213025457004,
+        "citations_per_year": 0.19047619047619047
+      },
+      {
+        "pmid": 16567696,
+        "year": 2006,
+        "citation_count": 43,
+        "rcr": 1.0975996213788546,
+        "citations_per_year": 2.15
+      },
+      {
+        "pmid": 16736733,
+        "year": 2006,
+        "citation_count": 33,
+        "rcr": 0.9391700805810849,
+        "citations_per_year": 1.65
+      },
+      {
+        "pmid": 16989302,
+        "year": 2006,
+        "citation_count": 10,
+        "rcr": 0.33538915257826685,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 17063998,
+        "year": 2006,
+        "citation_count": 7,
+        "rcr": 0.2913318828894219,
+        "citations_per_year": 0.35
+      },
+      {
+        "pmid": 17272899,
+        "year": 2007,
+        "citation_count": 48,
+        "rcr": 1.4960850203313547,
+        "citations_per_year": 2.526315789473684
+      },
+      {
+        "pmid": 17588762,
+        "year": 2007,
+        "citation_count": 29,
+        "rcr": 0.828518232803656,
+        "citations_per_year": 1.5263157894736843
+      },
+      {
+        "pmid": 17658093,
+        "year": 2007,
+        "citation_count": 10,
+        "rcr": 0.5158428150285168,
+        "citations_per_year": 0.5263157894736842
+      },
+      {
+        "pmid": 17764405,
+        "year": 2007,
+        "citation_count": 96,
+        "rcr": 4.4177638490407025,
+        "citations_per_year": 5.052631578947368
+      },
+      {
+        "pmid": 18180129,
+        "year": 2008,
+        "citation_count": 26,
+        "rcr": 1.1071830209942566,
+        "citations_per_year": 1.4444444444444444
+      },
+      {
+        "pmid": 18368901,
+        "year": 2007,
+        "citation_count": 2,
+        "rcr": 0.04791050564032386,
+        "citations_per_year": 0.10526315789473684
+      },
+      {
+        "pmid": 18542893,
+        "year": 2008,
+        "citation_count": 32,
+        "rcr": 1.028410834189204,
+        "citations_per_year": 1.7777777777777777
+      },
+      {
+        "pmid": 18640743,
+        "year": 2009,
+        "citation_count": 4,
+        "rcr": 0.19512711166478894,
+        "citations_per_year": 0.23529411764705882
+      },
+      {
+        "pmid": 18924004,
+        "year": 2008,
+        "citation_count": 131,
+        "rcr": 4.052768198572235,
+        "citations_per_year": 7.277777777777778
+      },
+      {
+        "pmid": 19013688,
+        "year": 2009,
+        "citation_count": 68,
+        "rcr": 2.8075650996879995,
+        "citations_per_year": 4.0
+      },
+      {
+        "pmid": 19581033,
+        "year": 2009,
+        "citation_count": 67,
+        "rcr": 2.282681737859093,
+        "citations_per_year": 3.9411764705882355
+      },
+      {
+        "pmid": 19720978,
+        "year": 2009,
+        "citation_count": 25,
+        "rcr": 0.8005457112978247,
+        "citations_per_year": 1.4705882352941178
+      },
+      {
+        "pmid": 19893677,
+        "year": 2008,
+        "citation_count": 16,
+        "rcr": 0.5723114773366428,
+        "citations_per_year": 0.8888888888888888
+      },
+      {
+        "pmid": 19943041,
+        "year": 2010,
+        "citation_count": 5,
+        "rcr": 0.22428222316221144,
+        "citations_per_year": 0.3125
+      },
+      {
+        "pmid": 20031364,
+        "year": 2012,
+        "citation_count": 3,
+        "rcr": 0.14999639883039875,
+        "citations_per_year": 0.21428571428571427
+      },
+      {
+        "pmid": 20385080,
+        "year": 2010,
+        "citation_count": 7,
+        "rcr": 0.3024073012603679,
+        "citations_per_year": 0.4375
+      },
+      {
+        "pmid": 20422406,
+        "year": 2011,
+        "citation_count": 27,
+        "rcr": 0.9541310031259433,
+        "citations_per_year": 1.8
+      },
+      {
+        "pmid": 2054801,
+        "year": 1991,
+        "citation_count": 11,
+        "rcr": 0.9139571986918471,
+        "citations_per_year": 0.3142857142857143
+      },
+      {
+        "pmid": 20704572,
+        "year": 2011,
+        "citation_count": 9,
+        "rcr": 0.3480826135388425,
+        "citations_per_year": 0.6
+      },
+      {
+        "pmid": 21144035,
+        "year": 2010,
+        "citation_count": 129,
+        "rcr": 5.744499531094259,
+        "citations_per_year": 8.0625
+      },
+      {
+        "pmid": 21209901,
+        "year": 2010,
+        "citation_count": 31,
+        "rcr": 0.9598195712337616,
+        "citations_per_year": 1.9375
+      },
+      {
+        "pmid": 21212666,
+        "year": 2011,
+        "citation_count": 35,
+        "rcr": 1.1636758847956912,
+        "citations_per_year": 2.3333333333333335
+      },
+      {
+        "pmid": 21310859,
+        "year": 2011,
+        "citation_count": 27,
+        "rcr": 0.9530005241280727,
+        "citations_per_year": 1.8
+      },
+      {
+        "pmid": 21497476,
+        "year": 2012,
+        "citation_count": 11,
+        "rcr": 0.35910149782185885,
+        "citations_per_year": 0.7857142857142857
+      },
+      {
+        "pmid": 21999937,
+        "year": 2013,
+        "citation_count": 14,
+        "rcr": 0.7912596320187069,
+        "citations_per_year": 1.0769230769230769
+      },
+      {
+        "pmid": 22111397,
+        "year": 2011,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 2222879,
+        "year": 1990,
+        "citation_count": 16,
+        "rcr": 1.1422361555696616,
+        "citations_per_year": 0.4444444444444444
+      },
+      {
+        "pmid": 22645217,
+        "year": 2013,
+        "citation_count": 0,
+        "rcr": 0.0,
+        "citations_per_year": 0.0
+      },
+      {
+        "pmid": 22737984,
+        "year": 2013,
+        "citation_count": 2,
+        "rcr": 0.06566063299006449,
+        "citations_per_year": 0.15384615384615385
+      },
+      {
+        "pmid": 22824572,
+        "year": 2013,
+        "citation_count": 20,
+        "rcr": 1.0336426557890264,
+        "citations_per_year": 1.5384615384615385
+      },
+      {
+        "pmid": 22844598,
+        "year": 2012,
+        "citation_count": 13,
+        "rcr": 0.7967629811808434,
+        "citations_per_year": 0.9285714285714286
+      },
+      {
+        "pmid": 22882660,
+        "year": 2012,
+        "citation_count": 13,
+        "rcr": 0.7748899088788744,
+        "citations_per_year": 0.9285714285714286
+      },
+      {
+        "pmid": 22994221,
+        "year": 2012,
+        "citation_count": 9,
+        "rcr": 0.34254230893524545,
+        "citations_per_year": 0.6428571428571429
+      },
+      {
+        "pmid": 23635920,
+        "year": 2014,
+        "citation_count": 20,
+        "rcr": 0.6663266430867311,
+        "citations_per_year": 1.6666666666666667
+      },
+      {
+        "pmid": 24064044,
+        "year": 2015,
+        "citation_count": 14,
+        "rcr": 0.6444055628037906,
+        "citations_per_year": 1.2727272727272727
+      },
+      {
+        "pmid": 24067768,
+        "year": 2013,
+        "citation_count": 3,
+        "rcr": 0.11656157597696272,
+        "citations_per_year": 0.23076923076923078
+      },
+      {
+        "pmid": 24099829,
+        "year": 2015,
+        "citation_count": 42,
+        "rcr": 1.8677376425445935,
+        "citations_per_year": 3.8181818181818183
+      },
+      {
+        "pmid": 24245486,
+        "year": 2013,
+        "citation_count": 17,
+        "rcr": 0.8887255572378422,
+        "citations_per_year": 1.3076923076923077
+      },
+      {
+        "pmid": 24276505,
+        "year": 2014,
+        "citation_count": 22,
+        "rcr": 0.8696443838180729,
+        "citations_per_year": 1.8333333333333333
+      },
+      {
+        "pmid": 24399372,
+        "year": 2014,
+        "citation_count": 39,
+        "rcr": 1.5429192229355957,
+        "citations_per_year": 3.25
+      },
+      {
+        "pmid": 24526344,
+        "year": 2014,
+        "citation_count": 8,
+        "rcr": 0.5392070378460533,
+        "citations_per_year": 0.6666666666666666
+      },
+      {
+        "pmid": 24668398,
+        "year": 2015,
+        "citation_count": 21,
+        "rcr": 1.3442090672059874,
+        "citations_per_year": 1.9090909090909092
+      },
+      {
+        "pmid": 24908858,
+        "year": 2014,
+        "citation_count": 2,
+        "rcr": 0.11048111904078774,
+        "citations_per_year": 0.16666666666666666
+      },
+      {
+        "pmid": 25282392,
+        "year": 2015,
+        "citation_count": 6,
+        "rcr": 0.31448124768973684,
+        "citations_per_year": 0.5454545454545454
+      },
+      {
+        "pmid": 25312034,
+        "year": 2014,
+        "citation_count": 47,
+        "rcr": 1.6904616588351364,
+        "citations_per_year": 3.9166666666666665
+      },
+      {
+        "pmid": 25361734,
+        "year": 2014,
+        "citation_count": 2,
+        "rcr": 0.09914816865458455,
+        "citations_per_year": 0.16666666666666666
+      },
+      {
+        "pmid": 25371778,
+        "year": 2014,
+        "citation_count": 11,
+        "rcr": 0.44785643505869877,
+        "citations_per_year": 0.9166666666666666
+      },
+      {
+        "pmid": 25640574,
+        "year": 2015,
+        "citation_count": 12,
+        "rcr": 0.6880909136391246,
+        "citations_per_year": 1.0909090909090908
+      },
+      {
+        "pmid": 25660140,
+        "year": 2016,
+        "citation_count": 12,
+        "rcr": 0.5107617983047196,
+        "citations_per_year": 1.2
+      },
+      {
+        "pmid": 25738470,
+        "year": 2015,
+        "citation_count": 9,
+        "rcr": 0.34172065601679813,
+        "citations_per_year": 0.8181818181818182
+      },
+      {
+        "pmid": 25886844,
+        "year": 2015,
+        "citation_count": 18,
+        "rcr": 1.3087152933562876,
+        "citations_per_year": 1.6363636363636365
+      },
+      {
+        "pmid": 26051665,
+        "year": 2015,
+        "citation_count": 11,
+        "rcr": 0.4776525983424764,
+        "citations_per_year": 1.0
+      },
+      {
+        "pmid": 26215236,
+        "year": 2015,
+        "citation_count": 14,
+        "rcr": 0.9711735692577433,
+        "citations_per_year": 1.2727272727272727
+      },
+      {
+        "pmid": 26344501,
+        "year": 2016,
+        "citation_count": 2,
+        "rcr": 0.1103714980943438,
+        "citations_per_year": 0.2
+      },
+      {
+        "pmid": 26356742,
+        "year": 2015,
+        "citation_count": 6,
+        "rcr": 0.28789183656749767,
+        "citations_per_year": 0.5454545454545454
+      },
+      {
+        "pmid": 26486954,
+        "year": 1995,
+        "citation_count": 1,
+        "rcr": 0.05669137471216749,
+        "citations_per_year": 0.03225806451612903
+      },
+      {
+        "pmid": 26517096,
+        "year": 2015,
+        "citation_count": 7,
+        "rcr": 0.3592381231937378,
+        "citations_per_year": 0.6363636363636364
+      },
+      {
+        "pmid": 26536404,
+        "year": 2016,
+        "citation_count": 46,
+        "rcr": 2.5220091271066454,
+        "citations_per_year": 4.6
+      },
+      {
+        "pmid": 26641366,
+        "year": 2016,
+        "citation_count": 101,
+        "rcr": 4.837736053755522,
+        "citations_per_year": 10.1
+      },
+      {
+        "pmid": 26988168,
+        "year": 2016,
+        "citation_count": 4,
+        "rcr": 0.18281726603003912,
+        "citations_per_year": 0.4
+      },
+      {
+        "pmid": 26996561,
+        "year": 2016,
+        "citation_count": 5,
+        "rcr": 0.32778204022718965,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 27121376,
+        "year": 2016,
+        "citation_count": 20,
+        "rcr": 1.166259226274717,
+        "citations_per_year": 2.0
+      },
+      {
+        "pmid": 27121501,
+        "year": 2016,
+        "citation_count": 50,
+        "rcr": 2.356748012014052,
+        "citations_per_year": 5.0
+      },
+      {
+        "pmid": 27246289,
+        "year": 2016,
+        "citation_count": 43,
+        "rcr": 1.8976481160518461,
+        "citations_per_year": 4.3
+      },
+      {
+        "pmid": 27256170,
+        "year": 2016,
+        "citation_count": 14,
+        "rcr": 0.7062321584120835,
+        "citations_per_year": 1.4
+      },
+      {
+        "pmid": 27266620,
+        "year": 2016,
+        "citation_count": 8,
+        "rcr": 0.4139948008331735,
+        "citations_per_year": 0.8
+      },
+      {
+        "pmid": 27323314,
+        "year": 2016,
+        "citation_count": 193,
+        "rcr": 8.620494870743018,
+        "citations_per_year": 19.3
+      },
+      {
+        "pmid": 27342763,
+        "year": 2017,
+        "citation_count": 64,
+        "rcr": 2.568876238668176,
+        "citations_per_year": 7.111111111111111
+      },
+      {
+        "pmid": 27364528,
+        "year": 2016,
+        "citation_count": 31,
+        "rcr": 1.315034727445265,
+        "citations_per_year": 3.1
+      },
+      {
+        "pmid": 27478641,
+        "year": 2016,
+        "citation_count": 16,
+        "rcr": 0.8566183781629155,
+        "citations_per_year": 1.6
+      },
+      {
+        "pmid": 27496722,
+        "year": 2016,
+        "citation_count": 5,
+        "rcr": 0.37676452108408126,
+        "citations_per_year": 0.5
+      },
+      {
+        "pmid": 27587529,
+        "year": 2016,
+        "citation_count": 32,
+        "rcr": 2.0973861981227935,
+        "citations_per_year": 3.2
+      },
+      {
+        "pmid": 27618197,
+        "year": 2016,
+        "citation_count": 4,
+        "rcr": 0.20067047077878794,
+        "citations_per_year": 0.4
+      },
+      {
+        "pmid": 27629092,
+        "year": 2016,
+        "citation_count": 162,
+        "rcr": 6.744861607915694,
+        "citations_per_year": 16.2
+      },
+      {
+        "pmid": 27779969,
+        "year": 2016,
+        "citation_count": 4,
+        "rcr": 0.25563983978808885,
+        "citations_per_year": 0.4
+      },
+      {
+        "pmid": 3797931,
+        "year": 1986,
+        "citation_count": 6,
+        "rcr": 0.4811205877950301,
+        "citations_per_year": 0.15
+      },
+      {
+        "pmid": 4086499,
+        "year": 1985,
+        "citation_count": 2,
+        "rcr": 0.1557540838739001,
+        "citations_per_year": 0.04878048780487805
+      },
+      {
+        "pmid": 7201577,
+        "year": 1982,
+        "citation_count": 62,
+        "rcr": 3.505847311723035,
+        "citations_per_year": 1.4090909090909092
+      },
+      {
+        "pmid": 7786807,
+        "year": 1995,
+        "citation_count": 17,
+        "rcr": 0.9969115438767754,
+        "citations_per_year": 0.5483870967741935
+      },
+      {
+        "pmid": 8092022,
+        "year": 1994,
+        "citation_count": 8,
+        "rcr": 0.4406487267902543,
+        "citations_per_year": 0.25
+      },
+      {
+        "pmid": 8290937,
+        "year": 1993,
+        "citation_count": 6,
+        "rcr": 0.2640521114101365,
+        "citations_per_year": 0.18181818181818182
+      }
+    ]
+  }
+}
