@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Full-Spectrum CT Decision Dashboard</title>
+<style>html,body{margin:0;background:#F4F1EA;}</style>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef } = React;
+
+
+
+/* =========================================================================
+   Full-Spectrum CT Decision Dashboard  —  Scenario-2/3 Task 4
+   Places a CT decision on the spectrum:
+     Scenario 2 (radiation may dominate) · Scenario 3 (comparable) · Scenario 1 (not scanning is the bigger risk)
+   by weighing the benefit of scanning against the CUMULATIVE radiation harm.
+
+   Harm of scanning   : per-scan lifetime attributable risk (LAR) of cancer incidence by
+                        age/sex (Smith-Bindman et al., Arch Intern Med 2009, Table 4;
+                        BEIR VII risk model), accumulated linearly over N scans.
+   Benefit of scanning: harm AVOIDED for acute indications (Scenario-1 extraction) OR
+                        marginal diagnostic yield for lower-yield indications (Scenario-2/3 extraction).
+   Illustrative decision-framing tool, NOT for individual clinical use.
+   ========================================================================= */
+
+// ---- Smith-Bindman 2009 Table 4: per-scan LAR of all-cancer incidence ("1 in X"); smaller X = higher risk
+const SCAN = {
+  "Head CT":                      { mSv: 2.1, lar: { F: { 20: 4360, 40: 8100, 60: 12250 }, M: { 20: 7350, 40: 11080, 60: 14680 } } },
+  "Routine chest CT":             { mSv: 8.2, lar: { F: { 20: 390, 40: 720, 60: 1090 },    M: { 20: 1040, 40: 1566, 60: 2080 } } },
+  "CTPA":                         { mSv: 9.6, lar: { F: { 20: 330, 40: 620, 60: 930 },     M: { 20: 880, 40: 1333, 60: 1770 } } },
+  "Abdomen/pelvis CT":            { mSv: 16,  lar: { F: { 20: 470, 40: 870, 60: 1320 },    M: { 20: 620, 40: 942, 60: 1250 } } },
+  "Multiphase abdomen/pelvis CT": { mSv: 31,  lar: { F: { 20: 250, 40: 460, 60: 700 },     M: { 20: 330, 40: 498, 60: 660 } } },
+  "Aneurysm/dissection CT":       { mSv: 24,  lar: { F: { 20: 320, 40: 590, 60: 890 },     M: { 20: 420, 40: 636, 60: 840 } } },
+};
+
+// per-scan probability of a radiation-induced cancer, age interpolated within 20-60
+function perScanRisk(scanType, sex, age) {
+  const a = Math.max(20, Math.min(60, age));
+  const t = SCAN[scanType].lar[sex];
+  const r20 = 1 / t[20], r40 = 1 / t[40], r60 = 1 / t[60];
+  return a <= 40 ? r20 + ((a - 20) / 20) * (r40 - r20) : r40 + ((a - 40) / 20) * (r60 - r40);
+}
+
+// ---- Indications spanning the spectrum ----
+// benefitType: "avoided" = harm prevented by scanning (S1) · "yield" = marginal diagnostic yield (S2/3)
+const IND = {
+  appendicitis: {
+    label: "Acute appendicitis", group: "acute", scan: "Abdomen/pelvis CT",
+    benefitType: "avoided", benefitPct: 13.6, benefitTag: "DATA", benefitSrc: "PMID 32250068",
+    benefitLabel: "wound infection when antibiotics delayed >4 h (vs 2.9%)",
+    headline: "A missed or delayed diagnosis drives perforation and its complications.",
+    figures: [
+      { t: "Perforation odds rise ~2% per hour of delay (OR 1.02/h)", s: "PMID 27749630", tag: "DATA" },
+      { t: "Missed diagnosis → perforation aOR 3.1; abscess aOR 3.0", s: "PMID 37355425", tag: "DATA" },
+    ],
+  },
+  ischemic_stroke: {
+    label: "Ischemic stroke", group: "acute", scan: "Head CT",
+    benefitType: "avoided", benefitPct: 25.9, benefitTag: "DATA", benefitSrc: "PMID 26716735",
+    benefitLabel: "good-outcome benefit (mRS 0–2) foregone if reperfusion slips past 3 h",
+    headline: "Time is brain — every hour of delay erases treatment benefit.",
+    figures: [
+      { t: "Each 1-h delay to reperfusion: disability cOR 0.84", s: "PMID 27673305", tag: "DATA" },
+      { t: "Reperfusion benefit decays +25.9% (3 h) → +6.7% (6 h)", s: "PMID 26716735", tag: "DATA" },
+    ],
+  },
+  pulmonary_embolism: {
+    label: "Pulmonary embolism (high-risk)", group: "acute", scan: "CTPA",
+    benefitType: "avoided", benefitPct: 43.2, benefitTag: "DATA", benefitSrc: "PMID 32694258",
+    benefitLabel: "in-hospital mortality if diagnosis delayed (vs 1.6% early)",
+    headline: "Delayed diagnosis multiplies mortality several-fold.",
+    figures: [
+      { t: "30-day mortality RR 3.31 (delayed vs timely)", s: "PMID 41004149", tag: "DATA" },
+      { t: "In-hospital mortality 1.6% (early) vs 43.2% (delayed)", s: "PMID 32694258", tag: "DATA" },
+    ],
+  },
+  aortic_dissection: {
+    label: "Aortic dissection", group: "acute", scan: "Aneurysm/dissection CT",
+    benefitType: "avoided", benefitPct: 67, benefitTag: "LIT", benefitSrc: "IRAD / Hirsch 2010",
+    benefitLabel: "cumulative mortality by 48 h untreated (~1.4%/h)",
+    headline: "Untreated type-A dissection kills ~1–2% of patients per hour.",
+    figures: [
+      { t: "Mortality accrues ~1–2% per hour in the first 48 h", s: "IRAD / Hirsch 2010", tag: "LIT" },
+      { t: "Primary-abstract delay-harm estimates were absent from extraction (a finding)", s: "S1 Task 2", tag: "DATA" },
+    ],
+  },
+  mesenteric_ischemia: {
+    label: "Mesenteric ischemia", group: "acute", scan: "Abdomen/pelvis CT",
+    benefitType: "avoided", benefitPct: 87, benefitTag: "DATA", benefitSrc: "PMID 16796010",
+    benefitLabel: "mortality if surgery delayed >24 h (vs 72%)",
+    headline: "Lethal even when prompt; delay pushes mortality higher still.",
+    figures: [
+      { t: "Mortality 72% (\u226424 h) vs 87% (>24 h) to surgery", s: "PMID 16796010", tag: "DATA" },
+      { t: "Delayed revascularization → 30-day mortality OR 2.09", s: "PMID 34634418", tag: "DATA" },
+    ],
+  },
+  major_trauma: {
+    label: "Major trauma (whole-body)", group: "acute", scan: "Aneurysm/dissection CT",
+    benefitType: "avoided", benefitPct: 22.5, benefitTag: "LIT", benefitSrc: "PMID 25216568",
+    benefitLabel: "survival benefit of whole-body CT (~20–25%)",
+    headline: "Whole-body CT improves the probability of survival ~20–25%.",
+    note: "Whole-body dose modeled with a ~24 mSv high-dose CT as a proxy (whole-body CT is not in the source dose table).",
+    figures: [
+      { t: "WBCT improves probability of survival 20–25% vs prior methods", s: "PMID 25216568", tag: "LIT" },
+    ],
+  },
+  syncope_headct: {
+    label: "Routine head CT for syncope", group: "lower", scan: "Head CT",
+    benefitType: "yield", benefitPct: 5, benefitTag: "DATA", benefitSrc: "PMID 17551685",
+    benefitLabel: "abnormal head CT in syncope (~0.8–5%)",
+    headline: "Most head CTs in syncope are normal — but the dose is tiny, so this is a value question, not a radiation one.",
+    figures: [
+      { t: "Abnormal head CT in ~0.8–5% of syncope patients", s: "PMID 17551685, 27583235", tag: "DATA" },
+      { t: "Clinically important findings 6–19%, mostly for other indications", s: "PMID 33246274", tag: "DATA" },
+    ],
+  },
+  lowrisk_ctpa: {
+    label: "CTPA for low-risk PE", group: "lower", scan: "CTPA",
+    benefitType: "yield", benefitPct: 3.5, benefitTag: "DATA", benefitSrc: "PMID 37490553",
+    benefitLabel: "CTPA positive for PE in low-risk patients (~3–4%)",
+    headline: "In low-risk patients most CTPAs are negative, while the chest dose is far from trivial.",
+    figures: [
+      { t: "CTPA positive in only 2.8% of an ED cohort", s: "PMID 37490553", tag: "DATA" },
+      { t: "3.5% positive in pregnancy; ~9–16% overall but ~3–4% in low-risk subgroups", s: "PMID 38784183", tag: "DATA" },
+    ],
+  },
+  recurrent_renal_colic: {
+    label: "Repeat CT for recurrent renal colic", group: "lower", scan: "Multiphase abdomen/pelvis CT",
+    benefitType: "yield", benefitPct: 5, benefitTag: "LIT", benefitSrc: "S2/3 Task 2",
+    benefitLabel: "marginal yield of a repeat stone CT (low; illustrative)",
+    headline: "Repeat CT for known recurrent stones rarely changes management, and multiphase dose accrues fast.",
+    note: "Marginal-benefit figure is illustrative; the yield of repeat stone CT is under-quantified in the abstract literature.",
+    figures: [
+      { t: "18% of recurrent-stone CTs showed incidental potentially malignant findings — not the same as benefit", s: "PMID 41445992", tag: "DATA" },
+      { t: "Most recurrent stone episodes are managed clinically without repeat CT", s: "S2/3 Task 2", tag: "LIT" },
+    ],
+  },
+  incidentaloma_surveillance: {
+    label: "Surveillance of an incidental finding", group: "lower", scan: "Routine chest CT",
+    benefitType: "yield", benefitPct: 4, benefitTag: "DATA", benefitSrc: "PMID 39283819",
+    benefitLabel: "malignancy among incidental findings (~4%)",
+    headline: "Most surveilled incidental findings are benign — the overdiagnosis signature.",
+    overdiagnosis: true,
+    figures: [
+      { t: "Incidental finding prevalence 2–74% by region and population", s: "PMID 35717273", tag: "DATA" },
+      { t: "Malignancy among thyroid incidentalomas only 3.9%", s: "PMID 39283819", tag: "DATA" },
+    ],
+  },
+};
+const ORDER_ACUTE = ["appendicitis", "ischemic_stroke", "pulmonary_embolism", "aortic_dissection", "mesenteric_ischemia", "major_trauma"];
+const ORDER_LOWER = ["syncope_headct", "lowrisk_ctpa", "recurrent_renal_colic", "incidentaloma_surveillance"];
+
+function classify(ratio) {
+  if (ratio >= 10) return { key: "S1", short: "Scenario 1", label: "Not scanning is the bigger risk", cls: "s1" };
+  if (ratio >= 1)  return { key: "S3", short: "Scenario 3", label: "Benefit and harm are comparable", cls: "s3" };
+  return { key: "S2", short: "Scenario 2", label: "Radiation harm may dominate", cls: "s2" };
+}
+const RLO = -1, RHI = 2;                       // log10 spectrum bounds: ratio 0.1 .. 100
+const specX = (r) => Math.max(0, Math.min(1, (Math.log10(Math.max(r, 1e-3)) - RLO) / (RHI - RLO)));
+const SLO = Math.log10(0.001), SHI = Math.log10(100);
+const logPos = (p) => Math.max(0, Math.min(1, (Math.log10(Math.max(p, 0.001)) - SLO) / (SHI - SLO)));
+
+function useCountUp(target, dur = 550) {
+  const [v, setV] = useState(target);
+  const ref = useRef(target);
+  useEffect(() => {
+    const from = ref.current, start = performance.now();
+    let raf;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / dur);
+      const e = 1 - Math.pow(1 - t, 3);
+      setV(from + (target - from) * e);
+      if (t < 1) raf = requestAnimationFrame(tick); else ref.current = target;
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, dur]);
+  return v;
+}
+const fmtPct = (p) => (p >= 10 ? p.toFixed(1) : p >= 1 ? p.toFixed(2) : p >= 0.1 ? p.toFixed(2) : p.toFixed(3));
+const fmtN = (n) => (n === Infinity || !isFinite(n) ? "—" : Math.round(n).toLocaleString());
+const fmtRatio = (r) => (r >= 100 ? Math.round(r).toLocaleString() : r >= 10 ? r.toFixed(0) : r >= 1 ? r.toFixed(1) : r.toFixed(2));
+
+function FullSpectrumCTDashboard() {
+  const [indKey, setIndKey] = useState("recurrent_renal_colic");
+  const [age, setAge] = useState(40);
+  const [sex, setSex] = useState("F");
+  const [scans, setScans] = useState(1);
+
+  const ind = IND[indKey];
+  const scan = SCAN[ind.scan];
+  const pScan = perScanRisk(ind.scan, sex, age);
+  const cumRisk = pScan * scans;             // cumulative LAR (probability), linear/LNT
+  const cumPct = cumRisk * 100;
+  const cumDose = scan.mSv * scans;
+  const benefit = ind.benefitPct;
+  const ratio = benefit / Math.max(cumPct, 1e-9);
+  const sc = classify(ratio);
+
+  const benAnim = useCountUp(benefit);
+  const harmAnim = useCountUp(cumPct);
+  const x = specX(ratio);
+
+  const Tag = ({ k }) => <span className={"tag " + (k === "DATA" ? "tag-data" : "tag-lit")}>{k}</span>;
+
+  return (
+    <>
+      <style>{CSS}</style>
+      <div className="fsd">
+        <header className="head">
+          <div className="kicker">Three-scenario framework · the full spectrum of CT decisions</div>
+          <h1>Where does this scan fall?</h1>
+          <p className="sub">
+            Every CT trades a benefit against a radiation cost that <i>accumulates</i> with each repeat. This places a
+            decision on the spectrum from <b>Scenario 2</b> (radiation may dominate) through <b>Scenario 3</b> to
+            <b> Scenario 1</b> (not scanning is the bigger risk). The number of scans is the lever — watch a high-dose,
+            low-yield study slide left as it is repeated.
+          </p>
+        </header>
+
+        {/* controls */}
+        <section className="controls">
+          <div className="ctrl wide">
+            <label>Clinical situation</label>
+            <select value={indKey} onChange={(e) => setIndKey(e.target.value)}>
+              <optgroup label="Acute / time-critical">
+                {ORDER_ACUTE.map((k) => <option key={k} value={k}>{IND[k].label}</option>)}
+              </optgroup>
+              <optgroup label="Lower-yield / recurrent">
+                {ORDER_LOWER.map((k) => <option key={k} value={k}>{IND[k].label}</option>)}
+              </optgroup>
+            </select>
+          </div>
+          <div className="ctrl">
+            <label>Age at exposure <b>{age}</b></label>
+            <input type="range" min="20" max="60" value={age} onChange={(e) => setAge(+e.target.value)} />
+          </div>
+          <div className="ctrl">
+            <label>Sex</label>
+            <div className="seg">
+              {["F", "M"].map((s) => (
+                <button key={s} className={sex === s ? "on" : ""} onClick={() => setSex(s)}>{s === "F" ? "Female" : "Male"}</button>
+              ))}
+            </div>
+          </div>
+          <div className="ctrl">
+            <label>Number of scans <b>{scans}</b></label>
+            <div className="stepper">
+              <button onClick={() => setScans(Math.max(1, scans - 1))}>–</button>
+              <span>{scans}</span>
+              <button onClick={() => setScans(Math.min(30, scans + 1))}>+</button>
+            </div>
+          </div>
+        </section>
+
+        {/* scenario spectrum — signature */}
+        <section className="spectrum">
+          <div className="spec-zonelabels">
+            <span className="zl z2">Scenario 2 · radiation may dominate</span>
+            <span className="zl z3">Scenario 3 · comparable</span>
+            <span className="zl z1">Scenario 1 · not scanning is the bigger risk</span>
+          </div>
+          <div className="spec-band">
+            <div className="spec-zone z2" /><div className="spec-zone z3" /><div className="spec-zone z1" />
+            <div className={"spec-flag " + sc.cls} style={{ left: x * 100 + "%" }}>
+              <b>{sc.short}</b><span>{fmtRatio(ratio)}×</span>
+            </div>
+            <div className={"spec-marker " + sc.cls} style={{ left: x * 100 + "%" }} />
+          </div>
+          <div className="spec-axis"><span>benefit ≪ harm</span><span>balanced</span><span>benefit ≫ harm</span></div>
+          <p className={"verdict " + sc.cls}>
+            {sc.label}.{" "}
+            {ratio >= 1
+              ? <>Benefit is about <b>{fmtRatio(ratio)}×</b> the cumulative radiation harm at {scans} scan{scans > 1 ? "s" : ""}.</>
+              : <>Cumulative radiation harm is about <b>{fmtRatio(1 / ratio)}×</b> the benefit at {scans} scan{scans > 1 ? "s" : ""}.</>}
+          </p>
+        </section>
+
+        {/* two panels */}
+        <section className="panels">
+          <div className="panel ben">
+            <div className="panel-top"><span className="dot dot-ben" /><h2>{ind.benefitType === "avoided" ? "What scanning avoids" : "What the scan finds"}</h2></div>
+            <div className="protocol">{ind.benefitType === "avoided" ? "harm prevented by timely CT" : "marginal diagnostic yield"}</div>
+            <div className="bignum">
+              <span className="val">{fmtPct(benAnim)}<span className="unit">%</span></span>
+              <span className="cap">{ind.benefitLabel} <Tag k={ind.benefitTag} /> <span className="src">{ind.benefitSrc}</span></span>
+            </div>
+            <p className="headline">{ind.headline}</p>
+            {ind.overdiagnosis && <p className="flag">Much of this "yield" is incidental — finding it often leads to more imaging, not better outcomes.</p>}
+            <ul className="figs">
+              {ind.figures.map((f, i) => <li key={i}><span>{f.t}</span> <Tag k={f.tag} /> <span className="src">{f.s}</span></li>)}
+            </ul>
+          </div>
+
+          <div className="versus"><span>vs</span></div>
+
+          <div className="panel cost">
+            <div className="panel-top"><span className="dot dot-cost" /><h2>Radiation cost</h2></div>
+            <div className="protocol">{ind.scan} · {scan.mSv} mSv{scans > 1 ? ` × ${scans}` : ""}</div>
+            <div className="bignum">
+              <span className="val costval">{fmtPct(harmAnim)}<span className="unit">%</span></span>
+              <span className="cap">added lifetime cancer risk over {scans} scan{scans > 1 ? "s" : ""}</span>
+            </div>
+            <div className="oneinn">≈ 1 in {fmtN(1 / cumRisk)} · {sex === "F" ? "female" : "male"}, age {age}</div>
+            <p className="note">
+              Cumulative effective dose <b>{cumDose.toFixed(0)} mSv</b> ({scan.mSv} mSv × {scans}).
+              Per-scan LAR {fmtPct(pScan * 100)}% (BEIR VII via Smith-Bindman 2009). Point estimate with wide CIs.
+            </p>
+          </div>
+        </section>
+
+        {/* log strip */}
+        <section className="compare">
+          <div className="strip-wrap">
+            <div className="strip">
+              {[0.001, 0.01, 0.1, 1, 10, 100].map((t) => (
+                <div key={t} className="tick" style={{ left: logPos(t) * 100 + "%" }}>
+                  <span className="tickline" /><span className="ticklab">{t}%</span>
+                </div>
+              ))}
+              <div className="ptr ptr-ben" style={{ left: logPos(benefit) * 100 + "%" }}>
+                <span className="ptr-dot" /><span className="ptr-lab">benefit {fmtPct(benefit)}%</span>
+              </div>
+              <div className="ptr ptr-cost" style={{ left: logPos(cumPct) * 100 + "%" }}>
+                <span className="ptr-dot" /><span className="ptr-lab">radiation {fmtPct(cumPct)}%</span>
+              </div>
+            </div>
+            <div className="strip-axis">probability (log scale) · benefit of scanning vs cumulative radiation harm</div>
+          </div>
+          <p className="kinds">
+            These are different <i>kinds</i> of quantity: a near-term diagnostic benefit (or harm avoided) against a
+            stochastic, lifetime cancer probability. The spectrum frames the trade-off — it is not a like-for-like subtraction.
+            Crucially, low-dose studies such as head CT rarely reach Scenario 2 however often they are repeated: their
+            radiation cost stays tiny, so an overused head CT is a <i>value</i> problem, not a radiation one.
+          </p>
+        </section>
+
+        <footer className="foot">
+          <div className="src-row">
+            <b>Sources</b> · Radiation: Smith-Bindman et al., <i>Arch Intern Med</i> 2009 (per-scan LAR, Table 4), on the BEIR VII (2006) risk model.
+            Benefit: literature extracted in the Scenario-1 and Scenario-2/3 work (PMIDs shown).
+            <span className="tag tag-data">DATA</span> = extracted estimate · <span className="tag tag-lit">LIT</span> = literature constant.
+          </div>
+          <div className="caveat">
+            Illustrative decision-framing tool, calibrated for adults aged 20–60. Cumulative risk uses the linear-no-threshold
+            model (debated at low dose); benefit is operationalized two ways (harm avoided vs marginal yield); marginal yield
+            typically falls with repeated scans, so Scenario-2 placement is conservative; classification thresholds (10×, 1×)
+            are illustrative. Not for individual clinical decisions.
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+}
+
+const CSS = `
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap');
+.fsd{--bg:#F4F1EA;--ink:#1b1a16;--mut:#736f63;--line:#e0dbcf;--card:#fcfbf7;
+ --ben:#2f7d6b;--ben-soft:#dcebe6;--cost:#b0432b;--cost-soft:#f1ddd4;
+ --s1:#2f7d6b;--s1-soft:#dcebe6;--s3:#9a7b3c;--s3-soft:#efe4cc;--s2:#b0432b;--s2-soft:#f3ddd3;
+ font-family:'IBM Plex Sans',sans-serif;color:var(--ink);
+ background:radial-gradient(120% 80% at 0% 0%, #f8f6f0 0%, var(--bg) 55%);
+ padding:30px 26px 22px;max-width:1080px;margin:0 auto;line-height:1.5;}
+.fsd *{box-sizing:border-box;}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--s2);font-weight:600;margin-bottom:8px;}
+.head h1{font-family:'Fraunces',serif;font-weight:600;font-size:35px;line-height:1.05;margin:0 0 10px;letter-spacing:-.01em;}
+.sub{color:var(--mut);font-size:14.5px;max-width:680px;margin:0;}
+.sub b{color:var(--ink);font-weight:600;}.sub i{font-style:italic;}
+
+.controls{display:grid;grid-template-columns:1.7fr .95fr .8fr .8fr;gap:18px;margin:26px 0 20px;
+ padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px;}
+.ctrl{display:flex;flex-direction:column;gap:8px;min-width:0;}
+.ctrl label{font-size:12px;color:var(--mut);font-weight:500;letter-spacing:.02em;}
+.ctrl label b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;}
+input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:3px;background:var(--line);outline:none;margin-top:6px;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--ink);cursor:pointer;border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2);}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--ink);cursor:pointer;border:3px solid #fff;}
+.seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;}
+.seg button{flex:1;border:none;background:#fff;padding:8px 4px;font:inherit;font-size:13px;cursor:pointer;color:var(--mut);transition:.15s;}
+.seg button.on{background:var(--ink);color:#fff;font-weight:500;}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff;}
+.stepper button{border:none;background:#fff;width:36px;padding:7px 0;font-size:17px;cursor:pointer;color:var(--ink);}
+.stepper button:hover{background:#f0ece2;}
+.stepper span{flex:1;text-align:center;font-weight:600;font-variant-numeric:tabular-nums;}
+select{font:inherit;font-size:14px;padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:#fff;cursor:pointer;width:100%;color:var(--ink);}
+
+.spectrum{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px 16px;margin-bottom:16px;}
+.spec-zonelabels{display:grid;grid-template-columns:1fr 1fr 1fr;margin-bottom:9px;gap:6px;}
+.zl{font-size:11px;font-weight:600;letter-spacing:.01em;line-height:1.3;}
+.zl.z2{color:var(--s2);text-align:left;}.zl.z3{color:var(--s3);text-align:center;}.zl.z1{color:var(--s1);text-align:right;}
+.spec-band{position:relative;display:flex;height:50px;border-radius:12px;overflow:visible;margin:30px 0 8px;}
+.spec-zone{flex:1;height:100%;}
+.spec-zone.z2{background:var(--s2-soft);border-radius:12px 0 0 12px;}
+.spec-zone.z3{background:var(--s3-soft);}
+.spec-zone.z1{background:var(--s1-soft);border-radius:0 12px 12px 0;}
+.spec-marker{position:absolute;top:-7px;bottom:-7px;width:3px;background:var(--ink);transform:translateX(-50%);
+ transition:left .6s cubic-bezier(.22,1,.36,1);border-radius:2px;}
+.spec-marker.s1{background:var(--s1);}.spec-marker.s2{background:var(--s2);}.spec-marker.s3{background:var(--s3);}
+.spec-flag{position:absolute;top:-40px;transform:translateX(-50%);transition:left .6s cubic-bezier(.22,1,.36,1);
+ background:var(--card);border:1.5px solid var(--line);border-radius:9px;padding:4px 11px;white-space:nowrap;
+ display:flex;flex-direction:column;align-items:center;line-height:1.15;box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.spec-flag b{font-family:'Fraunces',serif;font-size:14px;font-weight:600;}
+.spec-flag span{font-size:11px;color:var(--mut);font-variant-numeric:tabular-nums;}
+.spec-flag.s1{border-color:var(--s1);} .spec-flag.s1 b{color:var(--s1);}
+.spec-flag.s3{border-color:var(--s3);} .spec-flag.s3 b{color:var(--s3);}
+.spec-flag.s2{border-color:var(--s2);} .spec-flag.s2 b{color:var(--s2);}
+.spec-axis{display:flex;justify-content:space-between;font-size:10.5px;color:var(--mut);letter-spacing:.02em;margin-bottom:12px;}
+.verdict{font-size:15px;line-height:1.5;margin:0;border-top:1px dashed var(--line);padding-top:12px;}
+.verdict b{font-weight:600;font-variant-numeric:tabular-nums;}
+.verdict.s1{color:#27604f;}.verdict.s3{color:#7d6322;}.verdict.s2{color:#8f3522;}
+
+.panels{display:grid;grid-template-columns:1fr 54px 1fr;align-items:stretch;margin-bottom:16px;}
+.panel{padding:22px 24px;border-radius:14px;border:1px solid var(--line);background:var(--card);}
+.panel.ben{border-top:3px solid var(--ben);}
+.panel.cost{border-top:3px solid var(--cost);}
+.panel-top{display:flex;align-items:center;gap:9px;margin-bottom:4px;}
+.panel-top h2{font-family:'Fraunces',serif;font-weight:600;font-size:18px;margin:0;}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+.dot-ben{background:var(--ben);}.dot-cost{background:var(--cost);}
+.protocol{font-size:12.5px;color:var(--mut);margin-bottom:14px;}
+.bignum{display:flex;flex-direction:column;gap:3px;margin:6px 0 10px;}
+.bignum .val{font-family:'Fraunces',serif;font-weight:600;font-size:46px;line-height:1;color:var(--ben);font-variant-numeric:tabular-nums;}
+.bignum .costval{color:var(--cost);}
+.bignum .unit{font-size:24px;margin-left:2px;}
+.bignum .cap{font-size:12.5px;color:var(--mut);max-width:340px;}
+.oneinn{font-size:14px;font-weight:500;margin-bottom:12px;}
+.headline{font-size:14.5px;font-weight:500;margin:2px 0 10px;color:#3a342b;}
+.flag{font-size:12.5px;color:var(--cost);font-weight:500;background:var(--cost-soft);border-radius:8px;padding:8px 11px;margin:0 0 10px;}
+.note{font-size:11.5px;color:var(--mut);line-height:1.5;margin:0;border-top:1px dashed var(--line);padding-top:10px;}
+.note b{color:#4a463c;font-weight:600;}
+.figs{list-style:none;padding:0;margin:8px 0 0;border-top:1px dashed var(--line);padding-top:12px;display:flex;flex-direction:column;gap:9px;}
+.figs li{font-size:12.5px;line-height:1.4;}
+.src{color:var(--mut);font-size:11px;}
+.versus{display:flex;align-items:center;justify-content:center;}
+.versus span{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--mut);background:var(--bg);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);}
+
+.tag{font-size:9px;font-weight:700;letter-spacing:.06em;padding:1.5px 5px;border-radius:5px;vertical-align:middle;}
+.tag-data{background:var(--ben-soft);color:var(--ben);}
+.tag-lit{background:#efe7d4;color:#8a6d22;}
+
+.compare{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px 18px;margin-bottom:16px;}
+.strip-wrap{margin:4px 4px 4px;}
+.strip{position:relative;height:74px;border-bottom:2px solid var(--line);margin-bottom:6px;}
+.tick{position:absolute;bottom:0;transform:translateX(-50%);text-align:center;}
+.tickline{display:block;width:1px;height:7px;background:var(--line);margin:0 auto;}
+.ticklab{font-size:10px;color:var(--mut);font-variant-numeric:tabular-nums;}
+.ptr{position:absolute;transform:translateX(-50%);transition:left .55s cubic-bezier(.22,1,.36,1);text-align:center;}
+.ptr-dot{display:block;width:14px;height:14px;border-radius:50%;margin:0 auto 3px;border:2.5px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.18);}
+.ptr-ben{bottom:34px;z-index:2;} .ptr-ben .ptr-dot{background:var(--ben);}
+.ptr-cost{bottom:9px;z-index:3;} .ptr-cost .ptr-dot{background:var(--cost);}
+.ptr-lab{font-size:11px;font-weight:600;white-space:nowrap;}
+.ptr-ben .ptr-lab{color:var(--ben);} .ptr-cost .ptr-lab{color:var(--cost);}
+.strip-axis{font-size:10.5px;color:var(--mut);text-align:center;letter-spacing:.03em;}
+.kinds{font-size:12.5px;color:var(--mut);line-height:1.55;margin:18px 0 0;border-top:1px dashed var(--line);padding-top:14px;}
+.kinds i{font-style:italic;}
+
+.foot{font-size:11px;color:var(--mut);line-height:1.5;display:flex;flex-direction:column;gap:8px;}
+.foot b{color:#4a463c;}
+.caveat{font-style:italic;}
+
+@media(max-width:760px){
+ .controls{grid-template-columns:1fr 1fr;}
+ .panels{grid-template-columns:1fr;gap:14px;}
+ .versus{display:none;}
+ .head h1{font-size:27px;}
+ .bignum .val{font-size:38px;}
+ .spec-zonelabels{display:none;}
+}
+`;
+
+
+ReactDOM.createRoot(document.getElementById("root")).render(<FullSpectrumCTDashboard />);
+</script>
+</body>
+</html>

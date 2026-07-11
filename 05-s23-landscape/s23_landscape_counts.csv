@@ -1,0 +1,10 @@
+category,label,query,count,search_date
+overuse,CT + overuse / inappropriate / low-value / unnecessary,"(""computed tomography""[tiab] OR ""CT scan""[tiab] OR ""CT imaging""[tiab]) AND (""overutilization""[tiab] OR ""overuse""[tiab] OR ""inappropriate""[tiab] OR ""low-value""[tiab] OR ""unnecessary""[tiab])",6792,2026-06-10
+overuse,CT + appropriateness / Choosing Wisely,"(""computed tomography""[tiab] OR ""CT scan""[tiab] OR ""CT imaging""[tiab]) AND (""appropriateness""[tiab] OR ""appropriate use""[tiab] OR ""Choosing Wisely""[tiab])",1039,2026-06-10
+yield,CT + diagnostic yield / low yield / number-needed-to-scan,"(""computed tomography""[tiab] OR ""CT scan""[tiab] OR ""CT imaging""[tiab]) AND (""diagnostic yield""[tiab] OR ""low yield""[tiab] OR ""number needed to scan""[tiab] OR ""number needed to image""[tiab] OR ""incremental yield""[tiab])",1694,2026-06-10
+incidental,CT + incidental findings / incidentaloma / overdiagnosis,"(""computed tomography""[tiab] OR ""CT scan""[tiab] OR ""CT imaging""[tiab]) AND (""incidental finding""[tiab] OR ""incidental findings""[tiab] OR ""incidentaloma""[tiab] OR ""overdiagnosis""[tiab])",3391,2026-06-10
+cumulative_dose,CT + cumulative / recurrent / repeated dose,"(""computed tomography""[tiab] OR ""CT scan""[tiab] OR ""CT imaging""[tiab]) AND (""cumulative radiation""[tiab] OR ""cumulative dose""[tiab] OR ""cumulative effective dose""[tiab] OR ""recurrent CT""[tiab] OR ""repeated CT""[tiab] OR ""repeat CT imaging""[tiab])",938,2026-06-10
+marginal_benefit,CT + net / marginal / incremental clinical benefit,"(""computed tomography""[tiab] OR ""CT scan""[tiab] OR ""CT imaging""[tiab]) AND (""net clinical benefit""[tiab] OR ""net benefit""[tiab] OR ""marginal benefit""[tiab] OR ""incremental benefit""[tiab])",515,2026-06-10
+MeSH,MeSH: CT AND Medical Overuse,"""Tomography, X-Ray Computed""[Mesh] AND ""Medical Overuse""[Mesh]",805,2026-06-10
+MeSH,MeSH: CT AND Incidental Findings,"""Tomography, X-Ray Computed""[Mesh] AND ""Incidental Findings""[Mesh]",4240,2026-06-10
+MeSH,MeSH: CT AND Unnecessary Procedures,"""Tomography, X-Ray Computed""[Mesh] AND ""Unnecessary Procedures""[Mesh]",693,2026-06-10

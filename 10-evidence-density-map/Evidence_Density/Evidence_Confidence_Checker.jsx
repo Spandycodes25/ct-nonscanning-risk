@@ -1,0 +1,211 @@
+import React, { useState } from "react";
+
+/* =========================================================================
+   Evidence Confidence-Checker  —  Scenario-2/3 Task 6
+   The prior question to placement: do we have enough primary evidence to put
+   this CT decision on the spectrum at all? Pick a condition and it returns a
+   verdict with the numbers in context (usable studies / screened) and an
+   adjustable, explained threshold. Thin evidence is Scenario 3 BY UNCERTAINTY,
+   distinct from Scenario 3 by balance.
+
+   Counts are from the project's two extractions (each estimate has a PMID):
+     U = abstracts that produced a usable, curated estimate
+     E = curated estimates in total (one abstract can give more than one)
+     M = abstracts screened for that condition (the denominator)
+   Inclusion: primary studies, outcome- or yield-focused, case reports excluded.
+   Illustrative / pilot scale. Not for clinical use.
+   ========================================================================= */
+
+const DATA = [
+  // acute — benefit is harm avoided
+  { key: "mesenteric", lane: "acute", label: "Mesenteric ischemia", E: 9, U: 5, M: 81 },
+  { key: "stroke", lane: "acute", label: "Ischemic stroke", E: 7, U: 6, M: 60 },
+  { key: "appendicitis", lane: "acute", label: "Appendicitis", E: 5, U: 4, M: 59 },
+  { key: "pe", lane: "acute", label: "Pulmonary embolism (high-risk)", E: 4, U: 3, M: 60 },
+  { key: "aortic", lane: "acute", label: "Aortic dissection", E: 1, U: 1, M: 81, gap: true,
+    note: "Documented gap: of 81 abstracts screened, almost none quantified delay-related mortality." },
+  { key: "trauma", lane: "acute", label: "Major trauma", E: 1, U: 1, M: 60,
+    note: "The benefit rests on a whole-body-CT survival figure from review literature, not a primary delay-harm estimate." },
+  { key: "sah", lane: "acute", label: "Subarachnoid hemorrhage", E: 0, U: 0, M: 81, gap: true,
+    note: "Documented gap: 81 abstracts screened, none produced a usable delay-harm estimate." },
+  // lower-yield — benefit is marginal yield
+  { key: "ctpa", lane: "lower", label: "CTPA for suspected PE", E: 18, U: 17, M: 100,
+    note: "High volume, but the estimates span very different populations (~3% in low-risk to ~40% in selected), so a specific subgroup can still be uncertain." },
+  { key: "syncope", lane: "lower", label: "Head CT in syncope", E: 9, U: 9, M: 56 },
+  { key: "incidental", lane: "lower", label: "Incidental-finding surveillance", E: 9, U: 9, M: 99, overdiag: true,
+    note: "The yield is real but largely overdiagnosis: much of what is found would never have caused harm." },
+  { key: "minor", lane: "lower", label: "Head CT in minor injury", E: 6, U: 5, M: 100 },
+  { key: "arrest", lane: "lower", label: "CT after cardiac arrest", E: 5, U: 5, M: 99 },
+  { key: "abdo", lane: "lower", label: "CT for nonspecific abdominal pain", E: 3, U: 3, M: 169,
+    note: "Clears a count of 3, but on a 1.8% hit rate from the largest search of all, so the base is thin: a count-only view would overstate it." },
+  { key: "renal", lane: "lower", label: "Repeat CT for renal colic", E: 1, U: 1, M: 161,
+    note: "Largest search effort (161 screened), lowest yield (0.6%): the repeat-stone yield is essentially unquantified in primary abstracts." },
+  { key: "wbct", lane: "lower", label: "Whole-body CT screening", E: 1, U: 1, M: 48,
+    note: "Small literature and almost no usable yield estimate." },
+];
+const LANES = { acute: "Acute / time-critical", lower: "Lower-yield / recurrent" };
+const rate = (d) => (d.M ? (100 * d.U) / d.M : 0);
+const UMAX = 17;
+
+export default function EvidenceConfidenceChecker() {
+  const [sel, setSel] = useState("renal");
+  const [K, setK] = useState(3);
+
+  const d = DATA.find((x) => x.key === sel);
+  const backed = d.U >= K;
+  const r = rate(d);
+  const thinRate = backed && r < 3;
+
+  const Chip = ({ x }) => {
+    const ok = x.U >= K;
+    return (
+      <button className={"ovrow " + (x.key === sel ? "on " : "") + (ok ? "ok" : "no")} onClick={() => setSel(x.key)}>
+        <span className="ovlab">{x.label}</span>
+        <span className="ovbar"><i style={{ width: Math.max((x.U / UMAX) * 100, x.U === 0 ? 3 : 6) + "%" }} /></span>
+        <span className="ovnum">{x.U}<em>/{x.M}</em></span>
+        <span className={"ovtag " + (ok ? "tok" : "tno")}>{ok ? "placeable" : "uncertain"}</span>
+      </button>
+    );
+  };
+
+  return (
+    <>
+      <style>{CSS}</style>
+      <div className="cc">
+        <header className="head">
+          <div className="kicker">Three-scenario framework · the prior question to placement</div>
+          <h1>Do we have the evidence to place this scan?</h1>
+          <p className="sub">
+            Before asking where a CT decision sits on the spectrum, ask whether the primary literature can place it at all.
+            Pick a condition: if the evidence is too thin, that is the answer, <b>Scenario 3 by uncertainty</b>, separate from
+            Scenario 3 by balance.
+          </p>
+        </header>
+
+        <section className="controls">
+          <div className="ctl">
+            <label>Condition</label>
+            <select value={sel} onChange={(e) => setSel(e.target.value)}>
+              <optgroup label={LANES.acute}>{DATA.filter((x) => x.lane === "acute").map((x) => <option key={x.key} value={x.key}>{x.label}</option>)}</optgroup>
+              <optgroup label={LANES.lower}>{DATA.filter((x) => x.lane === "lower").map((x) => <option key={x.key} value={x.key}>{x.label}</option>)}</optgroup>
+            </select>
+          </div>
+          <div className="ctl">
+            <label>Evidence threshold: <b>{K}</b> stud{K === 1 ? "y" : "ies"}</label>
+            <input type="range" min="1" max="6" value={K} onChange={(e) => setK(+e.target.value)} />
+            <span className="cnote">"Evidence-backed" = at least {K} studies with a usable estimate. This is a judgment call, not a standard; drag to test it.</span>
+          </div>
+        </section>
+
+        <section className={"card " + (backed ? "b" : "u")}>
+          <div className="verdict-row">
+            <span className={"badge " + (backed ? "vb" : "vu")}>{backed ? "Evidence-backed" : "Too thin to place"}</span>
+            <span className="vtitle">{d.label}</span>
+          </div>
+          <p className="vline">
+            {backed
+              ? <>The primary literature can support placing this on the spectrum.</>
+              : <>The primary literature cannot place this. It defaults to <b>Scenario 3 by uncertainty</b>, regardless of any point estimate.</>}
+          </p>
+
+          <div className="nums">
+            <div className="n"><span className="nv">{d.U}</span><span className="nl">primary studies with a usable estimate</span></div>
+            <div className="n"><span className="nv">{d.M}</span><span className="nl">abstracts screened</span></div>
+            <div className="n"><span className="nv">{r.toFixed(1)}<em>%</em></span><span className="nl">hit rate (usable ÷ screened)</span></div>
+            <div className="n"><span className="nv">{d.E}</span><span className="nl">curated estimates in total</span></div>
+          </div>
+
+          <p className="explain">
+            We screened <b>{d.M}</b> relevance-ranked abstracts for this; <b>{d.U}</b> produced a usable estimate
+            ({d.E} estimate{d.E === 1 ? "" : "s"} in total). At a threshold of {K}, it {backed ? "clears" : "falls short of"} the bar.
+          </p>
+
+          {thinRate && <p className="flag warn">It clears the count, but the hit rate is only {r.toFixed(1)}% despite a large search, so the evidence base is thin. A count-only view would overstate this.</p>}
+          {d.gap && <p className="flag gapf">This is a documented evidence gap from the extraction.</p>}
+          {d.overdiag && <p className="flag warn">Even where placeable, the yield here is largely overdiagnosis, not benefit.</p>}
+          {d.note && <p className="note">{d.note}</p>}
+        </section>
+
+        <section className="overview">
+          <div className="ov-h">All conditions at a threshold of {K} <span>· bar = studies with a usable estimate (U), number = U / screened (M)</span></div>
+          {["acute", "lower"].map((ln) => (
+            <div className="ov-lane" key={ln}>
+              <div className="ov-lane-h">{LANES[ln]}</div>
+              {DATA.filter((x) => x.lane === ln).slice().sort((a, b) => b.U - a.U).map((x) => <Chip key={x.key} x={x} />)}
+            </div>
+          ))}
+        </section>
+
+        <footer className="foot">
+          <p className="caveat">
+            <b>How to read this.</b> Evidence is counted as primary studies that yielded a usable, curated estimate (each with a PMID),
+            over the abstracts screened for that condition. Inclusion: primary studies, outcome- or yield-focused, case reports excluded.
+            The threshold is a judgment call, not a validated cut-off, which is why it is adjustable and the raw numbers are always shown.
+            A high count can still leave a subgroup uncertain (CTPA), and a count that just clears the bar can rest on a low hit rate (abdominal pain).
+            Radiation cost is modeled separately and is rarely the binding constraint; benefit-side evidence usually is. Pilot scale, scalable by widening the corpus.
+          </p>
+        </footer>
+      </div>
+    </>
+  );
+}
+
+const CSS = `
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap');
+.cc{--bg:#F4F1EA;--ink:#1b1a16;--mut:#6d6759;--line:#e0dbcf;--card:#fcfbf7;
+ --ok:#2f7d6b;--ok-soft:#dcebe6;--no:#9a7b3c;--no-soft:#efe4cc;--warn:#b0432b;--warn-soft:#f1ddd4;
+ font-family:'IBM Plex Sans',sans-serif;color:var(--ink);
+ background:radial-gradient(120% 80% at 0% 0%, #f8f6f0 0%, var(--bg) 55%);
+ max-width:980px;margin:0 auto;padding:30px 26px 22px;line-height:1.5;}
+.cc *{box-sizing:border-box;}
+.kicker{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--no);font-weight:600;margin-bottom:8px;}
+.head h1{font-family:'Fraunces',serif;font-weight:600;font-size:33px;line-height:1.05;margin:0 0 10px;letter-spacing:-.01em;}
+.sub{color:var(--mut);font-size:14.5px;max-width:720px;margin:0;} .sub b{color:var(--ink);font-weight:600;}
+
+.controls{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:22px 0 16px;}
+.ctl{display:flex;flex-direction:column;gap:8px;min-width:0;}
+.ctl label{font-size:13px;color:var(--ink);font-weight:500;} .ctl label b{font-variant-numeric:tabular-nums;}
+select{font:inherit;font-size:14px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%;cursor:pointer;}
+input[type=range]{-webkit-appearance:none;appearance:none;height:5px;border-radius:3px;background:var(--line);outline:none;width:100%;margin-top:4px;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--no);cursor:pointer;border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2);}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--no);cursor:pointer;border:3px solid #fff;}
+.cnote{font-size:11.5px;color:var(--mut);line-height:1.4;}
+
+.card{border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:16px;background:var(--card);}
+.card.b{border-top:4px solid var(--ok);} .card.u{border-top:4px solid var(--no);}
+.verdict-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.badge{font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:8px;}
+.badge.vb{background:var(--ok);color:#fff;} .badge.vu{background:var(--no);color:#fff;}
+.vtitle{font-family:'Fraunces',serif;font-size:21px;font-weight:600;}
+.vline{font-size:15px;line-height:1.55;margin:0 0 16px;color:#33302a;} .vline b{font-weight:600;}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;}
+.n{background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;}
+.nv{font-family:'Fraunces',serif;font-size:30px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums;} .nv em{font-style:normal;font-size:16px;}
+.nl{font-size:11px;color:var(--mut);line-height:1.35;}
+.explain{font-size:13.5px;line-height:1.6;color:#33302a;margin:0 0 10px;border-top:1px dashed var(--line);padding-top:12px;} .explain b{font-weight:600;font-variant-numeric:tabular-nums;}
+.flag{font-size:12.5px;line-height:1.5;border-radius:9px;padding:9px 13px;margin:0 0 10px;font-weight:500;}
+.flag.warn{background:var(--warn-soft);color:#8f3522;} .flag.gapf{background:var(--no-soft);color:#7d6322;}
+.note{font-size:12.5px;line-height:1.55;color:var(--mut);margin:0;border-top:1px dashed var(--line);padding-top:10px;}
+
+.overview{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:16px;}
+.ov-h{font-size:13px;color:var(--ink);font-weight:600;margin-bottom:10px;} .ov-h span{color:var(--mut);font-weight:400;font-size:11.5px;}
+.ov-lane{margin-bottom:8px;}
+.ov-lane-h{font-family:'Fraunces',serif;font-size:13.5px;font-weight:600;color:var(--mut);margin:8px 0 5px;}
+.ovrow{display:grid;grid-template-columns:1fr 130px 64px 86px;align-items:center;gap:10px;width:100%;text-align:left;border:none;background:transparent;padding:6px 8px;border-radius:8px;cursor:pointer;font:inherit;}
+.ovrow:hover{background:#f3efe6;} .ovrow.on{background:#efe9dd;}
+.ovlab{font-size:12.5px;color:var(--ink);}
+.ovbar{height:10px;background:#ece7db;border-radius:5px;overflow:hidden;} .ovbar i{display:block;height:100%;border-radius:5px;}
+.ovrow.ok .ovbar i{background:var(--ok);} .ovrow.no .ovbar i{background:var(--no);}
+.ovnum{font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;text-align:right;} .ovnum em{font-style:normal;color:var(--mut);font-weight:400;}
+.ovtag{font-size:10px;font-weight:700;letter-spacing:.03em;padding:2px 7px;border-radius:5px;text-align:center;}
+.ovtag.tok{background:var(--ok-soft);color:var(--ok);} .ovtag.tno{background:var(--no-soft);color:#8a6d22;}
+
+.foot{font-size:11.5px;color:var(--mut);line-height:1.55;} .foot b{color:#4a463c;} .caveat{margin:0;}
+
+@media(max-width:760px){
+ .head h1{font-size:26px;}
+ .controls{grid-template-columns:1fr;}
+ .nums{grid-template-columns:repeat(2,1fr);}
+ .ovrow{grid-template-columns:1fr 56px 78px;} .ovbar{display:none;}
+}
+`;

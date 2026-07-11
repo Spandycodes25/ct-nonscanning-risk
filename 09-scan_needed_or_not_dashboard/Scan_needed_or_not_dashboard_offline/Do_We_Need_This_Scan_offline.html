@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Do We Need This Scan? (offline)</title>
+<style>html,body{margin:0;background:#F4F1EA;}</style>
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./vendor/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const { useState, useMemo } = React;
+
+
+
+/* =========================================================================
+   Do We Need This Scan?  —  Scenario-2/3 Task 5
+   A shared-decision communication tool for the LOWER-YIELD end of the spectrum,
+   the inverse of the Scenario-1 "Understanding Your Scan" tool.
+
+   AUDIENCE-SEPARATED, by the same rule as the Scenario-1 tool:
+     • Patient view (default): plain language, a benefit (yield) icon array, an
+       honest qualitative note on radiation, and questions to ask. NO personalized
+       cancer/death probability and NO expected-harm arithmetic.
+     • Clinician view: the marginal-yield-vs-cumulative-radiation model (LAR by
+       age/sex from Smith-Bindman 2009, accumulated over N scans), the scenario
+       read, decision-rule pointers, figures, and assumptions.
+
+   Honest nuance baked in: a high benefit-to-radiation ratio means radiation is
+   not the deciding factor here, NOT that the scan is worth doing. Low yield,
+   overdiagnosis, and radiation-free alternatives are separate reasons that may
+   argue against scanning regardless of the radiation verdict.
+
+   Deterministic core works with no network; the Q&A is an optional in-app layer.
+   Educational — NOT medical advice.
+   ========================================================================= */
+
+// ---- Smith-Bindman 2009 Table 4: per-scan LAR of all-cancer incidence ("1 in X") ----
+const SCAN = {
+  "Head CT":                      { mSv: 2.1, lar: { F: { 20: 4360, 40: 8100, 60: 12250 }, M: { 20: 7350, 40: 11080, 60: 14680 } } },
+  "Routine chest CT":             { mSv: 8.2, lar: { F: { 20: 390, 40: 720, 60: 1090 },    M: { 20: 1040, 40: 1566, 60: 2080 } } },
+  "CTPA":                         { mSv: 9.6, lar: { F: { 20: 330, 40: 620, 60: 930 },     M: { 20: 880, 40: 1333, 60: 1770 } } },
+  "Multiphase abdomen/pelvis CT": { mSv: 31,  lar: { F: { 20: 250, 40: 460, 60: 700 },     M: { 20: 330, 40: 498, 60: 660 } } },
+};
+function perScanRisk(scanType, sex, age) {
+  const a = Math.max(20, Math.min(60, age));
+  const t = SCAN[scanType].lar[sex];
+  const r20 = 1 / t[20], r40 = 1 / t[40], r60 = 1 / t[60];
+  return a <= 40 ? r20 + ((a - 20) / 20) * (r40 - r20) : r40 + ((a - 40) / 20) * (r60 - r40);
+}
+
+// ---- Lower-yield / recurrent indications (benefit = marginal diagnostic yield) ----
+const IND = {
+  syncope_headct: {
+    label: "Routine head CT after fainting (syncope)", scan: "Head CT",
+    yieldPct: 5, yieldTag: "DATA", yieldSrc: "PMID 17551685",
+    radLow: true,
+    findTarget: "a brain cause for the faint",
+    plainLead: "Most head CTs after a simple faint come back normal, and the radiation from a head CT is small. So the real question here is mostly whether the scan is likely to help at all.",
+    alts: "Validated rules (Canadian CT Head Rule, San Francisco Syncope Rule) and ACR Appropriateness Criteria flag syncope as low-yield for head CT; an ECG and clinical risk assessment usually come first.",
+    figures: [
+      { t: "Abnormal head CT in ~0.8–5% of syncope patients", s: "PMID 17551685, 27583235", tag: "DATA" },
+      { t: "Clinically important findings 6–19%, mostly explained by other indications", s: "PMID 33246274", tag: "DATA" },
+    ],
+  },
+  lowrisk_ctpa: {
+    label: "CTPA for low-risk possible PE", scan: "CTPA",
+    yieldPct: 3.5, yieldTag: "DATA", yieldSrc: "PMID 37490553",
+    findTarget: "a blood clot in the lungs",
+    plainLead: "In low-risk patients, the large majority of these chest scans find no clot, while the chest dose is far from trivial.",
+    alts: "PERC and the Wells score with age-adjusted D-dimer can safely rule out PE without imaging in low-risk patients (ACR Appropriateness Criteria).",
+    figures: [
+      { t: "CTPA positive in only 2.8% of an ED cohort", s: "PMID 37490553", tag: "DATA" },
+      { t: "~3–4% positive in low-risk subgroups (vs ~9–16% overall)", s: "PMID 38784183", tag: "DATA" },
+    ],
+  },
+  recurrent_renal_colic: {
+    label: "Repeat CT for recurrent kidney stones", scan: "Multiphase abdomen/pelvis CT",
+    yieldPct: 5, yieldTag: "LIT", yieldSrc: "S2/3 Task 2",
+    findTarget: "a kidney stone you already know you get",
+    plainLead: "For someone who already knows they form stones, a repeat CT rarely changes what is done, and a multiphase abdominal scan carries one of the larger doses.",
+    note: "The marginal-yield figure is illustrative: the abstract literature under-quantifies the yield of a repeat stone CT.",
+    alts: "Ultrasound or low-dose CT, and clinical management for known recurrent stone-formers, avoid repeat standard-dose multiphase CT (ACR Appropriateness Criteria).",
+    figures: [
+      { t: "18% of recurrent-stone CTs showed incidental potentially malignant findings — not the same as benefit", s: "PMID 41445992", tag: "DATA" },
+      { t: "Most recurrent stone episodes are managed clinically without repeat CT", s: "S2/3 Task 2", tag: "LIT" },
+    ],
+  },
+  incidentaloma_surveillance: {
+    label: "Repeat scan to watch an incidental finding", scan: "Routine chest CT",
+    yieldPct: 4, yieldTag: "DATA", yieldSrc: "PMID 39283819",
+    overdiagnosis: true,
+    findTarget: "a change in an incidental finding",
+    plainLead: "Most incidental findings that get watched turn out to be harmless, and many would never have caused any problem.",
+    alts: "Follow guideline surveillance intervals (e.g., Fleischner Society for lung nodules) and de-escalate once stability is shown, to avoid over-surveillance.",
+    figures: [
+      { t: "Incidental finding prevalence 2–74% by region and population", s: "PMID 35717273", tag: "DATA" },
+      { t: "Malignancy among thyroid incidentalomas only 3.9%", s: "PMID 39283819", tag: "DATA" },
+    ],
+  },
+};
+const ORDER = ["syncope_headct", "lowrisk_ctpa", "recurrent_renal_colic", "incidentaloma_surveillance"];
+
+function classify(ratio, radLow) {
+  if (ratio >= 10) return {
+    cls: "s1", short: "Scenario 1",
+    line: radLow
+      ? "the radiation from this scan stays small however often it is repeated, so this is an appropriateness question, not a radiation one"
+      : "on the radiation axis, the benefit outweighs this scan’s radiation — radiation is not the deciding factor",
+  };
+  if (ratio >= 1) return { cls: "s3", short: "Scenario 3", line: "benefit and cumulative radiation are in a similar range — a genuine shared-decision point" };
+  return { cls: "s2", short: "Scenario 2", line: "cumulative radiation may outweigh the marginal benefit — worth questioning whether to repeat" };
+}
+const SLO = Math.log10(0.001), SHI = Math.log10(100);
+const logPos = (p) => Math.max(0, Math.min(1, (Math.log10(Math.max(p, 0.001)) - SLO) / (SHI - SLO)));
+const fmtPct = (p) => (p >= 10 ? p.toFixed(1) : p >= 1 ? p.toFixed(2) : p >= 0.1 ? p.toFixed(2) : p.toFixed(3));
+const fmtN = (n) => (!isFinite(n) ? "—" : Math.round(n).toLocaleString());
+const fmtRatio = (r) => (r >= 100 ? Math.round(r).toLocaleString() : r >= 10 ? r.toFixed(0) : r >= 1 ? r.toFixed(1) : r.toFixed(2));
+
+function YieldArray({ n, overdiagnosis }) {
+  const dots = useMemo(() => {
+    const out = [];
+    for (let i = 0; i < 100; i++) out.push(<span key={i} className={"qd " + (i < n ? "qd-find" : "qd-normal")} />);
+    return out;
+  }, [n]);
+  return <div className="qgrid">{dots}</div>;
+}
+
+function DoWeNeedThisScan() {
+  const [audience, setAudience] = useState("patient");
+  const [indKey, setIndKey] = useState("recurrent_renal_colic");
+  const [age, setAge] = useState(45);
+  const [sex, setSex] = useState("F");
+  const [scans, setScans] = useState(1);
+  const [question, setQuestion] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [reply, setReply] = useState("");
+  const [askMsg, setAskMsg] = useState("");
+
+  const isClin = audience === "clinician";
+  const ind = IND[indKey];
+  const scan = SCAN[ind.scan];
+  const pScan = perScanRisk(ind.scan, sex, age);
+  const cumRisk = pScan * scans;
+  const cumPct = cumRisk * 100;
+  const cumDose = scan.mSv * scans;
+  const yieldPct = ind.yieldPct;
+  const ratio = yieldPct / Math.max(cumPct, 1e-9);
+  const sc = classify(ratio, ind.radLow);
+  const findN = Math.max(1, Math.round(yieldPct));
+  const who = `${age}-year-old ${sex === "F" ? "woman" : "man"}`;
+
+  const Tag = ({ k }) => <span className={"tag " + (k === "DATA" ? "t-data" : "t-lit")}>{k}</span>;
+
+  const patientText = useMemo(() => {
+    let s = `${ind.plainLead} `;
+    if (scans > 1) s += `You have had about ${scans} of these scans here, and radiation from repeated CT scans adds up over time, which is why doctors try to avoid ones that will not change your care. `;
+    else s += `A single CT scan uses a small amount of radiation; it is repeated scans that add up over time. `;
+    if (ind.overdiagnosis) s += `Many of the things these scans pick up would never have caused you harm, and finding them can lead to more tests and worry. `;
+    s += `Sometimes a test without radiation, such as an ultrasound or MRI, or simply watching and waiting, can answer the same question. `;
+    s += `It is completely reasonable to ask whether you need this scan now, and you and your doctor can decide together.`;
+    return s;
+  }, [indKey, scans]);
+
+  const clinText = useMemo(() => {
+    const cmp = ratio >= 10 ? "far exceeds" : ratio >= 1 ? "is comparable to" : "is below";
+    let s = `${who}; ${ind.label.toLowerCase()}. ${ind.scan} ≈ ${scan.mSv} mSv${scans > 1 ? ` × ${scans} = ${cumDose.toFixed(0)} mSv cumulative` : ""}. `;
+    s += `Per-scan LAR ≈ ${fmtPct(pScan * 100)}% (BEIR VII via Smith-Bindman 2009); cumulative ≈ ${fmtPct(cumPct)}% (1 in ${fmtN(1 / cumRisk)}). `;
+    s += `Marginal yield ≈ ${yieldPct}% (${ind.yieldTag}). Benefit-to-cumulative-radiation ratio ≈ ${fmtRatio(ratio)}×, which ${cmp} parity. ${sc.short}: ${sc.line}. `;
+    s += `This is the radiation axis only — low yield, overdiagnosis, and radiation-free alternatives may argue against the scan even when radiation is not the deciding factor.`;
+    return s;
+  }, [indKey, age, sex, scans]);
+
+  async function askAI() {
+    setLoading(true); setAskMsg(""); setReply("");
+    const instr = isClin
+      ? "You are a concise clinical decision-support assistant for a physician considering whether a lower-yield or repeat CT is warranted. Use ONLY the facts below; never invent statistics. ~150-180 words. Discuss the marginal-yield-versus-cumulative-radiation framing, and make clear that low yield, overdiagnosis, and radiation-free alternatives are separate considerations that may argue against the scan even when radiation is not the deciding factor. Remain non-directive, note key uncertainties (effective dose as a whole-body proxy; LNT at low dose; marginal yield falls with repeats; illustrative thresholds), and defer to ACR Appropriateness Criteria, the named decision rules, and clinical judgement."
+      : "You are a warm, plain-spoken health educator. You are NOT the patient's doctor and must never tell them whether to have the scan, and must NOT state any personalized probability of cancer or death or do any risk arithmetic. Use ONLY the facts below; never invent statistics. Write at a 7th-8th grade level, calm and supportive, ~150-180 words. Explain in general terms that this kind of scan often does not change the plan and that radiation from repeated scans adds up, so asking whether it is needed is reasonable and sensible. Mention that radiation-free alternatives or watchful waiting sometimes work as well. Answer their question gently. Always end by encouraging them to decide together with their own doctor.";
+    const facts =
+      `FACTS:\n` +
+      `- Situation: ${ind.label} (looking for ${ind.findTarget}); imaging is a ${ind.scan}.\n` +
+      `- Number of these scans so far: ${scans}.\n` +
+      `- Marginal yield: about ${findN} in 100 of these scans find something that changes treatment; the rest do not.\n` +
+      (ind.overdiagnosis ? `- Much of what is found is incidental and would not have caused harm (overdiagnosis).\n` : "") +
+      `- Radiation: a single scan is a small amount; repeated scans add up over time.\n` +
+      `- Alternatives / appropriateness: ${ind.alts}\n` +
+      (isClin ? `- Clinician metrics: cumulative dose ${cumDose.toFixed(0)} mSv; cumulative LAR ${fmtPct(cumPct)}% (1 in ${fmtN(1 / cumRisk)}); yield-to-radiation ratio ${fmtRatio(ratio)}x; ${sc.short}.\n` : "") +
+      (question.trim() ? `\nQuestion: "${question.trim()}"` : "\nNo specific question — give a brief, balanced explanation.");
+    try {
+      const res = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, messages: [{ role: "user", content: instr + "\n\n" + facts }] }),
+      });
+      if (!res.ok) throw new Error(res.status);
+      const data = await res.json();
+      const text = (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
+      if (text) setReply(text); else setAskMsg("No answer came back — the summary above still applies.");
+    } catch (e) {
+      setAskMsg("Live answers aren’t available in this view (they need the hosted app). The summary above already covers the situation.");
+    } finally { setLoading(false); }
+  }
+
+  return (
+    <>
+      <style>{CSS}</style>
+      <div className="dwn">
+        <header className="head">
+          <div className="head-row">
+            <div className="kicker">{isClin ? "Shared decision support · marginal yield vs cumulative radiation" : "A guide to talk through with your doctor"}</div>
+            <div className="aud">
+              {["patient", "clinician"].map((a) => <button key={a} className={audience === a ? "on" : ""} onClick={() => setAudience(a)}>{a === "patient" ? "Patient" : "Clinician"}</button>)}
+            </div>
+          </div>
+          <h1>Do we need this scan?</h1>
+          <p className="sub">{isClin
+            ? <>For lower-yield and repeat CT, this weighs the marginal diagnostic yield against the radiation that <i>accumulates</i> with each scan. A high ratio means radiation is not the deciding factor, not that the scan is warranted.</>
+            : <>Some scans rarely change what happens next, and radiation from repeated scans adds up. Here is how to think it through, and what to ask, in plain terms.</>}
+          </p>
+        </header>
+
+        <section className="form">
+          <div className="field">
+            <label>{isClin ? "Clinical situation" : "What is the scan for?"}</label>
+            <select value={indKey} onChange={(e) => setIndKey(e.target.value)}>{ORDER.map((k) => <option key={k} value={k}>{IND[k].label}</option>)}</select>
+          </div>
+          <div className="row2">
+            <div className="field"><label>{isClin ? "Patient age" : "Your age"}: <b>{age}</b> <span className="opt">(20–60)</span></label>
+              <input type="range" min="20" max="60" value={age} onChange={(e) => setAge(+e.target.value)} /></div>
+            <div className="field"><label>Sex</label>
+              <div className="seg">{["F", "M"].map((s) => <button key={s} className={sex === s ? "on" : ""} onClick={() => setSex(s)}>{s === "F" ? "Female" : "Male"}</button>)}</div></div>
+            <div className="field"><label>{isClin ? "Scans (incl. this one)" : "How many of these have you had?"}: <b>{scans}</b></label>
+              <div className="stepper">
+                <button onClick={() => setScans(Math.max(1, scans - 1))}>–</button>
+                <span>{scans}</span>
+                <button onClick={() => setScans(Math.min(30, scans + 1))}>+</button>
+              </div></div>
+          </div>
+        </section>
+
+        {/* ---------- CLINICIAN: yield-vs-cumulative-radiation model ---------- */}
+        {isClin && (
+          <section className="decision">
+            <div className="dec-grid">
+              <div className="dec-col"><div className="dec-h">Marginal diagnostic yield</div><div className="dec-num b">{yieldPct}<span>%</span></div><div className="dec-cap">scans that change management <Tag k={ind.yieldTag} /></div></div>
+              <div className="dec-mid"><span className="dec-ratio">{fmtRatio(ratio)}×<em>yield : cumulative LAR</em></span></div>
+              <div className="dec-col"><div className="dec-h">Cumulative radiation (LAR)</div><div className="dec-num c">{fmtPct(cumPct)}<span>%</span></div><div className="dec-cap">{cumDose.toFixed(0)} mSv over {scans} scan{scans > 1 ? "s" : ""} · 1 in {fmtN(1 / cumRisk)}</div></div>
+            </div>
+            <div className={"scenario s-" + sc.cls}><b>{sc.short}:</b> {sc.line}.</div>
+            {ind.overdiagnosis && <div className="flag">Much of this yield is incidental: finding it often leads to more imaging, not better outcomes.</div>}
+            <p className="dec-text">{clinText}</p>
+            <div className="alts"><b>Appropriateness / alternatives.</b> {ind.alts}</div>
+            <p className="assume">Assumptions: per-scan LAR from Smith-Bindman 2009 (BEIR VII model), all-cancer incidence, accumulated linearly; effective dose treated as whole-body-equivalent; LNT at low dose; marginal yield typically falls with repeats, so Scenario-2 placement is conservative; thresholds (10×, 1×) illustrative. Not a substitute for ACR Appropriateness Criteria or clinical judgement.</p>
+          </section>
+        )}
+
+        {/* ---------- PATIENT: plain language, no risk math ---------- */}
+        {!isClin && (
+          <section className="patient-sum">
+            <div className="ps-row">
+              <span className="ps-pill find-pill">Most of these scans come back without anything that changes the plan</span>
+              <span className="ps-pill rad-pill">CT uses radiation, and repeated scans add up</span>
+            </div>
+            <p className="dec-text">{patientText}</p>
+          </section>
+        )}
+
+        {/* ---------- PANELS ---------- */}
+        <section className="panels">
+          <div className="panel ben">
+            <div className="p-top"><span className="d db" /><h2>{isClin ? "What the scan finds" : "How often it changes the plan"}</h2></div>
+            <div className="p-proto">{ind.scan} · looking for {ind.findTarget}</div>
+            <YieldArray n={findN} overdiagnosis={ind.overdiagnosis} />
+            <div className="legend">
+              <span><i className="sw qd-find" /> Finds something that changes treatment — about <b>{findN}</b> in 100</span>
+              <span><i className="sw qd-normal" /> Comes back without anything that changes the plan — about {100 - findN} in 100</span>
+            </div>
+            {ind.overdiagnosis && !isClin && <p className="takeaway">And some of what is found would never have caused harm, so finding it can lead to more tests rather than better health.</p>}
+            {isClin ? (
+              <ul className="figs">{ind.figures.map((f, i) => <li key={i}><span>{f.t}</span> <Tag k={f.tag} /> <span className="src">{f.s}</span></li>)}</ul>
+            ) : (
+              <p className="figs-note">{ind.radLow
+                ? "The radiation here is small, so the real question is simply whether the scan is likely to help."
+                : "When most scans come back normal, it is fair to ask whether this one is needed now — your care team weighs the studies behind these figures."}</p>
+            )}
+          </div>
+
+          <div className="panel cost">
+            <div className="p-top"><span className="d dc" /><h2>{isClin ? "The radiation, accumulating" : "Why repeated scans matter"}</h2></div>
+            {isClin ? (
+              <>
+                <div className="p-proto">{ind.scan} · {scan.mSv} mSv each · {cumDose.toFixed(0)} mSv over {scans}</div>
+                <div className="strip-wrap">
+                  <div className="strip">
+                    {[0.001, 0.01, 0.1, 1, 10, 100].map((t) => (
+                      <div key={t} className="tick" style={{ left: logPos(t) * 100 + "%" }}><span className="tickline" /><span className="ticklab">{t}%</span></div>
+                    ))}
+                    <div className="ptr ptr-ben" style={{ left: logPos(yieldPct) * 100 + "%" }}><span className="ptr-dot" /><span className="ptr-lab">yield {fmtPct(yieldPct)}%</span></div>
+                    <div className="ptr ptr-cost" style={{ left: logPos(cumPct) * 100 + "%" }}><span className="ptr-dot" /><span className="ptr-lab">radiation {fmtPct(cumPct)}%</span></div>
+                  </div>
+                  <div className="strip-axis">probability (log scale) · marginal yield vs cumulative radiation harm</div>
+                </div>
+                <p className="takeaway">Per-scan LAR {fmtPct(pScan * 100)}% (1 in {fmtN(1 / pScan)}); it scales roughly linearly with the number of scans. <span className="muted">Point estimate with wide CIs.</span></p>
+              </>
+            ) : (
+              <>
+                <p className="stakes">A single CT scan is a small amount of radiation. The reason doctors avoid scans that will not change your care is that the radiation from repeated scans adds up over the years.</p>
+                <div className="timeline"><span className="clock">⏱</span><span>{ind.radLow
+                  ? "A head CT is one of the lower-dose scans, so for this situation the main question is whether the scan will help, not the radiation."
+                  : "Higher-dose scans such as chest and abdominal CT add more each time, so it is especially worth asking before a repeat."}</span></div>
+                <p className="figs-note">If you have had several scans, it is reasonable to mention that to your doctor so it can be part of the decision.</p>
+              </>
+            )}
+          </div>
+        </section>
+
+        {/* ---------- QUESTIONS TO ASK (patient) ---------- */}
+        {!isClin && (
+          <section className="ask">
+            <div className="ask-h">Questions you can ask your doctor</div>
+            <ul className="qlist">
+              <li>Will this scan change my treatment or the plan?</li>
+              <li>Is there a test without radiation — like an ultrasound or MRI — that could answer the same question?</li>
+              <li>Can we watch and wait, and scan only if something changes?</li>
+              <li>Have I had similar scans recently, and do they add up?</li>
+              {ind.overdiagnosis && <li>If this finds something small, what happens next — and could it lead to more tests I may not need?</li>}
+              {indKey === "lowrisk_ctpa" && <li>Could a blood test (D-dimer) or a risk score answer this without a scan?</li>}
+            </ul>
+            <p className="ask-note">Asking these is normal and helpful. A good care team welcomes them.</p>
+          </section>
+        )}
+
+        {/* ---------- OPTIONAL Q&A ---------- */}
+        <section className="ask">
+          <div className="ask-h">{isClin ? "Ask a question (decision support)" : "Have a question, or want it in plainer words?"}</div>
+          <textarea rows={2} value={question} placeholder={isClin ? "e.g. how many repeats before this slips into Scenario 2 at this age/sex?" : "e.g. I have had a few of these scans — is it ok to ask for something without radiation?"} onChange={(e) => setQuestion(e.target.value)} />
+          <button className="go" onClick={askAI} disabled={loading}>{loading ? "Thinking it through…" : "Ask in plain language"}</button>
+          {loading && <div className="thinking"><span /><span /><span /></div>}
+          {askMsg && <div className="ask-note">{askMsg}</div>}
+          {reply && (<div className="reply"><div className="ex-body">{reply.split("\n").filter(Boolean).map((p, i) => <p key={i}>{p}</p>)}</div><div className="byline">Plain-language answer using only the figures shown above.</div></div>)}
+        </section>
+
+        <footer className="disclaimer">
+          <b>General information, not medical advice.</b> It cannot tell you whether to have a scan — your doctor knows your full health, history, and situation, so decide together. If you may be having an emergency, call your local emergency number.
+          <div className="srcline">Radiation — Smith-Bindman et al., Arch Intern Med 2009 (per-scan LAR, BEIR VII model). Yield — literature extracted in the Scenario-2/3 work (PMIDs shown). {isClin ? "Ratio = marginal yield ÷ cumulative radiation LAR; radiation axis only. " : ""}<Tag k="DATA" /> measured in a study · <Tag k="LIT" /> wider-literature figure.</div>
+        </footer>
+      </div>
+    </>
+  );
+}
+
+const CSS = `
+
+.dwn{--bg:#F4F1EA;--ink:#1b1a16;--mut:#6d6759;--line:#e0dbcf;--card:#fcfbf7;
+ --ben:#2f7d6b;--ben-soft:#dcebe6;--cost:#b0432b;--cost-soft:#f1ddd4;
+ --s1:#2f7d6b;--s1-soft:#dcebe6;--s3:#9a7b3c;--s3-soft:#efe4cc;--s2:#b0432b;--s2-soft:#f3ddd3;
+ font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--ink);
+ background:radial-gradient(130% 90% at 100% 0%, #f8f6f0 0%, var(--bg) 60%);
+ max-width:920px;margin:0 auto;padding:30px 26px 22px;line-height:1.55;}
+.dwn *{box-sizing:border-box;}
+.head-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:9px;}
+.kicker{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--cost);font-weight:600;padding-top:4px;}
+.aud{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;flex-shrink:0;background:#fff;}
+.aud button{border:none;background:#fff;padding:6px 14px;font:inherit;font-size:12.5px;cursor:pointer;color:var(--mut);transition:.15s;}
+.aud button.on{background:var(--ink);color:#fff;font-weight:500;}
+.head h1{font-family:ui-serif,Georgia,'Iowan Old Style',Palatino,'Times New Roman',serif;font-weight:600;font-size:36px;line-height:1.04;margin:0 0 10px;letter-spacing:-.01em;}
+.sub{color:var(--mut);font-size:15px;max-width:690px;margin:0;} .sub i{font-style:italic;color:var(--cost);font-weight:500;}
+
+.form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:22px 0 16px;display:flex;flex-direction:column;gap:15px;}
+.field{display:flex;flex-direction:column;gap:8px;}
+.field label{font-size:13.5px;color:var(--ink);font-weight:500;} .field label b{font-variant-numeric:tabular-nums;}
+.opt{color:var(--mut);font-weight:400;font-size:12.5px;}
+.row2{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;} .row2 .field{flex:1;min-width:150px;}
+input[type=range]{-webkit-appearance:none;appearance:none;height:5px;border-radius:3px;background:var(--line);outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--cost);cursor:pointer;border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.18);}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--cost);cursor:pointer;border:3px solid #fff;}
+.seg{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.seg button{flex:1;border:none;background:#fff;padding:9px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--mut);transition:.15s;}
+.seg button.on{background:var(--cost);color:#fff;font-weight:500;}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;}
+.stepper button{border:none;background:#fff;width:40px;padding:9px 0;font-size:18px;cursor:pointer;color:var(--ink);}
+.stepper button:hover{background:#f0ece2;}
+.stepper span{flex:1;text-align:center;font-weight:600;font-variant-numeric:tabular-nums;}
+select,textarea{font:inherit;font-size:14.5px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%;resize:vertical;}
+.go{align-self:flex-start;background:var(--ink);color:#fff;border:none;border-radius:11px;padding:11px 20px;font:inherit;font-size:14.5px;font-weight:500;cursor:pointer;transition:.15s;margin-top:10px;}
+.go:hover{background:#000;} .go:disabled{opacity:.6;cursor:default;}
+
+.patient-sum{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:16px;border-top:3px solid var(--ben);}
+.ps-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+.ps-pill{font-size:13px;line-height:1.4;padding:11px 14px;border-radius:11px;flex:1;min-width:240px;font-weight:500;}
+.find-pill{background:var(--ben-soft);color:#234;} .rad-pill{background:var(--cost-soft);color:#5a3725;}
+.dec-text{font-size:14.5px;line-height:1.62;color:#33302a;margin:14px 0 0;border-top:1px dashed var(--line);padding-top:14px;}
+
+.decision{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:16px;border-top:3px solid var(--ink);}
+.dec-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;}
+.dec-h{font-size:12px;color:var(--mut);font-weight:500;margin-bottom:7px;min-height:30px;}
+.dec-num{font-family:ui-serif,Georgia,'Iowan Old Style',Palatino,'Times New Roman',serif;font-weight:600;font-size:42px;line-height:1;font-variant-numeric:tabular-nums;}
+.dec-num.b{color:var(--ben);} .dec-num.c{color:var(--cost);} .dec-num span{font-size:20px;margin-left:2px;}
+.dec-cap{font-size:11.5px;color:var(--mut);margin-top:7px;line-height:1.4;}
+.dec-mid{display:flex;align-items:center;justify-content:center;text-align:center;}
+.dec-ratio{font-family:ui-serif,Georgia,'Iowan Old Style',Palatino,'Times New Roman',serif;font-size:20px;color:var(--ink);font-weight:600;display:flex;flex-direction:column;line-height:1.1;}
+.dec-ratio em{font-style:normal;font-size:9px;color:var(--mut);font-weight:400;letter-spacing:.03em;margin-top:2px;text-transform:uppercase;}
+.scenario{margin-top:16px;padding:10px 14px;border-radius:10px;font-size:13.5px;line-height:1.45;} .scenario b{font-weight:600;}
+.scenario.s-s1{background:var(--s1-soft);color:#27604f;} .scenario.s-s3{background:var(--s3-soft);color:#5f4f1e;} .scenario.s-s2{background:var(--s2-soft);color:#8f3522;}
+.flag{font-size:12.5px;color:var(--cost);font-weight:500;background:var(--cost-soft);border-radius:9px;padding:9px 13px;margin-top:12px;}
+.alts{font-size:13px;line-height:1.55;color:#33302a;margin:14px 0 0;border-top:1px dashed var(--line);padding-top:13px;} .alts b{font-weight:600;}
+.assume{font-size:11px;color:var(--mut);line-height:1.5;margin:12px 0 0;font-style:italic;}
+
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;align-items:start;}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;}
+.panel.ben{border-top:3px solid var(--ben);} .panel.cost{border-top:3px solid var(--cost);}
+.p-top{display:flex;align-items:center;gap:9px;margin-bottom:5px;} .p-top h2{font-family:ui-serif,Georgia,'Iowan Old Style',Palatino,'Times New Roman',serif;font-weight:600;font-size:18px;margin:0;}
+.d{width:9px;height:9px;border-radius:50%;} .db{background:var(--ben);} .dc{background:var(--cost);}
+.p-proto{font-size:12.5px;color:var(--mut);margin-bottom:14px;}
+.qgrid{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;width:100%;max-width:300px;margin:2px 0 12px;}
+.qd{width:100%;aspect-ratio:1;border-radius:2px;} .qd-find{background:var(--ben);} .qd-normal{background:#e2ddd0;}
+.legend{display:flex;flex-direction:column;gap:4px;font-size:11.5px;color:var(--mut);margin-bottom:12px;} .legend b{color:var(--ink);}
+.sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:middle;}
+.takeaway{font-size:13px;line-height:1.5;color:#33302a;margin:0;border-top:1px dashed var(--line);padding-top:12px;} .takeaway .muted{color:var(--mut);}
+.stakes{font-size:14.5px;font-weight:450;margin:2px 0 14px;color:var(--ink);line-height:1.5;}
+.timeline{display:flex;gap:9px;align-items:flex-start;background:var(--cost-soft);border-radius:10px;padding:11px 13px;font-size:13.5px;line-height:1.45;color:#5a3725;margin-bottom:14px;} .clock{font-size:15px;}
+.figs{list-style:none;padding:0;margin:0;border-top:1px dashed var(--line);padding-top:12px;display:flex;flex-direction:column;gap:9px;}
+.figs li{font-size:12.5px;line-height:1.4;} .src{color:var(--mut);font-size:11px;}
+.figs-note{font-size:13px;line-height:1.5;color:#33302a;border-top:1px dashed var(--line);padding-top:12px;margin:0;}
+
+.strip-wrap{margin:2px 0 6px;}
+.strip{position:relative;height:64px;border-bottom:2px solid var(--line);margin-bottom:6px;}
+.tick{position:absolute;bottom:0;transform:translateX(-50%);text-align:center;}
+.tickline{display:block;width:1px;height:7px;background:var(--line);margin:0 auto;}
+.ticklab{font-size:10px;color:var(--mut);font-variant-numeric:tabular-nums;}
+.ptr{position:absolute;transform:translateX(-50%);transition:left .5s cubic-bezier(.22,1,.36,1);text-align:center;}
+.ptr-dot{display:block;width:13px;height:13px;border-radius:50%;margin:0 auto 3px;border:2.5px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.18);}
+.ptr-ben{bottom:30px;z-index:2;} .ptr-ben .ptr-dot{background:var(--ben);}
+.ptr-cost{bottom:8px;z-index:3;} .ptr-cost .ptr-dot{background:var(--cost);}
+.ptr-lab{font-size:11px;font-weight:600;white-space:nowrap;}
+.ptr-ben .ptr-lab{color:var(--ben);} .ptr-cost .ptr-lab{color:var(--cost);}
+.strip-axis{font-size:10.5px;color:var(--mut);text-align:center;letter-spacing:.02em;}
+
+.tag{font-size:9px;font-weight:700;letter-spacing:.05em;padding:1.5px 5px;border-radius:5px;vertical-align:middle;}
+.t-data{background:var(--ben-soft);color:var(--ben);} .t-lit{background:#efe7d4;color:#8a6d22;}
+
+.ask{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin-bottom:16px;}
+.ask-h{font-size:14.5px;font-weight:500;margin-bottom:10px;}
+.qlist{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;}
+.qlist li{font-size:14px;line-height:1.5;color:#33302a;}
+.ask-note{font-size:13px;color:var(--mut);background:var(--cost-soft);border-radius:9px;padding:10px 13px;margin-top:12px;line-height:1.45;}
+.reply{margin-top:14px;background:var(--ben-soft);border:1px solid #cfe0e4;border-radius:12px;padding:18px 20px;}
+.ex-body p{font-size:15px;line-height:1.62;margin:0 0 11px;color:#22302f;} .ex-body p:last-child{margin-bottom:0;}
+.byline{font-size:11.5px;color:var(--mut);margin-top:12px;border-top:1px dashed #cfe0e4;padding-top:9px;font-style:italic;}
+.thinking{display:flex;gap:7px;padding:10px 0 2px;}
+.thinking span{width:9px;height:9px;border-radius:50%;background:var(--ben);opacity:.5;animation:bnc 1.1s infinite ease-in-out;}
+.thinking span:nth-child(2){animation-delay:.18s;} .thinking span:nth-child(3){animation-delay:.36s;}
+@keyframes bnc{0%,80%,100%{transform:translateY(0);opacity:.4;}40%{transform:translateY(-7px);opacity:1;}}
+
+.disclaimer{font-size:12.5px;color:var(--mut);line-height:1.55;background:var(--cost-soft);border:1px solid #e8d3c6;border-radius:13px;padding:15px 18px;} .disclaimer b{color:#7d4327;}
+.srcline{margin-top:9px;padding-top:9px;border-top:1px dashed #e3cdbf;font-size:11px;}
+
+@media(max-width:720px){
+ .head h1{font-size:28px;} .head-row{flex-direction:column;}
+ .panels{grid-template-columns:1fr;} .dec-grid{grid-template-columns:1fr;gap:16px;text-align:center;} .dec-h{min-height:0;}
+ .qgrid{max-width:none;}
+}
+`;
+
+
+ReactDOM.createRoot(document.getElementById("root")).render(<DoWeNeedThisScan />);
+</script>
+</body>
+</html>
