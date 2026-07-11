@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite both the associated paper and this archive."
+title: "Analysis code and data for 'The risk of not performing or delaying a CT scan, quantified'"
+type: software
+authors:
+  - family-names: Surdas
+    given-names: Spandan
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add your ORCID iD
+  - family-names: Rehani
+    given-names: Madan M.
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add ORCID iD
+version: 1.0.0
+date-released: 2026-07-11   
+license: MIT
+repository-code: "https://github.com/Spandycodes25/ct-nonscanning-risk"   
+abstract: >-
+  Bibliometric analysis, a locally run language-model extraction pipeline,
+  derived datasets, and prototype decision-support tools underpinning the paper
+  "The risk of not performing or delaying a CT scan, quantified". The work
+  quantifies the imbalance between the literature on the radiation risk of CT
+  and the literature on the risk of not performing it, and extracts
+  source-traceable estimates of the harm of delay and of diagnostic yield
+  across acute and lower-yield indications.
+keywords:
+  - computed tomography
+  - radiation risk
+  - imaging appropriateness
+  - diagnostic delay
+  - evidence synthesis
+  - natural language processing
